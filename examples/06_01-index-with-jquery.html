@@ -1,0 +1,125 @@
+<html>
+
+<head>
+  <title>img 和 input</title>
+  <style>
+    body {
+      background: #fcf8e0;
+    }
+
+    .logo {
+      text-align: center;
+    }
+
+    .logo img {
+      width: 300px;
+    }
+
+    .search {
+      text-align: center;
+      margin-top: 20px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 390px;
+      height: 32px;
+      border: 1px solid #0b4f79;
+      overflow: hidden;
+    }
+
+    .search input {
+      height: 32px;
+      width: 300px;
+      outline: none;
+      border: none;
+      font-size: 14px;
+      text-indent: 3px;
+    }
+
+    .search button {
+      height: 32px;
+      width: 90px;
+      background-color: #0b4f79;
+      outline: none;
+      border: none;
+      color: #fff;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .choose-types {
+      display: flex;
+      align-content: center;
+      justify-content: center;
+    }
+
+    .choose-types .type {
+      margin: 0 5px;
+    }
+
+    .choose-types .type input {
+      vertical-align: text-bottom;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="logo">
+    <img src="./img/logo02.jpeg" alt="">
+  </div>
+  <div class="choose-types">
+    <div class="type">
+      <input type="radio" name="type" id="baidu" checked />
+      <label for="baidu">在百度搜</label>
+    </div>
+    <div class="type">
+      <input type="radio" name="type" id="taobao" />
+      <label for="taobao">在淘宝搜</label>
+    </div>
+    <div class="type">
+      <input type="radio" name="type" id="bing" />
+      <label for="bing">在必应搜</label>
+    </div>
+  </div>
+
+  <div class="search">
+    <input id="search-input" type="text"><button id="search-button">汪汪一下</button>
+  </div>
+
+  <script src="./js/jquery-3.4.1.min.js"></script>
+  <script>
+
+    $(function () {
+
+      var button = $('#search-button');
+      var searchInput = $('#search-input');
+
+      var search = function () {
+        var searchWord = encodeURIComponent(searchInput.val());
+        var type = $('input[name="type"]:checked').attr('id');
+
+        var url = 'https://www.baidu.com/s?wd=' + searchWord;
+
+        if (type === 'taobao') {
+          url = 'https://s.taobao.com/search?q=' + searchWord;
+        }
+        if (type === 'bing') {
+          url = 'https://cn.bing.com/search?q=' + searchWord;
+        }
+        window.open(url);
+      }
+
+      searchInput.on('keydown', function (e) {
+        if (e.keyCode === 13) {
+          search();
+        }
+      })
+
+      button.click(function () {
+        search();
+      });
+
+    });
+  </script>
+</body>
+
+</html>

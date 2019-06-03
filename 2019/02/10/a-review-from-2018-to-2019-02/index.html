@@ -79,20 +79,17 @@
 
 
 
-<meta name="description" content="为什么需要明白Component生命周期？ React Component生命周期是React的重要设计思想和概念之一。所以如果想更深入了解React的工作机制，更好的使用React进行实战，这里就是开始。 Before 生命周期 Component设计思想Component是从有限状态机（FSM）的思想中衍生出来的一个模型。主要工作原理跟有限状态机几乎一样：通过状态、条件、动作来描述信息流转。">
+<meta name="description" content="第一季度第一季度经济上压力比较大，因为2017年10月底刚开始上班，然后还房贷，支持二宝做树懒宝贝。精神上一直处于一种压力较大的状态，在工作上属于有积极性和热情，这个阶段的团队在气氛上属于大家都想做事情的状态，不论能力如何态度是积极的。这个季度整体欣欣向荣，积极融入团队，积极处理工作，同时积极协助树懒宝贝工作。 第二季度第二季度的经济还是处于紧张状态，树懒宝贝还在进行，主要忙于春天的洋槐蜜，整个树">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【React - 02】React Component生命周期详解">
-<meta property="og:url" content="http://yoursite.com/2017/11/09/eact-lifecycle-02/index.html">
+<meta property="og:title" content="回顾2018年至2019年2月10日">
+<meta property="og:url" content="http://yoursite.com/2019/02/10/a-review-from-2018-to-2019-02/index.html">
 <meta property="og:site_name" content="109km是一场冒险">
-<meta property="og:description" content="为什么需要明白Component生命周期？ React Component生命周期是React的重要设计思想和概念之一。所以如果想更深入了解React的工作机制，更好的使用React进行实战，这里就是开始。 Before 生命周期 Component设计思想Component是从有限状态机（FSM）的思想中衍生出来的一个模型。主要工作原理跟有限状态机几乎一样：通过状态、条件、动作来描述信息流转。">
+<meta property="og:description" content="第一季度第一季度经济上压力比较大，因为2017年10月底刚开始上班，然后还房贷，支持二宝做树懒宝贝。精神上一直处于一种压力较大的状态，在工作上属于有积极性和热情，这个阶段的团队在气氛上属于大家都想做事情的状态，不论能力如何态度是积极的。这个季度整体欣欣向荣，积极融入团队，积极处理工作，同时积极协助树懒宝贝工作。 第二季度第二季度的经济还是处于紧张状态，树懒宝贝还在进行，主要忙于春天的洋槐蜜，整个树">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/images/fsm.jpeg">
-<meta property="og:image" content="http://yoursite.com/images/react-component-initialization.jpeg">
-<meta property="og:updated_time" content="2019-02-11T14:27:05.588Z">
+<meta property="og:updated_time" content="2019-02-11T14:29:05.081Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【React - 02】React Component生命周期详解">
-<meta name="twitter:description" content="为什么需要明白Component生命周期？ React Component生命周期是React的重要设计思想和概念之一。所以如果想更深入了解React的工作机制，更好的使用React进行实战，这里就是开始。 Before 生命周期 Component设计思想Component是从有限状态机（FSM）的思想中衍生出来的一个模型。主要工作原理跟有限状态机几乎一样：通过状态、条件、动作来描述信息流转。">
-<meta name="twitter:image" content="http://yoursite.com/images/fsm.jpeg">
+<meta name="twitter:title" content="回顾2018年至2019年2月10日">
+<meta name="twitter:description" content="第一季度第一季度经济上压力比较大，因为2017年10月底刚开始上班，然后还房贷，支持二宝做树懒宝贝。精神上一直处于一种压力较大的状态，在工作上属于有积极性和热情，这个阶段的团队在气氛上属于大家都想做事情的状态，不论能力如何态度是积极的。这个季度整体欣欣向荣，积极融入团队，积极处理工作，同时积极协助树懒宝贝工作。 第二季度第二季度的经济还是处于紧张状态，树懒宝贝还在进行，主要忙于春天的洋槐蜜，整个树">
 
 
 
@@ -122,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/11/09/eact-lifecycle-02/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/10/a-review-from-2018-to-2019-02/">
 
 
 
 
 
-  <title>【React - 02】React Component生命周期详解 | 109km是一场冒险</title>
+  <title>回顾2018年至2019年2月10日 | 109km是一场冒险</title>
   
 
 
@@ -245,7 +242,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/09/eact-lifecycle-02/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/10/a-review-from-2018-to-2019-02/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="阿信">
@@ -262,7 +259,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">【React - 02】React Component生命周期详解</h2>
+          <h2 class="post-title" itemprop="name headline">回顾2018年至2019年2月10日</h2>
         
 
         <div class="post-meta">
@@ -274,8 +271,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-09T00:00:00+08:00">
-                2017-11-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-10T00:00:00+08:00">
+                2019-02-10
               </time>
             
 
@@ -297,8 +294,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/react/" itemprop="url" rel="index">
-                    <span itemprop="name">react</span>
+                  <a href="/categories/随想/" itemprop="url" rel="index">
+                    <span itemprop="name">随想</span>
                   </a>
                 </span>
 
@@ -334,111 +331,25 @@
       
 
       
-        <h3 id="为什么需要明白Component生命周期？"><a href="#为什么需要明白Component生命周期？" class="headerlink" title="为什么需要明白Component生命周期？"></a>为什么需要明白Component生命周期？</h3><hr>
-<p>React Component生命周期是React的重要设计思想和概念之一。所以如果想更深入了解React的工作机制，更好的使用React进行实战，这里就是开始。</p>
-<h3 id="Before-生命周期"><a href="#Before-生命周期" class="headerlink" title="Before 生命周期"></a>Before 生命周期</h3><hr>
-<h4 id="Component设计思想"><a href="#Component设计思想" class="headerlink" title="Component设计思想"></a>Component设计思想</h4><p>Component是从<a href="https://zh.wikipedia.org/wiki/%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA" target="_blank" rel="noopener">有限状态机（FSM）</a>的思想中衍生出来的一个模型。主要工作原理跟有限状态机几乎一样：通过状态、条件、动作来描述信息流转。</p>
-<p>有限状态机的动作一般有下面几种：</p>
+        <h2 id="第一季度"><a href="#第一季度" class="headerlink" title="第一季度"></a>第一季度</h2><p>第一季度经济上压力比较大，因为2017年10月底刚开始上班，然后还房贷，支持二宝做树懒宝贝。精神上一直处于一种压力较大的状态，在工作上属于有积极性和热情，这个阶段的团队在气氛上属于大家都想做事情的状态，不论能力如何态度是积极的。这个季度整体欣欣向荣，积极融入团队，积极处理工作，同时积极协助树懒宝贝工作。</p>
+<h2 id="第二季度"><a href="#第二季度" class="headerlink" title="第二季度"></a>第二季度</h2><p>第二季度的经济还是处于紧张状态，树懒宝贝还在进行，主要忙于春天的洋槐蜜，整个树懒宝贝的团队去了一趟延安。此时的个人精神状态，比上季度有了很大的放松。工作的热情和积极态度开始减弱，原因在于公司团队领导没有领导力，做事情处于互相推诿，并不专业，而这种情况从入职开始已过去半年多，可以预见未来也不一定会有任何改变。个人在技术上的成长有限，在心理成长也比较普通。这个季度相较上个季度，人的状态开始松懈了，比较懒散。</p>
+<h2 id="第三季度"><a href="#第三季度" class="headerlink" title="第三季度"></a>第三季度</h2><p>第三季度开始花更多的时间在个人成长上面，完整地练习了 <code>Javascript design patterns</code> ,同时在开发一个新项目使用 <code>eggjs</code> 与 <code>react</code> 技术搭建的，主要是模仿 <code>patreon.com</code> ，目的是让大家能够在网上发布自己的梦想，然后获得支持。这个季度自我提升意识开始变得强烈，但是总体没有目标和计划，而是想到什么就去做什么。树懒宝贝在这个季度也开始陷入僵局，完全挣不到钱，然后我跟二宝也发生数次争执，决定在十一过后分开居住。最终做的网站也并没有上线，学到的很多知识很快也忘掉了，所以是一种浪费，需要有<strong>明确的计划和目标</strong>，去非常非常扎实地锻炼到自己的能力。</p>
+<h2 id="第四季度"><a href="#第四季度" class="headerlink" title="第四季度"></a>第四季度</h2><p>十一发生的争吵很大，我们各执己见，互不相让，内心的压抑及痛苦无处安放。而由于经济原因，分开居住的时间点一直拖到了11月。实际上，分开却又不舍得。好的方面是，分开之后双方都更加独立，都有了喘息的空间，对我来说我心理的压抑也没有那么多，更多时候能够自我舒解。</p>
+<p>二宝在这个时候开始从事保险行业，一开始总是困难很多，但是我相信她能做好，因为我相信她心里的善良会指引她更多真正地为别人着想，而非追逐利益。</p>
+<p>这个季度里，整个市场经济都不好，我开始尝试玩股票，看了一些书去了解炒股的方法和理论，最终有很多心得，股价仅存在每个人的认知里，而与实际价值毫无关联。在这个季度中，我一共亏损了1.5w元，加上三季度亏损的9000，全年总亏损2.4w元。钱财的亏损换来的是我风险意识的觉醒。股市中为何7亏，2平，1正？原因在于风险控制，实际上炒股除了考验技术，更多的是考验人性，“追涨杀跌”反应在人性上就是所有人都想挣钱，都害怕亏钱：一看数字飘红了，手就痒，想买；一看数字绿了，心慌，想卖。所以这么一买一卖就亏了。</p>
+<p>也许每到年底人就思考的更多，我也一样。在年底的时候思考更多人生的事情，未来的发展方向，实际上更多反应的是对现状的焦虑，答案并没有在年底出现。</p>
+<p>这个季度让我最开心的事情就是大约12月中旬的时候，某一天二宝在跟妈妈通话之后突然开窍了，情绪状态开始稳定，变得更好更积极，大概就是时间到了，一切就顺应着发生了。不论她后面是否能保持下去，此时此刻都是一个非常好的开端，即使再次情绪不好也跟以前完全不同。我非常有信心二宝能好起来。</p>
+<h2 id="2019到现在"><a href="#2019到现在" class="headerlink" title="2019到现在"></a>2019到现在</h2><p>一月的时候经历了三件事情：一是去我哥公司面试，聊到《周易》；二是跟三科吃饭，他分享了他多年以来的转变和心得；三是跟合租的人发生冲突，去了派出所。</p>
+<p>第一件事情，对我影响最大的是开始对《周易》产生浓厚兴趣，这是个可以学一辈子的东西，而且因为这个我开始信命。说起来信命，仿佛被贴上迷信的标签似的，但我反而认为这是很科学的事情，只是现在科学知识无法解读的事情。<strong>我相信科学，但我不相信科学能解释所有的事情。</strong> 比如：我为什么出生在西安，为什么在这个固定的时间出生？《周易》是研究计算时间和空间因素的关联性的，而从其中衍生出来的算命、占卜等等都是它的应用。如果理解了周易核心思想，再去研究其他事物的时候也会变得非常容易。《周易》核心的三个字：象、数、理，我们研究任何事情，都可以通过这三个字去进行研究判断。象，代表现象、表现出来的东西。数，代表数量、程度。理，代表理论、道理、内涵。比如，用这个三个字去指导研究叶子从空中飘落，树叶从空中飘落是现象，飘落过程中的速度和轨迹是数，而万有引力、阻力等等是理，是形成这个现象的本质。这三者之间的关系我还没有思考清楚。</p>
+<p>第二个事情让我意识到贪多嚼不烂，每年只要有一个目标就好，然后列出执行计划，按计划进行，重点是要坚持。只有一个目标让人精力集中，让人没有压力和负担。我打算2019年的目标就是制作一套幽默、系统的学习前端开发的课程。</p>
+<p>第三个事情对我的影响从一开始愤怒和仇恨逐渐变化成平静和开悟。人生不如意十之八九，我们遇到不如意的事情时候，并不是一句简单的看开点就能解决的，而是每一次遇到不如意的事情都是一次磨练，这些人和事就像磨刀石，自己领悟到了，跨过去了就是一次成功的磨砺，如果没有过去，那就会对自己是一种伤害。人的境界和心胸，就是在大大小小的困难和挫折中，千锤百炼才能够不断提高。让我最开心的是，我将邻居视为我心性的磨刀石，感谢他们帮我磨练我的心性。以前的我，心眼很小，易怒，易激动，现在的我需要更多心性上的锻炼，我才可能到达一个不同的境界，才能够承担更重的责任和看到不一样的风景。</p>
+<h2 id="未来"><a href="#未来" class="headerlink" title="未来"></a>未来</h2><p>对于2019年的计划如下：</p>
 <ul>
-<li>进入动作：在进入状态时进行</li>
-<li>退出动作：在退出状态时进行</li>
-<li>输入动作：依赖于当前状态和输入条件进行</li>
-<li>转移动作：在进行特定转移时进行</li>
+<li>前端课程制作</li>
+<li>保持学习《周易》</li>
+<li>拓宽心胸，提高境界</li>
 </ul>
-<p>如下图（图片来自<a href="https://segmentfault.com/a/1190000003940416" target="_blank" rel="noopener">这里</a>），通过这个图可以清楚看到数据在每个节点不同状态时候形成了不同的转换，最终形成有限状态机。说的生动一点：想象数据是河水，然后我们设置关卡控制河水的流向，运动，停止。</p>
-<p><img src="/images/fsm.jpeg" alt=""></p>
-<p><br></p>
-<h3 id="During-生命周期"><a href="#During-生命周期" class="headerlink" title="During 生命周期"></a>During 生命周期</h3><hr>
-<h4 id="Component-Initialization"><a href="#Component-Initialization" class="headerlink" title="Component Initialization"></a>Component Initialization</h4><p>在这个阶段实例首次被创建，后面创建的实例会与第一次创建的实例在此阶段稍有不同。下面是这个阶段中会顺序执行的函数。</p>
-<p><img src="/images/react-component-initialization.jpeg" alt=""></p>
-<p><strong>getDefaultProps</strong></p>
-<p>这个函数用于创建默认的props属性。返回值必须是 <code>Object</code> 或 <code>NULL</code>。由于这个函数比较特殊，只会在<code>React.createClass</code>第一次执行的时候调用一次，所以下面研究一下原因。</p>
-<p>在创建Component的时候会调用<code>React.createClass</code>这个函数，这个函数实际的实现是在<code>ReactClass.createClass</code>里。我们看看这个函数里都执行了哪些操作：</p>
-<ul>
-<li><p>Constructor函数：这个Constructor中主要包含了初始化props获取initialState等功能，并没有任何与<code>getDefaultProps</code>有关的东西。第一次实例化后，再次调用<code>React.createClass</code>实际上执行的只有这个函数。</p>
-</li>
-<li><p>其他部分：在Component实例化过程中只会执行一次。下面的代码就在这个部分中，所以解释了为什么<code>getDefaultProps</code>只会执行一次。</p>
-<pre><code>// Initialize the defaultProps property after all mixins have been merged.
-if (Constructor.getDefaultProps) {
-  Constructor.defaultProps = Constructor.getDefaultProps();
-}
-</code></pre></li>
-</ul>
-<p><br></p>
-<blockquote>
-<p>ps:更详细和具体的过程我也不清楚，希望有大神指导。</p>
-</blockquote>
-<p><strong>getInitialState</strong></p>
-<p>这个函数用于创建Component的初始化state。返回值必须是 <code>Object</code> 或 <code>NULL</code>。</p>
-<p>此函数会在每次Component创建的时候被调用。</p>
-<p><strong>componentWillMount</strong></p>
-<p>这个函数在Component每次被创建的阶段都会被调用，代表的意思是：组件即将创建。在server和client都会调用。</p>
-<p><strong>render</strong></p>
-<p>这个函数是进行Component渲染的，React会将Component输出到页面中。server和client都会触发。</p>
-<p><strong>componentDidMount</strong></p>
-<p>这个函数是在Component渲染完毕之后触发。只在客户端触发，server不会触发</p>
-<p><br></p>
-<h4 id="Component-Creating（创建）"><a href="#Component-Creating（创建）" class="headerlink" title="Component Creating（创建）"></a>Component Creating（创建）</h4><p>这个阶段是Component创建期，在这个阶段主要有以下几个方法会被触发。</p>
-<ul>
-<li>getInitialState</li>
-<li>componentWillMount</li>
-<li>render</li>
-<li>componentDidMount</li>
-</ul>
-<p><br></p>
-<h4 id="Component-Updating（更新）"><a href="#Component-Updating（更新）" class="headerlink" title="Component Updating（更新）"></a>Component Updating（更新）</h4><ul>
-<li>componentWillReceiveProps</li>
-<li>shouldComponentUpdate</li>
-<li>componentWillUpdate</li>
-<li>render</li>
-<li>componentDidUpdate</li>
-</ul>
-<p><br></p>
-<h4 id="Component-Unmouting（销毁）"><a href="#Component-Unmouting（销毁）" class="headerlink" title="Component Unmouting（销毁）"></a>Component Unmouting（销毁）</h4><ul>
-<li>componentWillUnmount</li>
-</ul>
-<p><br></p>
-<p>下面举个例子：</p>
-<pre><code>var React = require(&apos;react/addons&apos;);
-var LifeCycle = require(&apos;react-lifecycle&apos;);
-
-var MyComponent = React.createClass({
-  mixins: [LifeCycle],
-
-  render: function(){
-    console.log(&apos;render&apos;);
-    return null;
-  }
-});
-
-React.render(&lt;MyComponent /&gt;, document.body);  // 1
-React.unmountComponentAtNode(document.body);   // 2
-React.render(&lt;MyComponent /&gt;, document.body);  // 3
-React.render(&lt;MyComponent /&gt;, document.body);  // 4
-</code></pre><p>下面是输出：</p>
-<pre><code>// 1
-getDefaultProps
-getInitialState
-componentWillMount
-render
-componentDidMount
-// 2
-componentWillUnmount
-// 3
-getInitialState
-componentWillMount
-render
-componentDidMount
-// 4
-componentWillReceiveProps
-shouldComponentUpdate
-componentWillUpdate
-render
-componentDidUpdate
-</code></pre><p><br></p>
-<p>参考链接：</p>
-<p><a href="http://facebook.github.io/react/docs/component-specs.html" target="_blank" rel="noopener">http://facebook.github.io/react/docs/component-specs.html</a></p>
-<p><a href="https://segmentfault.com/a/1190000003940416" target="_blank" rel="noopener">https://segmentfault.com/a/1190000003940416</a></p>
+<p>对于更远的将来，我希望能够寻找到乐趣学习方法，能够提高大家的学习效率。</p>
 
       
     </div>
@@ -463,8 +374,8 @@ componentDidUpdate
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/06/what-is-react-01/" rel="next" title="【React - 01】What’s React">
-                <i class="fa fa-chevron-left"></i> 【React - 01】What’s React
+              <a href="/2018/11/06/the-constitution-changed-turkey/" rel="next" title="这场被野心绑架的修宪，逆转了土耳其">
+                <i class="fa fa-chevron-left"></i> 这场被野心绑架的修宪，逆转了土耳其
               </a>
             
           </div>
@@ -472,10 +383,6 @@ componentDidUpdate
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/22/front-end-developing-standard/" rel="prev" title="前端开发规范">
-                前端开发规范 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -602,7 +509,7 @@ componentDidUpdate
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么需要明白Component生命周期？"><span class="nav-number">1.</span> <span class="nav-text">为什么需要明白Component生命周期？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Before-生命周期"><span class="nav-number">2.</span> <span class="nav-text">Before 生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Component设计思想"><span class="nav-number">2.1.</span> <span class="nav-text">Component设计思想</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#During-生命周期"><span class="nav-number">3.</span> <span class="nav-text">During 生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Component-Initialization"><span class="nav-number">3.1.</span> <span class="nav-text">Component Initialization</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Component-Creating（创建）"><span class="nav-number">3.2.</span> <span class="nav-text">Component Creating（创建）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Component-Updating（更新）"><span class="nav-number">3.3.</span> <span class="nav-text">Component Updating（更新）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Component-Unmouting（销毁）"><span class="nav-number">3.4.</span> <span class="nav-text">Component Unmouting（销毁）</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一季度"><span class="nav-number">1.</span> <span class="nav-text">第一季度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二季度"><span class="nav-number">2.</span> <span class="nav-text">第二季度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三季度"><span class="nav-number">3.</span> <span class="nav-text">第三季度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第四季度"><span class="nav-number">4.</span> <span class="nav-text">第四季度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2019到现在"><span class="nav-number">5.</span> <span class="nav-text">2019到现在</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#未来"><span class="nav-number">6.</span> <span class="nav-text">未来</span></a></li></ol></div>
             
 
           </div>
