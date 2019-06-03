@@ -92,7 +92,8 @@
 
       var button = $('#search-button');
       var searchInput = $('#search-input');
-      button.click(function () {
+
+      var search = function () {
         var searchWord = encodeURIComponent(searchInput.val());
         var type = $('input[name="type"]:checked').attr('id');
 
@@ -104,9 +105,17 @@
         if (type === 'bing') {
           url = 'https://cn.bing.com/search?q=' + searchWord;
         }
-
         window.open(url);
+      }
 
+      searchInput.on('keydown', function (e) {
+        if (e.keyCode === 13) {
+          search();
+        }
+      })
+
+      button.click(function () {
+        search();
       });
 
     });
