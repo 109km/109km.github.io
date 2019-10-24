@@ -20,5 +20,9 @@ theme = "yinyang"
   link = "https://github.com/109km"
 
 [[params.socials]]
-  name = "theme@yinyang"
+  name = "Powered by Hugo"
+  link = "https://gohugo.io/"
+
+[[params.socials]]
+  name = "Theme: Yingyang"
   link = "https://github.com/joway/hugo-theme-yinyang"
