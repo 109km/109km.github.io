@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="" />
+  <meta property="og:url" content="http://example.org/posts/css-selector-matching-theory/" />
+  <link rel="canonical" href="http://example.org/posts/css-selector-matching-theory/" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "http:\/\/example.org\/"
+      },
+      "articleSection" : "posts",
+      "name" : "css选择器匹配机制",
+      "headline" : "css选择器匹配机制",
+      "description" : "Keep in mind that when a browser is doing selector matching it has one element (the one it\x26rsquo;s trying to determine style for) and all your rules and their selectors and it needs to find which rules match the element. This is different from the usual jQuery thing, say, where you only have one selector and you need to find all the elements that match that selector.\nIf you only had one selector and only one element to compare against that selector, then left-to-right makes more sense in some cases.",
+      "inLanguage" : "en-US",
+      "author" : "",
+      "creator" : "",
+      "publisher": "",
+      "accountablePerson" : "",
+      "copyrightHolder" : "",
+      "copyrightYear" : "2017",
+      "datePublished": "2017-11-29 00:00:00 \x2b0800 CST",
+      "dateModified" : "2017-11-29 00:00:00 \x2b0800 CST",
+      "url" : "http:\/\/example.org\/posts\/css-selector-matching-theory\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>css选择器匹配机制 - 109km is a distance.</title>
+  <meta property="og:title" content="css选择器匹配机制 - 109km is a distance." />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="Keep in mind that when a browser is doing selector matching it has one element (the one it&rsquo;s trying to determine style for) and all your rules and their selectors and it needs to find which rules match the element. This is different from the usual jQuery thing, say, where you only have one selector and you need to find all the elements that match that selector.
+If you only had one selector and only one element to compare against that selector, then left-to-right makes more sense in some cases." />
+
+  <link rel="stylesheet" href="https://unpkg.com/flexboxgrid@6.3.1/dist/flexboxgrid.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="109km is a distance.">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
+  
+  <script>
+    
+
+    (function (undefined) { }).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+  </script>
+
+  
+</head>
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="/">109km</a>
+  </div>
+</header>
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">css选择器匹配机制</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2017-11-29 00:00:00 CST">
+                29 Nov 2017
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          <p>Keep in mind that when a browser is doing selector matching it has one element (the one it&rsquo;s trying to determine style for) and all your rules and their selectors and it needs to find which rules match the element. This is different from the usual jQuery thing, say, where you only have one selector and you need to find all the elements that match that selector.</p>
+
+<p>If you only had one selector and only one element to compare against that selector, then left-to-right makes more sense in some cases. But that&rsquo;s decidedly not the browser&rsquo;s situation. The browser is trying to render Gmail or whatever and has the one <span> it&rsquo;s trying to style and the 10,000+ rules Gmail puts in its stylesheet (I&rsquo;m not making that number up).</p>
+
+<p>In particular, in the situation the browser is looking at most of the selectors it&rsquo;s considering don&rsquo;tmatch the element in question. So the problem becomes one of deciding that a selector doesn&rsquo;t match as fast as possible; if that requires a bit of extra work in the cases that do match you still win due to all the work you save in the cases that don&rsquo;t match.
+If you start by just matching the rightmost part of the selector against your element, then chances are it won&rsquo;t match and you&rsquo;re done. If it does match, you have to do more work, but only proportional to your tree depth, which is not that big in most cases.</p>
+
+<p>On the other hand, if you start by matching the leftmost part of the selector&hellip; what do you match it against? You have to start walking the DOM, looking for nodes that might match it. Just discovering that there&rsquo;s nothing matching that leftmost part might take a while.</p>
+
+<p>So browsers match from the right; it gives an obvious starting point and lets you get rid of most of the candidate selectors very quickly. You can see some data at <a href="http://groups.google.com/group/mozilla.dev.tech.layout/browse_thread/thread/b185e455a0b3562a/7db34de545c17665">http://groups.google.com/group/mozilla.dev.tech.layout/browse_thread/thread/b185e455a0b3562a/7db34de545c17665</a> (though the notation is confusing), but the upshot is that for Gmail in particular two years ago, for 70% of the (rule, element) pairs you could decide that the rule does not match after just examining the tag/class/id parts of the rightmost selector for the rule. The corresponding number for Mozilla&rsquo;s pageload performance test suite was 72%. So it&rsquo;s really worth trying to get rid of those <sup>2</sup>&frasl;<sub>3</sub> of all rules as fast as you can and then only worry about matching the remaining <sup>1</sup>&frasl;<sub>3</sub>.</p>
+
+<p>Note also that there are other optimizations browsers already do to avoid even trying to match rules that definitely won&rsquo;t match. For example, if the rightmost selector has an id and that id doesn&rsquo;t match the element&rsquo;s id, then there will be no attempt to match that selector against that element at all in Gecko: the set of &ldquo;selectors with IDs&rdquo; that are attempted comes from a hashtable lookup on the element&rsquo;s ID. So this is 70% of the rules which have a pretty good chance of matching that stilldon&rsquo;t match after considering just the tag/class/id of the rightmost selector.</p>
+
+        </div>
+        
+
+        
+
+
+        
+        
+        <div style="height: 50px;"></div>
+        
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/109km" target="_blank">Github</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/joway/hugo-theme-yinyang" target="_blank">Theme:yinyang</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+<script src="https://unpkg.com/quicklink@0.1.1/dist/quicklink.umd.js"></script>
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  var posts = document.getElementById('posts-list');
+  posts && quicklink({
+    el: posts,
+    priority: true,
+  });
+</script>
+
+  
+
+</body>
+
+</html>
