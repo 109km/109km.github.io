@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>react on 109km is a distance.</title>
-    <link>http://example.org/categories/react/</link>
+    <link>https://109km.github.io/categories/react/</link>
     <description>Recent content in react on 109km is a distance.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 09 Nov 2017 00:00:00 +0800</lastBuildDate>
     
-	<atom:link href="http://example.org/categories/react/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://109km.github.io/categories/react/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>【React - 02】React Component生命周期详解</title>
-      <link>http://example.org/posts/react-lifecycle-02/</link>
+      <link>https://109km.github.io/posts/react-lifecycle-02/</link>
       <pubDate>Thu, 09 Nov 2017 00:00:00 +0800</pubDate>
       
-      <guid>http://example.org/posts/react-lifecycle-02/</guid>
+      <guid>https://109km.github.io/posts/react-lifecycle-02/</guid>
       <description>为什么需要明白Component生命周期？ React Component生命周期是React的重要设计思想和概念之一。所以如果想更深入了解React的工作机制，更好的使用React进行实战，这里就是开始。
 Before 生命周期 Component设计思想 Component是从有限状态机（FSM）的思想中衍生出来的一个模型。主要工作原理跟有限状态机几乎一样：通过状态、条件、动作来描述信息流转。
 有限状态机的动作一般有下面几种：
@@ -45,10 +45,10 @@ Component Creating（创建） 这个阶段是Component创建期，在这个阶�
     
     <item>
       <title>【React - 01】What’s React</title>
-      <link>http://example.org/posts/what-is-react-01/</link>
+      <link>https://109km.github.io/posts/what-is-react-01/</link>
       <pubDate>Mon, 06 Nov 2017 15:47:12 +0800</pubDate>
       
-      <guid>http://example.org/posts/what-is-react-01/</guid>
+      <guid>https://109km.github.io/posts/what-is-react-01/</guid>
       <description>React初识 React只是MVC中的V。
 React核心是Component，Component是html / javascript的合集。
 

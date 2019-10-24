@@ -2,48 +2,48 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on 109km is a distance.</title>
-    <link>http://example.org/categories/</link>
+    <link>https://109km.github.io/categories/</link>
     <description>Recent content in Categories on 109km is a distance.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 10 Feb 2019 00:00:00 +0800</lastBuildDate>
     
-	<atom:link href="http://example.org/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://109km.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>随想</title>
-      <link>http://example.org/categories/%E9%9A%8F%E6%83%B3/</link>
+      <link>https://109km.github.io/categories/%E9%9A%8F%E6%83%B3/</link>
       <pubDate>Sun, 10 Feb 2019 00:00:00 +0800</pubDate>
       
-      <guid>http://example.org/categories/%E9%9A%8F%E6%83%B3/</guid>
+      <guid>https://109km.github.io/categories/%E9%9A%8F%E6%83%B3/</guid>
       <description></description>
     </item>
     
     <item>
       <title>css</title>
-      <link>http://example.org/categories/css/</link>
+      <link>https://109km.github.io/categories/css/</link>
       <pubDate>Wed, 29 Nov 2017 00:00:00 +0800</pubDate>
       
-      <guid>http://example.org/categories/css/</guid>
+      <guid>https://109km.github.io/categories/css/</guid>
       <description></description>
     </item>
     
     <item>
       <title>前端开发</title>
-      <link>http://example.org/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/</link>
+      <link>https://109km.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/</link>
       <pubDate>Wed, 22 Nov 2017 16:47:12 +0800</pubDate>
       
-      <guid>http://example.org/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/</guid>
+      <guid>https://109km.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/</guid>
       <description></description>
     </item>
     
     <item>
       <title>react</title>
-      <link>http://example.org/categories/react/</link>
+      <link>https://109km.github.io/categories/react/</link>
       <pubDate>Thu, 09 Nov 2017 00:00:00 +0800</pubDate>
       
-      <guid>http://example.org/categories/react/</guid>
+      <guid>https://109km.github.io/categories/react/</guid>
       <description></description>
     </item>
     
