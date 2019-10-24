@@ -4,19 +4,30 @@
   
   <url>
     <loc>https://109km.github.io/</loc>
-    <lastmod>2019-02-10T00:00:00+08:00</lastmod>
+    <lastmod>2019-02-20T12:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://109km.github.io/categories/</loc>
-    <lastmod>2019-02-10T00:00:00+08:00</lastmod>
+    <lastmod>2019-02-20T12:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://109km.github.io/posts/</loc>
-    <lastmod>2019-02-10T00:00:00+08:00</lastmod>
+    <lastmod>2019-02-20T12:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://109km.github.io/posts/a-little-comprehension/</loc>
+    <lastmod>2019-02-20T12:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://109km.github.io/categories/%E9%9A%8F%E6%83%B3/</loc>
+    <lastmod>2019-02-20T12:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -26,9 +37,30 @@
   </url>
   
   <url>
-    <loc>https://109km.github.io/categories/%E9%9A%8F%E6%83%B3/</loc>
-    <lastmod>2019-02-10T00:00:00+08:00</lastmod>
+    <loc>https://109km.github.io/posts/how-to-make-a-hydrogen-bomb/</loc>
+    <lastmod>2019-01-17T12:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://109km.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/</loc>
+    <lastmod>2019-01-08T12:00:00+08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://109km.github.io/posts/a-glance-at-computer-science/</loc>
+    <lastmod>2019-01-08T12:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://109km.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/</loc>
+    <lastmod>2018-12-09T12:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://109km.github.io/posts/the-future-of-fe/</loc>
+    <lastmod>2018-12-09T12:00:00+08:00</lastmod>
   </url>
   
   <url>
@@ -60,12 +92,6 @@
   <url>
     <loc>https://109km.github.io/posts/css-selector-matching-theory/</loc>
     <lastmod>2017-11-29T00:00:00+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://109km.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/</loc>
-    <lastmod>2017-11-22T16:47:12+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>

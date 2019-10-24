@@ -6,6 +6,8 @@ theme = "yinyang"
 
 [params]
   mainSections = ["posts"]
+  author = "阿信"
+  description = "109km 是一段路程。"
   headTitle = "109km"
 
 
