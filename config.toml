@@ -1,0 +1,17 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+DefaultContentLanguage = "cn"
+title = "109km is a distance."
+theme = "yinyang"
+
+[params]
+  mainSections = ["posts"]
+  headTitle = "109km"
+
+[[params.socials]]
+  name = "Github"
+  link = "https://github.com/109km"
+
+[[params.socials]]
+  name = "Theme:yinyang"
+  link = "https://github.com/joway/hugo-theme-yinyang"
