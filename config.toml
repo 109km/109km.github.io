@@ -8,6 +8,11 @@ theme = "yinyang"
   mainSections = ["posts"]
   headTitle = "109km"
 
+
+[[params.socials]]
+  name = "RSS"
+  link = "https://github.com/109km/index.xml"
+
 [[params.socials]]
   name = "Github"
   link = "https://github.com/109km"
