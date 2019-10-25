@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "start": "hugo server -D",
+    "build": "hugo -d ./"
+  }
+}
