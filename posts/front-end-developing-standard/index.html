@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.55.6" />
+  <meta name="generator" content="Hugo 0.59.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -183,18 +183,19 @@ Hello 项目根目录，通常为项目名称 ├── README.md 项目说明�
 <li>命名尽量体现功能或者内容，例如：<code>popular-video-list</code>；尽量不要使用意义不明确的，例如：<code>round</code> <code>item</code></li>
 <li>class命名可以采用多个class并列。例如<code>top-news-list border-radius font-color-red</code>。</li>
 <li>如果class中有在js中使用的，请以<code>js-</code>开始。例如：<code>js-button-submit</code></li>
-<li>class名称层级化。当前页面若比较复杂，需要大量的html，每一层级都要拥有自己的命名空间，作用是在对页面和css进行架构的时候可以清楚的区分出到底哪些属于整站共用或是当前页面共用，或是某一组件专属。比如：</li>
-</ul>
+
+<li><p>class名称层级化。当前页面若比较复杂，需要大量的html，每一层级都要拥有自己的命名空间，作用是在对页面和css进行架构的时候可以清楚的区分出到底哪些属于整站共用或是当前页面共用，或是某一组件专属。比如：</p>
 
 <pre><code class="language-html">&lt;div class=&quot;grid&quot;&gt;
-  &lt;div class=&quot;hot-section hot-news&quot;&gt;
-    &lt;div class=&quot;nav nav-hot-news&quot;&gt;热门新闻导航&lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;hot-section hot-classes&quot;&gt;
-    &lt;div class=&quot;nav nav-hot-classes&quot;&gt;热门课程导航&lt;/div&gt;
-  &lt;/div&gt;
+&lt;div class=&quot;hot-section hot-news&quot;&gt;
+&lt;div class=&quot;nav nav-hot-news&quot;&gt;热门新闻导航&lt;/div&gt;
 &lt;/div&gt;
-</code></pre>
+&lt;div class=&quot;hot-section hot-classes&quot;&gt;
+&lt;div class=&quot;nav nav-hot-classes&quot;&gt;热门课程导航&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</code></pre></li>
+</ul>
 
 <h4 id="文档相关">文档相关</h4>
 
@@ -215,53 +216,49 @@ Hello 项目根目录，通常为项目名称 ├── README.md 项目说明�
 <h4 id="书写格式">书写格式</h4>
 
 <ul>
-<li>每一条css规则独占一行。示例如下：</li>
-</ul>
+<li><p>每一条css规则独占一行。示例如下：</p>
 
 <pre><code class="language-css">.container{
-  width:100%;
-  height:100%;
-  overflow:hidden;
+width:100%;
+height:100%;
+overflow:hidden;
 }
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>若多个选择器并列，则每一个选择器也独占一行，行尾用逗号分隔。示例如下：</li>
-</ul>
+<li><p>若多个选择器并列，则每一个选择器也独占一行，行尾用逗号分隔。示例如下：</p>
 
 <pre><code class="language-css">p,
 div,
 th,
 td,
 form{
-  margin:0;
-  padding:0;
+margin:0;
+padding:0;
 }
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>css相关属性排列在一起。示例如下：</li>
-</ul>
+<li><p>css相关属性排列在一起。示例如下：</p>
 
 <pre><code class="language-css">div{
-  display:block;
-  width:200px;
-  height:100px;
-  margin:20px;
-  padding:0 20px;
+display:block;
+width:200px;
+height:100px;
+margin:20px;
+padding:0 20px;
   
-  position:absolute:
-  top:10px;
-  left:50px;
+position:absolute:
+top:10px;
+left:50px;
   
-  font-size:16px;
-  color:#333;
-  text-align:center;
+font-size:16px;
+color:#333;
+text-align:center;
   
-  background-color:#fff;
-  opacity:0.8;
+background-color:#fff;
+opacity:0.8;
 }
-</code></pre>
+</code></pre></li>
+</ul>
 
 <h4 id="性能优化">性能优化</h4>
 
@@ -280,13 +277,13 @@ form{
 float不仅会导致DOM脱离正常文档流，还消耗大量性能。</p></li>
 
 <li><p>css选择器机制理解：
-css选择器是<strong>从右向左</strong>进行，所以下面中的css选择器实际运行效率很低：</p></li>
-</ul>
+css选择器是<strong>从右向左</strong>进行，所以下面中的css选择器实际运行效率很低：</p>
 
 <pre><code class="language-css">#logo a{
-  color:#fff;
+color:#fff;
 }
-</code></pre>
+</code></pre></li>
+</ul>
 
 <p>因为此时css会先查找所有<code>a</code>标签，然后查找哪些a标签的父祖级元素中有<code>#logo</code>，所以效率非常低下。推荐及不推荐写法展示如下：</p>
 
@@ -311,106 +308,90 @@ table tr td {}
 <li><p>多行注释。</p>
 
 <ul>
-<li>文件注释</li>
+<li><p>文件注释</p>
+
+<pre><code class="language-javascript">/**
+* @description This is homepage
+* @author shaoxinheng
+*/
+</code></pre></li>
+
+<li><p>函数注释</p>
+
+<pre><code class="language-javascript">/**
+* @param {string} p1 p1的说明
+* @param {number=} p2 p2的说明（可选）
+* @param {object.name} p3.name p3.name的说明
+* @return {object} 返回值描述
+*/
+</code></pre></li>
 </ul></li>
 </ul>
-
-<pre><code class="language-javascript">/**
- * @description This is homepage
- * @author shaoxinheng
- */
-</code></pre>
-
-<pre><code>* 函数注释
-</code></pre>
-
-<pre><code class="language-javascript">/**
- * @param {string} p1 p1的说明
- * @param {number=} p2 p2的说明（可选）
- * @param {object.name} p3.name p3.name的说明
- * @return {object} 返回值描述
- */
-</code></pre>
 
 <h4 id="命名">命名</h4>
 
 <ul>
-<li>变量。采用驼峰式命名。</li>
-</ul>
+<li><p>变量。采用驼峰式命名。</p>
 
 <pre><code class="language-javascript">var headerText = &quot;Hello&quot;;
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>私有变量。私有变量以<code>_</code>开头。</li>
-</ul>
+<li><p>私有变量。私有变量以<code>_</code>开头。</p>
 
 <pre><code class="language-javascript">var _privateName = &quot;Jack&quot;;
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>常量。全部大写，单词之间使用 <code>_</code> 分隔。</li>
-</ul>
+<li><p>常量。全部大写，单词之间使用 <code>_</code> 分隔。</p>
 
 <pre><code class="language-javascript">var GLOBAL_SITE_ID = 123;
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>函数。采用驼峰命名，同时名称应该表明此函数实际作用。</li>
-</ul>
+<li><p>函数。采用驼峰命名，同时名称应该表明此函数实际作用。</p>
 
 <pre><code class="language-javascript">function sayHello(){}
 function arrayToString(){}
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>函数参数。采用驼峰命名。</li>
-</ul>
+<li><p>函数参数。采用驼峰命名。</p>
 
 <pre><code class="language-javascript">function sayHello(userName){};
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>类名。采用Pascal命名，类的属性和参数采用驼峰。</li>
-</ul>
+<li><p>类名。采用Pascal命名，类的属性和参数采用驼峰。</p>
 
 <pre><code class="language-javascript">function Car(id,shape,carBrand){
-  this.id = id;
-  this.shape = shape;
-  this.carBrand = carBrand;
+this.id = id;
+this.shape = shape;
+this.carBrand = carBrand;
 }
 Car.prototype.turnLeft = function(){}
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>缩写情况。整个缩写单词保持大小写一致。</li>
-</ul>
+<li><p>缩写情况。整个缩写单词保持大小写一致。</p>
 
 <pre><code class="language-javascript">function insertHTML(){}
 function httpRequest(){}
 var wxLibary = 'lib';
-</code></pre>
+</code></pre></li>
 
-<ul>
-<li>boolean类型以，<code>is</code>或<code>has</code>开头。</li>
-</ul>
+<li><p>boolean类型以，<code>is</code>或<code>has</code>开头。</p>
 
 <pre><code class="language-javascript">var isFromShare = false;
 var hasDrawedPrice = true;
-</code></pre>
+</code></pre></li>
+</ul>
 
 <h4 id="性能优化-1">性能优化</h4>
 
 <ul>
-<li>减少DOM操作，如果多次使用，缓存DOM</li>
-</ul>
+<li><p>减少DOM操作，如果多次使用，缓存DOM</p>
 
 <pre><code class="language-javascript">// Recommended
 var myList = &quot;&quot;;
 var myListHTML = document.getElementById(&quot;myList&quot;).innerHTML;
 
 for (var i = 0; i &lt; 100; i++) {
-  myList += &quot;&lt;span&gt;&quot; + i + &quot;&lt;/span&gt;&quot;;
+myList += &quot;&lt;span&gt;&quot; + i + &quot;&lt;/span&gt;&quot;;
 }
 
 myListHTML = myList;
@@ -420,15 +401,16 @@ var fragNode = document.createDocumentFragment();
 var myList = document.getElementById(&quot;myList&quot;);
 
 for (var i = 0; i &lt; 100; i++) {
-  fragNode.appendChild( &quot;&lt;span&gt;&quot; + i + &quot;&lt;/span&gt;&quot;);
+fragNode.appendChild( &quot;&lt;span&gt;&quot; + i + &quot;&lt;/span&gt;&quot;);
 }
 myList.appendChild(fragNode);
 
 // Not recommended
 for (var i = 0; i &lt; 100; i++) {
-  document.getElementById(&quot;myList&quot;).innerHTML += &quot;&lt;span&gt;&quot; + i + &quot;&lt;/span&gt;&quot;;
+document.getElementById(&quot;myList&quot;).innerHTML += &quot;&lt;span&gt;&quot; + i + &quot;&lt;/span&gt;&quot;;
 }
-</code></pre>
+</code></pre></li>
+</ul>
 
 <h2 id="流程篇">流程篇</h2>
 

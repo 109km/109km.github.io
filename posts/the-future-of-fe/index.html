@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.55.6" />
+  <meta name="generator" content="Hugo 0.59.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -232,15 +232,15 @@ border-radus: 2px;
 <p>实际上这个功能还是利用编译工具，修改了css的<code>selector</code>来达到作用域的作用。</p>
 
 <ol>
-<li>使用BEM (Block Element Modifier)。本质上还是通过约束每一个css选择器的名称来控制作用域。</li>
-</ol>
+<li><p>使用BEM (Block Element Modifier)。本质上还是通过约束每一个css选择器的名称来控制作用域。</p>
 
 <pre><code class="language-css">[block]__[element]--[modifier] {
-  padding: 10px 20px;
-  font-weight: bold;
-  font-size: 2rem;
+padding: 10px 20px;
+font-weight: bold;
+font-size: 2rem;
 }
-</code></pre>
+</code></pre></li>
+</ol>
 
 <h4 id="未来-1">未来</h4>
 
@@ -282,22 +282,22 @@ export default () =&gt; {
 </code></pre>
 
 <ol>
-<li>css变量。这种方式能够解决的问题是，将大量的重复样式设置为变量，然后多处引用，可以大量减少css的属性编写量。同时在某个<code>selector</code>中书写变量的时候，此变量是带有所在<code>selector</code>作用域的。不过，此技术的缺点在于并没有解决css<code>selector</code>过多过长的问题，我们可以假想一下如果<code>selector</code>的名称也都可以使用变量的话，岂不是美滋滋。</li>
-</ol>
+<li><p>css变量。这种方式能够解决的问题是，将大量的重复样式设置为变量，然后多处引用，可以大量减少css的属性编写量。同时在某个<code>selector</code>中书写变量的时候，此变量是带有所在<code>selector</code>作用域的。不过，此技术的缺点在于并没有解决css<code>selector</code>过多过长的问题，我们可以假想一下如果<code>selector</code>的名称也都可以使用变量的话，岂不是美滋滋。</p>
 
 <pre><code class="language-less">html {
-  --main-bg-color: brown;
-  --main-title-mixin:{
-    font-size: 16px;
-    color: #333;
-  }
+--main-bg-color: brown;
+--main-title-mixin:{
+font-size: 16px;
+color: #333;
+}
 }
 
 .bg{
-  background-color: var(--main-bg-color);
-  @apply --main-title-mixin;
+background-color: var(--main-bg-color);
+@apply --main-title-mixin;
 }
-</code></pre>
+</code></pre></li>
+</ol>
 
 <h3 id="js">JS</h3>
 

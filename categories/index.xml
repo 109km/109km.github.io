@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on 109km is a distance.</title>
@@ -6,7 +6,7 @@
     <description>Recent content in Categories on 109km is a distance.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 06 Sep 2019 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 27 Oct 2019 12:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://109km.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>随想</title>
       <link>https://109km.github.io/categories/%E9%9A%8F%E6%83%B3/</link>
-      <pubDate>Fri, 06 Sep 2019 12:00:00 +0800</pubDate>
+      <pubDate>Sun, 27 Oct 2019 12:00:00 +0800</pubDate>
       
       <guid>https://109km.github.io/categories/%E9%9A%8F%E6%83%B3/</guid>
       <description></description>
