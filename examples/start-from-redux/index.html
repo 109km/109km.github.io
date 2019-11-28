@@ -1,0 +1,531 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>从Redux开始</title>
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css">
+	<link rel="stylesheet" href="css/index.css">
+
+	<!-- Theme used for syntax highlighting of code -->
+	<link rel="stylesheet" href="lib/css/monokai.css">
+
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
+				<h1 class="lime-5">Redux</h1>
+				<h3>一个数据管家</h3>
+				<p class="fragment">与React无关</p>
+			</section>
+			<section class="chapter01">
+				<section class="chapter01-1">
+					<h2>4个概念</h2>
+					<div class="lime-5">
+						State /
+						Store /
+						Action /
+						Reducer
+					</div>
+				</section>
+				<section class="chapter01-2">
+					<h2>State = <span class="fragment highlight-red">数据</span></h2>
+				</section>
+				<section class="chapter01-3">
+					<div>定义应用中的所有数据的结构</div>
+					<pre>
+							<code class="hljs" data-trim data-line-numbers>
+								const State = {
+									total: 0, // 总数
+									todos: [] // todo事项列表
+								}
+							</code>
+						</pre>
+				</section>
+
+				<section class="chapter01-4">
+					<h2>Store = <span class="fragment highlight-red">数据管家</span></h2>
+				</section>
+				<section class="chapter01-5">
+					<div>想改变数据，必须通过Store这个管家。</div>
+					<pre>
+						<code class="hljs" data-trim data-line-numbers>
+							// 创建一个Store
+							const store = createStore(reducer, initState); 
+
+							// 通过Store发出一个修改数据的指令
+							store.dispatch({ type:"ADD_NUMBER", payload: 1 }); 
+
+							// 获取当前的state数据
+							store.getState();
+						</code>
+					</pre>
+				</section>
+
+				<section class="chapter01-6">
+					<h2>Action = <span class="fragment highlight-red">改变数据的指令</span></h2>
+				</section>
+				<section class="chapter01-7">
+					<div>
+						<p>
+							Action是一个对象，包含两个属性：
+						</p>
+						<p>
+							<span class="var">type</span> 和 <span class="var">payload</span>
+						</p>
+					</div>
+					<pre>
+						<code class="hljs" data-trim data-line-numbers>
+							// 定义一个Action
+							const addAction = {
+								type: "ADD_NUMBER", // 找谁改变
+								payload: 1 // 传入的参数
+							}
+
+							// 通过Store发出一个修改数据的指令
+							store.dispatch(addAction); 
+						</code>
+						</pre>
+				</section>
+
+				<section class="chapter01-8">
+					<h2>Reducer = <span class="fragment highlight-red">如何改变数据</span></h2>
+				</section>
+				<section class="chapter01-9">
+					<div>
+						<p>
+							Reducer是一个函数，入参有两个
+							<span class="var">state</span> 和 <span class="var">action</span>，
+							最后返回新的state，而非修改当前state。
+						</p>
+						<p>
+							所有的Action被触发以后都执行的是<span class="red-6">这一个Reducer</span>，相当于是一个总通道。
+						</p>
+					</div>
+					<pre>
+						<code class="hljs" data-trim data-line-numbers>
+							const reducer = (state, action)=>{
+								if (action.type === 'ADD_NUMBER'){
+									return Object.assign(state, {
+										total: state.total + action.payload
+									});
+								}
+							}
+						</code>
+					</pre>
+				</section>
+				<section class="chapter01-10">
+					<div>
+						Store是一个数据管理员，我们要教会他如何修改数据（reducer），从此以后只需要告诉他任务名字和内容就行了（action）。
+					</div>
+				</section>
+			</section>
+
+			<section class="chapter02">
+				<section>
+					<h2>Redux的清晰规划</h2>
+				</section>
+				<section>
+					<pre class="stretch">
+						<code class="hljs" data-trim data-line-numbers>
+								import { createStore } from 'redux';
+
+								const INIT_STATE = {
+									total: 0,
+									todos: []
+								}
+								
+								const actions = {
+									add(num) {
+										return {
+											type: "ADD",
+											payload: num
+										}
+									},
+									minus(num) {
+										return {
+											type: "MINUS",
+											payload: num
+										}
+									},
+									addTodo(item) {
+										return {
+											type: "ADD_TODO",
+											payload: item
+										}
+									}
+								};
+
+								function createReducer(initState, handlers) {
+									return function (state = initState, action) {
+										if (handlers.hasOwnProperty(action.type)) {
+											return handlers[action.type](state, action.payload)
+										} else {
+											return state
+										}
+									}
+								}
+								function add(totalState, payload) {
+									return totalState + payload
+								}
+								function minus(totalState, payload) {
+									return totalState - payload
+								}
+								function addTodo(todosState, payload) {
+									return todosState.concat(payload)
+								}
+
+								const totalsReducer = createReducer(INIT_STATE.total, {
+									"ADD": add,
+									"MINUS": minus
+								});
+								const todosReducer = createReducer(INIT_STATE.todos, {
+									"ADD_TODO": addTodo
+								});
+
+								function appReducer(state = INIT_STATE, action) {
+									return {
+										total: totalsReducer(state.total, action),
+										todos: todosReducer(state.todos, action)
+									}
+								}
+								
+								const store = createStore(appReducer, INIT_STATE);
+								
+								const unsubsccribe = store.subscribe(() => {
+									console.log(store.getState());
+								});
+								
+								store.dispatch(actions.add(1));
+								store.dispatch(actions.minus(2));
+								store.dispatch(actions.addTodo("Yang"));
+						</code>
+					</pre>
+				</section>
+				<section>
+					<pre class="stretch">
+						<code class="hljs" data-trim data-line-numbers>
+								import { createStore } from 'redux';
+
+								const INIT_STATE = {
+									total: 0,
+									todos: []
+								}
+								
+								const Operations = {
+									ADD: {
+										action(num) {
+											return {
+												type: "ADD",
+												payload: num
+											}
+										},
+										reducer(currentState, payload) {
+											return Object.assign({}, currentState, {
+												total: currentState.total + payload
+											})
+										}
+									},
+									MINUS: {
+										action(num) {
+											return {
+												type: "MINUS",
+												payload: num
+											}
+										},
+										reducer(currentState, payload) {
+											return Object.assign({}, currentState, {
+												total: currentState.total - payload
+											})
+										}
+									},
+									ADD_TODO: {
+										action(item) {
+											return {
+												type: "ADD_TODO",
+												payload: item
+											}
+										},
+										reducer(currentState, payload) {
+											const todos = currentState.todos.concat(payload);
+											return Object.assign({}, currentState, {
+												todos: todos
+											})
+										}
+									}
+								}
+								
+								const appReducer = (state = INIT_STATE, action) => {
+									if (Operations.hasOwnProperty(action.type)) {
+										return Operations[action.type].reducer(state, action.payload);
+									} else {
+										return state;
+									}
+								}
+								
+								const store = createStore(appReducer, INIT_STATE);
+								
+								const unsubsccribe = store.subscribe(() => {
+									console.log(store.getState());
+								});
+								
+								store.dispatch(Operations.ADD.action(1));
+								store.dispatch(Operations.MINUS.action(2));
+								store.dispatch(Operations.ADD_TODO.action("Hello"));
+								store.dispatch(Operations.ADD_TODO.action("World"));
+																
+						</code>
+					</pre>
+				</section>
+				<section>
+					<pre class="stretch">
+						<code class="hljs" data-trim data-line-numbers>
+								import { createStore } from 'redux';
+								import { createState, createStoreManager, createAtom } from './store-manager';
+								
+								const storeManger = createStoreManager();
+								
+								// Define an action and its reducer at the same time,
+								// so it's easy to understand what this action will do.
+								// And also we know which property of state will be changed
+								// by this action. 
+								storeManger.create("ADD", "total", (total, payload) => {
+									return total + payload;
+								});
+								storeManger.create("MINUS", "total", (total, payload) => {
+									return total - payload;
+								});
+								
+								const INIT_STATE = createState({
+									total: 0,
+									todos: []
+								});
+								
+								const store = createStore(storeManger.reducer, INIT_STATE);
+								
+								const unsubsccribe = store.subscribe(() => {
+									console.log(store.getState());
+								});
+								
+								// Can define actions after `store` is created
+								storeManger.create("ADD_TODO", "todos", (todos, payload) => {
+									return todos.concat(payload);
+								});
+
+								storeManger.create("REMOVE_TODO", "todos", (todos, payload) => {
+									return todos.filter((item) => {
+										return item !== payload
+									})
+								});
+								
+								store.dispatch(storeManger.action("ADD", 1))
+								store.dispatch(storeManger.action("ADD", 3))
+								store.dispatch(storeManger.action("ADD_TODO", "A"))
+								store.dispatch(storeManger.action("ADD_TODO", "B"))
+								store.dispatch(storeManger.action("REMOVE_TODO", "A"))
+								
+						</code>
+					</pre>
+				</section>
+				<section>
+					<pre class="stretch">
+						<code class="hljs" data-trim data-line-numbers>
+							// Create an atom object which has no `Object`'s functions.
+							// Cause its prototype is `null`.
+							export const createAtom = () => {
+								return Object.create(null);
+							}
+
+							// The state's structure must be defined at 
+							// the beginning, it's not allow to add or remove
+							// any its property.
+							export const createState = (obj) => {
+								return Object.seal(obj)
+							}
+
+							export const createStoreManager = () => {
+								const Actions = createAtom();
+								const Reducers = createAtom();
+
+								// Define an action and its reducer.
+								function create(actionName, stateName, actionReducer) {
+									Actions[actionName] = (payload) => {
+										return {
+											type: actionName,
+											payload: payload
+										}
+									}
+									// Each reducer must be a pure function
+									Reducers[actionName] = (state, action) => {
+										return {
+											...state,
+											[stateName]: actionReducer(state[stateName], action.payload)
+										}
+									}
+								}
+								function action(actionName, payload) {
+									if (Actions[actionName]) {
+										return Actions[actionName](payload);
+									} else {
+										throw new TypeError(`Action "${actionName}" doesn't exsit.`)
+									}
+								}
+								// The export reducer for `store`
+								function reducer(state, action) {
+									if (Reducers[action.type]) {
+										return Reducers[action.type](state, action);
+									} else {
+										return state;
+									}
+								}
+								return {
+									create,
+									action,
+									reducer
+								}
+							};
+
+						</code>
+					</pre>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>
+						动手实现一个简单的Redux
+					</h2>
+				</section>
+				<section>
+					<pre class="stretch">
+						<code class="hljs" data-trim data-line-numbers>
+							const createStore = (reducer, preloadState = null) => {
+
+								if (typeof reducer !== "function") {
+									throw new TypeError('Reducer must be a function.');
+								}
+
+								if (typeof preloadState === null) {
+									throw new TypeError('Init state must not be empty.');
+								}
+
+								let currentState = preloadState;
+								const updateCallbacks = {};
+								let callbacksIndex = 0;
+
+								const updateState = (action) => {
+									currentState = reducer(currentState, action);
+									Object.freeze(currentState);
+									for (let key in updateCallbacks) {
+										updateCallbacks[key]();
+									}
+								}
+
+								// 订阅每次
+								const subscribe = (fn) => {
+									let index = callbacksIndex;
+									updateCallbacks[callbacksIndex] = fn;
+									callbacksIndex++;
+									return () => {
+										delete updateCallbacks[index];
+									}
+								}
+
+								return {
+									dispatch(action) {
+										updateState(action);
+									},
+									getState() { return currentState; },
+									subscribe
+								};
+							}
+
+							const reducer = (state, action) => {
+								if (action.type === 'ADD') {
+									return Object.assign({}, state, {
+										total: state.total + action.payload
+									})
+								}
+							}
+
+							const initState = {
+								total: 0
+							}
+
+							const store = createStore(reducer, initState);
+
+							const unsubscribe = store.subscribe(() => {
+								console.log(store.getState());
+							});
+
+							store.dispatch({
+								type: "ADD",
+								payload: 1
+							});
+
+
+							unsubscribe();
+
+							// 不会触发 console.log
+							store.dispatch({
+								type: "ADD",
+								payload: 2
+							});
+						</code>
+					</pre>
+				</section>
+			</section>
+			<section>
+				<h2 class="lime-6">
+					编程是什么？
+				</h2>
+				<p>
+					1. 对现实世界建模
+				</p>
+				<p>
+					2. 用程序表达出来
+				</p>
+			</section>
+			<section>
+				<h2 class="lime-6">
+					我们的问题
+				</h2>
+				<p>
+					不建模
+				</p>
+			</section>
+		</div>
+	</div>
+
+	<script src="js/reveal.js"></script>
+
+	<script>
+		// More info about config & dependencies:
+		// - https://github.com/hakimel/reveal.js#configuration
+		// - https://github.com/hakimel/reveal.js#dependencies
+		Reveal.initialize({
+			dependencies: [
+				{ src: 'plugin/markdown/marked.js' },
+				{ src: 'plugin/markdown/markdown.js' },
+				{ src: 'plugin/notes/notes.js', async: true },
+				{ src: 'plugin/highlight/highlight.js', async: true }
+			]
+		});
+	</script>
+</body>
+
+</html>
