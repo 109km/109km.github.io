@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on 109km is a distance.</title>
+    <link>https://109km.github.io/categories/</link>
+    <description>Recent content in Categories on 109km is a distance.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 27 Oct 2019 12:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://109km.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>随想</title>
+      <link>https://109km.github.io/categories/%E9%9A%8F%E6%83%B3/</link>
+      <pubDate>Sun, 27 Oct 2019 12:00:00 +0800</pubDate>
+      
+      <guid>https://109km.github.io/categories/%E9%9A%8F%E6%83%B3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>计算机科学</title>
+      <link>https://109km.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/</link>
+      <pubDate>Tue, 08 Jan 2019 12:00:00 +0800</pubDate>
+      
+      <guid>https://109km.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>前端开发</title>
+      <link>https://109km.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/</link>
+      <pubDate>Sun, 09 Dec 2018 12:00:00 +0800</pubDate>
+      
+      <guid>https://109km.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>css</title>
+      <link>https://109km.github.io/categories/css/</link>
+      <pubDate>Wed, 29 Nov 2017 00:00:00 +0800</pubDate>
+      
+      <guid>https://109km.github.io/categories/css/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>react</title>
+      <link>https://109km.github.io/categories/react/</link>
+      <pubDate>Thu, 09 Nov 2017 00:00:00 +0800</pubDate>
+      
+      <guid>https://109km.github.io/categories/react/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

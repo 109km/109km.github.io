@@ -1,0 +1,28 @@
+baseURL = "https://109km.github.io/"
+languageCode = "en-us"
+DefaultContentLanguage = "cn"
+title = "109km is a distance."
+theme = "yinyang"
+
+[params]
+  mainSections = ["posts"]
+  author = "阿信"
+  description = "109km 是一段路程。"
+  headTitle = "109km"
+
+
+[[params.socials]]
+  name = "RSS"
+  link = "https://github.com/109km/index.xml"
+
+[[params.socials]]
+  name = "Github"
+  link = "https://github.com/109km"
+
+[[params.socials]]
+  name = "Powered by Hugo"
+  link = "https://gohugo.io/"
+
+[[params.socials]]
+  name = "Theme: Yingyang"
+  link = "https://github.com/joway/hugo-theme-yinyang"

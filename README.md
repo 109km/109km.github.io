@@ -1,10 +1,7 @@
-# Introduction
+### Serve
 
-来自一个程序员的胡言乱语。
+`hugo server -D`
 
-# 文章分类
+### Deploy
 
-* 前端开发
-* css
-* react
-* 随想
+`hugo -d ./`

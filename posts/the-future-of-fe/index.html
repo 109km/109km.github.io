@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.59.0" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="" />
+  <meta property="og:url" content="https://109km.github.io/posts/the-future-of-fe/" />
+  <link rel="canonical" href="https://109km.github.io/posts/the-future-of-fe/" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/109km.github.io\/"
+      },
+      "articleSection" : "posts",
+      "name" : "前端开发未来十年",
+      "headline" : "前端开发未来十年",
+      "description" : "语言 HTML 历史  超文本标记语言（第一版）——在1993年6月作为互联网工程工作小组（IETF）工作草案发布（并非标准） HTML 2.0——1995年11月作为RFC 1866发布，在RFC 2854于2000年6月发布之后被宣布已经过时 HTML 3.2——1997年1月14日，W3C推荐标准 HTML 4.0——1997年12月18日，W3C推荐标准 HTML 4.01（微小改进）——1999年12月24日，W3C推荐标准 HTML 5——2014年10月28日，W3C推荐标准\n 问题 从html诞生开始，浏览器一直没有对HTML模块化的支持，从2016年起，w3c开始正式研究这个问题。 在以往的开发过程中，一直采用两种方式去模块化引入html：\n1.后端渲染的方式。以PHP的Smarty为例：\n\x26lt;body\x26gt; \x26lt;h2\x26gt;这个是模板文件输出的\x26lt;\/h2\x26gt; \x26lt;hr\/\x26gt; 子输出一：{block name=\x27first\x27}{\/block} \x26lt;hr\/\x26gt; \x26lt;hr\/\x26gt; 子输出二：{block name=\x27second\x27}{\/block} \x26lt;hr\/\x26gt; \x26lt;h2\x26gt;这个是模板文件输出的\x26lt;\/h2\x26gt; \x26lt;\/body\x26gt;  2.前端通过script的方式，使用JS去解析里面内容：\n\x26lt;script id=\x26quot;tpl_res_ques\x26quot; type=\x26quot;text\/html\x26quot;\x26gt; \x26lt;div class=\x26quot;q_re que_{{qid}}\x26quot;\x26gt; \x26lt;div class=\x26quot;que_{{qid}}\x26quot;\x26gt; \x26lt;div class=\x26quot;rep_person\x26quot;\x26gt; \x26lt;span class=\x26quot;{{role}}\x26quot;\x26gt;{{if role === \x26quot;spadmin\x26quot;}}[{{roleAlias.spadmin}}回答]:{{else if role === \x26quot;admin\x26quot;}}[{{roleAlias.admin}}回答]:{{else role === \x26quot;user\x26quot;}}[roleAlias.user]:{{\/if}}\x26lt;\/span\x26gt; \x26lt;span class=\x26quot;rep_msg\x26quot;\x26gt;{{content}}\x26lt;\/span\x26gt; \x26lt;\/div\x26gt; \x26lt;\/div\x26gt; \x26lt;\/div\x26gt; \x26lt;\/script\x26gt;  未来 未来所期待的方式有两种：\n1.html中直接引入html模块。\n\x26lt;script type=\x26quot;module\x26quot; url=\x26quot;a.",
+      "inLanguage" : "en-US",
+      "author" : "",
+      "creator" : "",
+      "publisher": "",
+      "accountablePerson" : "",
+      "copyrightHolder" : "",
+      "copyrightYear" : "2018",
+      "datePublished": "2018-12-09 12:00:00 \x2b0800 CST",
+      "dateModified" : "2018-12-09 12:00:00 \x2b0800 CST",
+      "url" : "https:\/\/109km.github.io\/posts\/the-future-of-fe\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>前端开发未来十年 - 109km is a distance.</title>
+  <meta property="og:title" content="前端开发未来十年 - 109km is a distance." />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="语言 HTML 历史  超文本标记语言（第一版）——在1993年6月作为互联网工程工作小组（IETF）工作草案发布（并非标准） HTML 2.0——1995年11月作为RFC 1866发布，在RFC 2854于2000年6月发布之后被宣布已经过时 HTML 3.2——1997年1月14日，W3C推荐标准 HTML 4.0——1997年12月18日，W3C推荐标准 HTML 4.01（微小改进）——1999年12月24日，W3C推荐标准 HTML 5——2014年10月28日，W3C推荐标准
+ 问题 从html诞生开始，浏览器一直没有对HTML模块化的支持，从2016年起，w3c开始正式研究这个问题。 在以往的开发过程中，一直采用两种方式去模块化引入html：
+1.后端渲染的方式。以PHP的Smarty为例：
+&lt;body&gt; &lt;h2&gt;这个是模板文件输出的&lt;/h2&gt; &lt;hr/&gt; 子输出一：{block name=&#39;first&#39;}{/block} &lt;hr/&gt; &lt;hr/&gt; 子输出二：{block name=&#39;second&#39;}{/block} &lt;hr/&gt; &lt;h2&gt;这个是模板文件输出的&lt;/h2&gt; &lt;/body&gt;  2.前端通过script的方式，使用JS去解析里面内容：
+&lt;script id=&quot;tpl_res_ques&quot; type=&quot;text/html&quot;&gt; &lt;div class=&quot;q_re que_{{qid}}&quot;&gt; &lt;div class=&quot;que_{{qid}}&quot;&gt; &lt;div class=&quot;rep_person&quot;&gt; &lt;span class=&quot;{{role}}&quot;&gt;{{if role === &quot;spadmin&quot;}}[{{roleAlias.spadmin}}回答]:{{else if role === &quot;admin&quot;}}[{{roleAlias.admin}}回答]:{{else role === &quot;user&quot;}}[roleAlias.user]:{{/if}}&lt;/span&gt; &lt;span class=&quot;rep_msg&quot;&gt;{{content}}&lt;/span&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/script&gt;  未来 未来所期待的方式有两种：
+1.html中直接引入html模块。
+&lt;script type=&quot;module&quot; url=&quot;a." />
+
+  <link rel="stylesheet" href="https://unpkg.com/flexboxgrid@6.3.1/dist/flexboxgrid.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="109km is a distance.">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
+  
+  <script>
+    
+
+    (function (undefined) { }).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+  </script>
+
+  
+</head>
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="/">109km</a>
+  </div>
+</header>
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">前端开发未来十年</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2018-12-09 12:00:00 CST">
+                09 Dec 2018
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          
+
+<h1 id="语言">语言</h1>
+
+<h3 id="html">HTML</h3>
+
+<h4 id="历史">历史</h4>
+
+<blockquote>
+<p>超文本标记语言（第一版）——在1993年6月作为互联网工程工作小组（IETF）工作草案发布（并非标准）
+HTML 2.0——1995年11月作为RFC 1866发布，在RFC 2854于2000年6月发布之后被宣布已经过时
+HTML 3.2——1997年1月14日，W3C推荐标准
+HTML 4.0——1997年12月18日，W3C推荐标准
+HTML 4.01（微小改进）——1999年12月24日，W3C推荐标准
+HTML 5——2014年10月28日，W3C推荐标准</p>
+</blockquote>
+
+<h4 id="问题">问题</h4>
+
+<p>从html诞生开始，浏览器一直没有对HTML模块化的支持，从2016年起，<strong>w3c</strong>开始正式研究这个问题。
+在以往的开发过程中，一直采用两种方式去模块化引入html：</p>
+
+<p>1.后端渲染的方式。以PHP的Smarty为例：</p>
+
+<pre><code class="language-html">&lt;body&gt;
+  &lt;h2&gt;这个是模板文件输出的&lt;/h2&gt;
+  &lt;hr/&gt;
+  子输出一：{block name='first'}{/block}
+  &lt;hr/&gt;
+  &lt;hr/&gt;
+  子输出二：{block name='second'}{/block}
+  &lt;hr/&gt;
+  &lt;h2&gt;这个是模板文件输出的&lt;/h2&gt;
+&lt;/body&gt;
+</code></pre>
+
+<p>2.前端通过script的方式，使用JS去解析里面内容：</p>
+
+<pre><code class="language-html">&lt;script id=&quot;tpl_res_ques&quot; type=&quot;text/html&quot;&gt;
+  &lt;div class=&quot;q_re que_{{qid}}&quot;&gt;
+    &lt;div class=&quot;que_{{qid}}&quot;&gt;
+      &lt;div class=&quot;rep_person&quot;&gt;
+        &lt;span class=&quot;{{role}}&quot;&gt;{{if role === &quot;spadmin&quot;}}[{{roleAlias.spadmin}}回答]:{{else if role === &quot;admin&quot;}}[{{roleAlias.admin}}回答]:{{else role === &quot;user&quot;}}[roleAlias.user]:{{/if}}&lt;/span&gt;
+        &lt;span class=&quot;rep_msg&quot;&gt;{{content}}&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/script&gt;
+</code></pre>
+
+<h4 id="未来">未来</h4>
+
+<p>未来所期待的方式有两种：</p>
+
+<p>1.html中直接引入html模块。</p>
+
+<pre><code class="language-html">&lt;script type=&quot;module&quot; url=&quot;a.html&quot;&gt;
+</code></pre>
+
+<p>2.在js中把html作为文本/DOM对象引入。</p>
+
+<pre><code class="language-javascript">import html from 'a.html';
+</code></pre>
+
+<h3 id="css">CSS</h3>
+
+<h4 id="历史-1">历史</h4>
+
+<p><img src="/images/history-of-css.jpg" alt="history-of-css.png" /></p>
+
+<h4 id="问题-1">问题</h4>
+
+<p>随着现代网页应用复杂程度越来越高，css代码也愈加复杂。以淘宝网首页为例，在页面中嵌入的css代码解压缩后有<strong>4820</strong>行。这意味着对于一个完整的网站来说，全部的css代码量加起来可能是几万甚至10万行以上。这个规模下，开发者希望能够有效地复用代码和防止样式冲突。可惜的是css并没有一个完善的模块化管理的方式，所有的css都处于<code>global</code>作用域下，开发者只能通过编写不同的<code>selector</code>名称去划分作用域。目前解决的方式主要有以下三种：</p>
+
+<ol>
+<li><p>规定清晰的<code>class</code>名称规范。所有开发人员按照此规范进行开发。</p>
+
+<pre><code class="language-css">.hide{} /* 全局级 */ 
+.page-index{} /* 页面级 */
+.com-modal-title{} /* 通用组件级 */
+.page-index .double-eleven-logo{} /* 页面 + 业务 */
+</code></pre>
+
+<p>这个办法的另外一个变种是：基于以上的规则，通过<code>less</code> <code>sass</code>等css预编译器去书写。</p>
+
+<pre><code class="language-less">.page-index{
+.header-title{}
+.footer-title{}
+}
+</code></pre></li>
+
+<li><p>使用各类框架时，通过自动编译的方式实现模块化。以<code>vue</code>为例子，在<code>style</code>标签上加入<code>scoped</code>属性。
+编译前：</p>
+
+<pre><code class="language-html">&lt;template&gt;
+&lt;div class=&quot;button-warp&quot;&gt;
+&lt;button class=&quot;button&quot;&gt;text&lt;/button&gt;
+&lt;/div&gt;
+&lt;/template&gt;
+&lt;style scoped&gt;
+.button-warp{
+display:inline-block;
+}
+.button{
+padding: 5px 10px;
+font-size: 12px;
+border-radus: 2px;
+}
+&lt;/style&gt;
+</code></pre>
+
+<p>编译后：</p>
+
+<pre><code class="language-html">&lt;div data-v-2311c06a class=&quot;button-warp&quot;&gt;
+&lt;button data-v-2311c06a class=&quot;button&quot;&gt;text&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+.button-warp[data-v-2311c06a]{
+display:inline-block;
+}
+.button[data-v-2311c06a]{
+padding: 5px 10px;
+font-size: 12px;
+border-radus: 2px;
+}
+&lt;/style&gt;
+</code></pre></li>
+</ol>
+
+<p>实际上这个功能还是利用编译工具，修改了css的<code>selector</code>来达到作用域的作用。</p>
+
+<ol>
+<li><p>使用BEM (Block Element Modifier)。本质上还是通过约束每一个css选择器的名称来控制作用域。</p>
+
+<pre><code class="language-css">[block]__[element]--[modifier] {
+padding: 10px 20px;
+font-weight: bold;
+font-size: 2rem;
+}
+</code></pre></li>
+</ol>
+
+<h4 id="未来-1">未来</h4>
+
+<p>css语言也要向更能够工程化的方向去发展。</p>
+
+<p>目前已有的两个技术：
+1. css modules，将css样式转化为js对象，在js文件中引入。目前常见于react项目。</p>
+
+<p><em>App.css</em></p>
+
+<pre><code class="language-css">.title {
+  color: red;
+}
+</code></pre>
+
+<p><em>App.jsx</em></p>
+
+<pre><code class="language-jsx">import React from 'react';
+import style from './App.css';
+export default () =&gt; {
+  return (
+    &lt;h1 className={style.title}&gt;
+      Hello World
+    &lt;/h1&gt;
+  );
+};
+</code></pre>
+
+<p>编译之后:</p>
+
+<pre><code class="language-html">&lt;h1 class=&quot;_3zyde4l1yATCOkgn-DBWEL&quot;&gt;
+  Hello World
+&lt;/h1&gt;
+</code></pre>
+
+<pre><code class="language-css">._3zyde4l1yATCOkgn-DBWEL {
+  color: red;
+}
+</code></pre>
+
+<ol>
+<li><p>css变量。这种方式能够解决的问题是，将大量的重复样式设置为变量，然后多处引用，可以大量减少css的属性编写量。同时在某个<code>selector</code>中书写变量的时候，此变量是带有所在<code>selector</code>作用域的。不过，此技术的缺点在于并没有解决css<code>selector</code>过多过长的问题，我们可以假想一下如果<code>selector</code>的名称也都可以使用变量的话，岂不是美滋滋。</p>
+
+<pre><code class="language-less">html {
+--main-bg-color: brown;
+--main-title-mixin:{
+font-size: 16px;
+color: #333;
+}
+}
+
+.bg{
+background-color: var(--main-bg-color);
+@apply --main-title-mixin;
+}
+</code></pre></li>
+</ol>
+
+<h3 id="js">JS</h3>
+
+<h4 id="历史-2">历史</h4>
+
+<p><img src="/images/history-of-js.jpg" alt="history-of-js.jpg" /></p>
+
+<h4 id="问题-2">问题</h4>
+
+<p>主要探讨一下ES5中的问题：</p>
+
+<ol>
+<li>没有块级作用域。</li>
+<li>各种隐式转换。</li>
+<li>没有模块机制。</li>
+<li><code>this</code>的指向问题。</li>
+</ol>
+
+<h4 id="未来-2">未来</h4>
+
+<p><strong>语言本身</strong></p>
+
+<p>主要在于于ES6甚至ES7带来的改变。</p>
+
+<p>1.块级作用域：<code>let</code> <code>const</code></p>
+
+<p>2.模块机制，静态化加载。</p>
+
+<pre><code class="language-javascript">import * from 'util.js';
+</code></pre>
+
+<p>3.引入箭头函数修改<code>this</code>指向问题。</p>
+
+<p>4.引入了<code>class</code>。</p>
+
+<p><strong>浏览器中技术的革新</strong></p>
+
+<ol>
+<li><code>WebAssembly</code> : <strong>让其他语言的代码也可以运行在浏览器中</strong>。</li>
+<li><code>Web components</code> : 浏览器原生支持的组件式开发。</li>
+<li><code>Service worker</code> : 让浏览器拥有强大的缓存能力。
+典型应用：Google提出的 <code>Progressive Web App</code>。</li>
+<li><code>IndexedDB</code> : 浏览器里的数据库，还能储存二进制数据。</li>
+</ol>
+
+<h1 id="桌面化">桌面化</h1>
+
+<p>使用前端技术<code>html</code> <code>css</code> <code>js</code>开发桌面APP。</p>
+
+<p>已有框架：</p>
+
+<p><a href="https://electronjs.org/">Electron</a> : Github Desktop / Atom / VS Code</p>
+
+<p><a href="https://nwjs.io/">NW.js</a> : 微信开发者工具</p>
+
+<p><a href="http://appjs.com/">AppJS</a></p>
+
+<p><a href="https://www.meteor.com/">Metor</a></p>
+
+<p><a href="https://angular.io/">Angular</a></p>
+
+<p><img src="/images/example-of-electron.jpg" alt="example-of-electron.jpg" /></p>
+
+<h1 id="手机客户端">手机客户端</h1>
+
+<p>使用前端技术开发<code>html</code> <code>css</code> <code>js</code>手机APP。</p>
+
+<p>已有框架：</p>
+
+<p><a href="https://phonegap.com/">Phonegap</a></p>
+
+<p><a href="http://mobileangularui.com/">Mobile Angular</a></p>
+
+<p><a href="https://facebook.github.io/react-native/">React Native</a> : Facebook / Instagram / Pinterest</p>
+
+<p><a href="https://www.meteor.com/">Metor</a></p>
+
+<p><a href="https://www.nativescript.org/">NativeScript</a></p>
+
+<p><a href="https://angular.io/">Angular</a></p>
+
+<p><img src="/images/example-of-mobile-apps.jpg" alt="example-of-mobile-apps.png" /></p>
+
+<h1 id="iot">IOT</h1>
+
+<p><strong>IOT = Internet of Things</strong></p>
+
+<p>随着互联网时代的深入发展，一切东西都可能联网：冰箱，手表，眼镜，衣服甚至我们自己。</p>
+
+<p>在这个情况下，所有的东西都需要交互的界面，这是一个非常大的挑战，因为交互方式和展示内容的设备可以是各种各样的。</p>
+
+<p><img src="/images/example-of-lot-01.jpg" alt="example-of-lot-01.jpg" /></p>
+
+<p><img src="/images/example-of-lot-02.jpg" alt="example-of-lot-02.jpg" /></p>
+
+<p><img src="/images/example-of-lot-03.jpg" alt="example-of-lot-03.jpg" /></p>
+
+<h1 id="浏览器操作系统化">浏览器操作系统化</h1>
+
+<p><a href="https://www.chromium.org/chromium-os">Chrome OS</a> 致力于把浏览器变成一个操作系统。</p>
+
+<p>可以想象一下未来网速获得极速提升之后，假设网速达到*1GB/s*，意味着我们可以不需要自己的硬盘了，所有资料可以储存在云端，看电影只要1秒种，玩游戏完全可以即时下载后运行，因为下载一个大型游戏只要几秒钟。今天我们价值<strong>10万rmb</strong>的最快的SSD读取速度只有<em>530MB/s</em>(<a href="https://item.jd.com/37283584091.html">闪迪SSD</a>)</p>
+
+<p><img src="/images/example-of-chrome-os-01.jpg" alt="example-of-chrome-os-01.jpg" /></p>
+
+<p><img src="/images/example-of-chrome-os-02.jpg" alt="example-of-chrome-os-02.jpg" /></p>
+
+        </div>
+        
+
+        
+
+
+        
+        
+        <div style="height: 50px;"></div>
+        
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/109km/index.xml" target="_blank">RSS</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/109km" target="_blank">Github</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://gohugo.io/" target="_blank">Powered by Hugo</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/joway/hugo-theme-yinyang" target="_blank">Theme: Yingyang</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+<script src="https://unpkg.com/quicklink@0.1.1/dist/quicklink.umd.js"></script>
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  var posts = document.getElementById('posts-list');
+  posts && quicklink({
+    el: posts,
+    priority: true,
+  });
+</script>
+
+  
+
+</body>
+
+</html>
