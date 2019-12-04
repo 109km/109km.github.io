@@ -5,9 +5,6 @@ date:   2019-12-04 15:47:12 +0800
 categories: 随想
 ---
 
-![human-alone.jpeg](/images/human-alone.jpeg)
-
-
 以前我觉得爱就是愿意为别人付出，而不求回报的感情是爱。
 
 现在问自己为什么爱，爱的是什么？
@@ -48,4 +45,6 @@ categories: 随想
 
 别人爱我们，我们就充满能量，我们的生命有多需要别人？
 
-愿此疑惑，今生能明了。
+We are born alone.
+
+![human-alone.jpeg](/images/human-alone.jpeg)
