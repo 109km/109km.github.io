@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.59.0" />
+  <meta name="generator" content="Hugo 0.55.6" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -44,23 +44,20 @@
 1.html中直接引入html模块。
 &lt;script type=&quot;module&quot; url=&quot;a." />
 
-  <link rel="stylesheet" href="https://unpkg.com/flexboxgrid@6.3.1/dist/flexboxgrid.min.css" />
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
   <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/tomorrow.min.css" />
+    href="/css/github-markdown.min.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
   <link rel="stylesheet" href="/css/index.css">
   <link href="/index.xml" rel="alternate" type="application/rss+xml" title="109km is a distance.">
   
   <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
   
-  <script>
-    
-
-    (function (undefined) { }).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
-  </script>
+  
 
   
 </head>
+
 
 <body>
   <article class="post " id="article">
@@ -232,15 +229,15 @@ border-radus: 2px;
 <p>实际上这个功能还是利用编译工具，修改了css的<code>selector</code>来达到作用域的作用。</p>
 
 <ol>
-<li><p>使用BEM (Block Element Modifier)。本质上还是通过约束每一个css选择器的名称来控制作用域。</p>
+<li>使用BEM (Block Element Modifier)。本质上还是通过约束每一个css选择器的名称来控制作用域。</li>
+</ol>
 
 <pre><code class="language-css">[block]__[element]--[modifier] {
-padding: 10px 20px;
-font-weight: bold;
-font-size: 2rem;
+  padding: 10px 20px;
+  font-weight: bold;
+  font-size: 2rem;
 }
-</code></pre></li>
-</ol>
+</code></pre>
 
 <h4 id="未来-1">未来</h4>
 
@@ -282,22 +279,22 @@ export default () =&gt; {
 </code></pre>
 
 <ol>
-<li><p>css变量。这种方式能够解决的问题是，将大量的重复样式设置为变量，然后多处引用，可以大量减少css的属性编写量。同时在某个<code>selector</code>中书写变量的时候，此变量是带有所在<code>selector</code>作用域的。不过，此技术的缺点在于并没有解决css<code>selector</code>过多过长的问题，我们可以假想一下如果<code>selector</code>的名称也都可以使用变量的话，岂不是美滋滋。</p>
+<li>css变量。这种方式能够解决的问题是，将大量的重复样式设置为变量，然后多处引用，可以大量减少css的属性编写量。同时在某个<code>selector</code>中书写变量的时候，此变量是带有所在<code>selector</code>作用域的。不过，此技术的缺点在于并没有解决css<code>selector</code>过多过长的问题，我们可以假想一下如果<code>selector</code>的名称也都可以使用变量的话，岂不是美滋滋。</li>
+</ol>
 
 <pre><code class="language-less">html {
---main-bg-color: brown;
---main-title-mixin:{
-font-size: 16px;
-color: #333;
-}
+  --main-bg-color: brown;
+  --main-title-mixin:{
+    font-size: 16px;
+    color: #333;
+  }
 }
 
 .bg{
-background-color: var(--main-bg-color);
-@apply --main-title-mixin;
+  background-color: var(--main-bg-color);
+  @apply --main-title-mixin;
 }
-</code></pre></li>
-</ol>
+</code></pre>
 
 <h3 id="js">JS</h3>
 
@@ -443,16 +440,16 @@ background-color: var(--main-bg-color);
   </article>
 
   <script src="/js/highlight.pack.js"></script>
-<script src="https://unpkg.com/quicklink@0.1.1/dist/quicklink.umd.js"></script>
+
 
 <script>
   hljs.initHighlightingOnLoad();
   
-  var posts = document.getElementById('posts-list');
-  posts && quicklink({
-    el: posts,
-    priority: true,
-  });
+  
+  
+    
+    
+  
 </script>
 
   

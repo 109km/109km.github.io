@@ -10,7 +10,6 @@ theme = "yinyang"
   description = "109km 是一段路程。"
   headTitle = "109km"
 
-
 [[params.socials]]
   name = "RSS"
   link = "https://github.com/109km/index.xml"
