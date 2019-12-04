@@ -6,9 +6,14 @@ theme = "yinyang"
 
 [params]
   mainSections = ["posts"]
-  author = "阿信"
   description = "109km 是一段路程。"
   headTitle = "109km"
+  favicon = "/images/default_avatar.png"
+
+
+
+[Author]
+  name = "阿信"
 
 [[params.socials]]
   name = "RSS"

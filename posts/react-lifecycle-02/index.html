@@ -6,9 +6,9 @@
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="author" content="" />
+  <meta name="author" content="阿信" />
   <meta property="og:url" content="https://109km.github.io/posts/react-lifecycle-02/" />
-  <link rel="canonical" href="https://109km.github.io/posts/react-lifecycle-02/" /><script type="application/ld+json">
+  <link rel="canonical" href="https://109km.github.io/posts/react-lifecycle-02/" /><link rel="shortcut icon" href="/images/default_avatar.png" type="image/x-png" /><script type="application/ld+json">
   {
       "@context" : "http://schema.org",
       "@type" : "BlogPosting",
@@ -21,11 +21,11 @@
       "headline" : "【React - 02】React Component生命周期详解",
       "description" : "为什么需要明白Component生命周期？ React Component生命周期是React的重要设计思想和概念之一。所以如果想更深入了解React的工作机制，更好的使用React进行实战，这里就是开始。\nBefore 生命周期 Component设计思想 Component是从有限状态机（FSM）的思想中衍生出来的一个模型。主要工作原理跟有限状态机几乎一样：通过状态、条件、动作来描述信息流转。\n有限状态机的动作一般有下面几种：\n 进入动作：在进入状态时进行 退出动作：在退出状态时进行 输入动作：依赖于当前状态和输入条件进行 转移动作：在进行特定转移时进行  如下图（图片来自这里），通过这个图可以清楚看到数据在每个节点不同状态时候形成了不同的转换，最终形成有限状态机。说的生动一点：想象数据是河水，然后我们设置关卡控制河水的流向，运动，停止。\n\nDuring 生命周期 Component Initialization 在这个阶段实例首次被创建，后面创建的实例会与第一次创建的实例在此阶段稍有不同。下面是这个阶段中会顺序执行的函数。\ngetDefaultProps\n这个函数用于创建默认的props属性。返回值必须是 Object 或 NULL。由于这个函数比较特殊，只会在React.createClass第一次执行的时候调用一次，所以下面研究一下原因。\n在创建Component的时候会调用React.createClass这个函数，这个函数实际的实现是在ReactClass.createClass里。我们看看这个函数里都执行了哪些操作：\n Constructor函数：这个Constructor中主要包含了初始化props获取initialState等功能，并没有任何与getDefaultProps有关的东西。第一次实例化后，再次调用React.createClass实际上执行的只有这个函数。\n 其他部分：在Component实例化过程中只会执行一次。下面的代码就在这个部分中，所以解释了为什么getDefaultProps只会执行一次。\n\/\/ Initialize the defaultProps property after all mixins have been merged. if (Constructor.getDefaultProps) { Constructor.defaultProps = Constructor.getDefaultProps(); }   \n ps:更详细和具体的过程我也不清楚，希望有大神指导。\n getInitialState\n这个函数用于创建Component的初始化state。返回值必须是 Object 或 NULL。\n此函数会在每次Component创建的时候被调用。\ncomponentWillMount\n这个函数在Component每次被创建的阶段都会被调用，代表的意思是：组件即将创建。在server和client都会调用。\nrender\n这个函数是进行Component渲染的，React会将Component输出到页面中。server和client都会触发。\ncomponentDidMount\n这个函数是在Component渲染完毕之后触发。只在客户端触发，server不会触发\n\nComponent Creating（创建） 这个阶段是Component创建期，在这个阶段主要有以下几个方法会被触发。",
       "inLanguage" : "en-US",
-      "author" : "",
-      "creator" : "",
-      "publisher": "",
-      "accountablePerson" : "",
-      "copyrightHolder" : "",
+      "author" : "阿信",
+      "creator" : "阿信",
+      "publisher": "阿信",
+      "accountablePerson" : "阿信",
+      "copyrightHolder" : "阿信",
       "copyrightYear" : "2017",
       "datePublished": "2017-11-09 00:00:00 \x2b0800 CST",
       "dateModified" : "2017-11-09 00:00:00 \x2b0800 CST",
@@ -106,6 +106,10 @@ Component Creating（创建） 这个阶段是Component创建期，在这个阶�
               
             </div>
             <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="">@阿信</a>
+              </div>
               
             </div>
           </div>
