@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.55.6" />
+  <meta name="generator" content="Hugo 0.59.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -59,20 +59,23 @@ setState 设置Component的state属性。
 props 父级Component传递给子级Component的属性。比如onClick也是props的一种。在下面这个例子中父级节点  传递了 name=“Tyler” 给子节点 
 var HelloUser = React.createClass({ render: function(){ return ( &lt;div&gt; Hello, {this." />
 
-  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/flexboxgrid@6.3.1/dist/flexboxgrid.min.css" />
   <link rel="stylesheet"
-    href="/css/github-markdown.min.css" />
-  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+    href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/tomorrow.min.css" />
   <link rel="stylesheet" href="/css/index.css">
   <link href="/index.xml" rel="alternate" type="application/rss+xml" title="109km is a distance.">
   
   <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
   
-  
+  <script>
+    
+
+    (function (undefined) { }).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+  </script>
 
   
 </head>
-
 
 <body>
   <article class="post " id="article">
@@ -350,16 +353,16 @@ React.render(&lt;HelloUser name=&quot;Tyler&quot;/&gt;, document.getElementById(
   </article>
 
   <script src="/js/highlight.pack.js"></script>
-
+<script src="https://unpkg.com/quicklink@0.1.1/dist/quicklink.umd.js"></script>
 
 <script>
   hljs.initHighlightingOnLoad();
   
-  
-  
-    
-    
-  
+  var posts = document.getElementById('posts-list');
+  posts && quicklink({
+    el: posts,
+    priority: true,
+  });
 </script>
 
   

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.55.6" />
+  <meta name="generator" content="Hugo 0.59.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -92,20 +92,23 @@
 对于这一问题的比较科学的回答，是恰普曼和恩斯柯克用比较严密的演算，从Boltzmann方程推导出适用局部热力学近似条件下的一个积分方程，直接从积分方程中解出Navier-Stocks方程。为此恰普曼和恩斯柯克专门写了一本大书！现在需要把辐射输运过程也引入流体力学，这就发生了一个同样需要回答的问题。即由“矩”展开给出的辐射流体力学方程是否是够精确？现在我们需要自己独立建立氢弹理论，如果你所采用的运动方程式根本不正确或不够正确，那么今后的所有工作，由这一不够正确方程式导出的结论是否可信，就值得怀疑！
 1956年，我表姊王承书教授和姊夫张文裕教授从国外归来，他们两位也被分配在原子能研究所任研究员。我和姊夫、表姊私下自然有较多交往。王承书教授的专业是统计物理学，是著名统计物理学家乌伦贝克的学生。她当然知道历史上存在这一重大理论问题，而且她还带回来一本恰普多和恩斯柯克的专著。一听见我们要研究这一问题，立即将国内唯一能‘长期’供我们‘天天’使用的专著给了我们。于敏以他的深厚的理论物理学的功底，学习掌握了这本大书，从而严格证明，这一由恰普曼，恩斯柯克方法所写导出Naver-Stocks型的辐射流体力学，在辐射温度T甚高的条件下，其辐射热传导项将和“一次矩”展开的方程式相一致，而新导出的第一类、第二类粘性系数的表示式，却极小、极小，完全可以认为是零！" />
 
-  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/flexboxgrid@6.3.1/dist/flexboxgrid.min.css" />
   <link rel="stylesheet"
-    href="/css/github-markdown.min.css" />
-  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+    href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/tomorrow.min.css" />
   <link rel="stylesheet" href="/css/index.css">
   <link href="/index.xml" rel="alternate" type="application/rss+xml" title="109km is a distance.">
   
   <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
   
-  
+  <script>
+    
+
+    (function (undefined) { }).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+  </script>
 
   
 </head>
-
 
 <body>
   <article class="post " id="article">
@@ -440,16 +443,16 @@
   </article>
 
   <script src="/js/highlight.pack.js"></script>
-
+<script src="https://unpkg.com/quicklink@0.1.1/dist/quicklink.umd.js"></script>
 
 <script>
   hljs.initHighlightingOnLoad();
   
-  
-  
-    
-    
-  
+  var posts = document.getElementById('posts-list');
+  posts && quicklink({
+    el: posts,
+    priority: true,
+  });
 </script>
 
   
