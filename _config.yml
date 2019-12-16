@@ -76,7 +76,7 @@ pagination_dir: page
 # #  shortname: your-duoshuo-shortname
 
 # ## Themes: https://hexo.io/themes/
-# theme: next
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
