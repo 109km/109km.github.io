@@ -2,7 +2,7 @@
 layout: post
 title:  "什么是爱？"
 date:   2019-12-04 15:47:12 +0800
-categories: 随想
+categories: ["随想"]
 ---
 
 曾经我觉得爱就是愿意为别人付出，而不求回报的感情是爱。

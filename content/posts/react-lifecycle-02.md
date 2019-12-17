@@ -2,7 +2,7 @@
 layout: post
 title:  "【React - 02】React Component生命周期详解"
 date:   2017-11-09 00:00:00 +0800
-categories: react
+categories: ["react"]
 ---
 
 ### 为什么需要明白Component生命周期？

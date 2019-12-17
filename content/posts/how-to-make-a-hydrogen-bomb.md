@@ -2,7 +2,7 @@
 layout: post
 title:  "【转】何祚庥先生谈于敏如何研究氢弹"
 date:   2019-01-17 12:00:00 +0800
-categories: 随想
+categories: ["随想"]
 ---
 
 

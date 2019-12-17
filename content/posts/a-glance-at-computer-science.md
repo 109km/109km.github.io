@@ -2,7 +2,7 @@
 layout: post
 title:  "计算机科学简述"
 date:   2019-01-08 12:00:00 +0800
-categories: 计算机科学
+categories: ["计算机科学"]
 ---
 
 ## 计算机科学简述

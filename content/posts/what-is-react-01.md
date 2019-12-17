@@ -2,7 +2,7 @@
 layout: post
 title:  "【React - 01】What’s React"
 date:   2017-11-06 15:47:12 +0800
-categories: react
+categories: ["react"]
 ---
 
 ### React初识

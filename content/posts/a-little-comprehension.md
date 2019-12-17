@@ -2,7 +2,7 @@
 layout: post
 title:  "奢与简"
 date:   2019-02-20 12:00:00 +0800
-categories: 随想
+categories: ["随想"]
 ---
 
 外面阳光明媚，世界忽然暗下来

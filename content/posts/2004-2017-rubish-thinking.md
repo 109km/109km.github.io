@@ -2,7 +2,7 @@
 layout: post
 title:  "2004-2017的语无伦次"
 date:   2017-12-02 00:00:00 +0800
-categories: 随想
+categories: ["随想"]
 ---
 
 ### 魔兽世界

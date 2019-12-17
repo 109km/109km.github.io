@@ -10,6 +10,9 @@ theme = "yinyang"
   headTitle = "109km"
   favicon = "/images/default_avatar.png"
 
+[taxonomies]
+  category = "categories"
+  tag = "tags"
 
 
 [Author]

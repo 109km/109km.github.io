@@ -2,7 +2,7 @@
 layout: post
 title:  "对本质的探索"
 date:   2019-10-27 12:00:00 +0800
-categories: 随想
+categories: ["随想"]
 ---
 
 ```

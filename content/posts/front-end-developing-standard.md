@@ -2,7 +2,7 @@
 layout: post
 title:  "前端开发规范"
 date:   2017-11-22 16:47:12 +0800
-categories: 前端开发
+categories: ["前端开发"]
 ---
 
 ## 开发篇

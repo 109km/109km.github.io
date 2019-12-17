@@ -2,7 +2,7 @@
 layout: post
 title:  "这场被野心绑架的修宪，逆转了土耳其"
 date:   2018-11-06 00:00:00 +0800
-categories: 随想
+categories: ["随想"]
 ---
 作者：不详，转自网络。
 

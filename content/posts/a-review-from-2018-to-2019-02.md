@@ -2,7 +2,7 @@
 layout: post
 title:  "回顾2018年至2019年2月10日"
 date:   2019-02-10 00:00:00 +0800
-categories: 随想
+categories: ["随想"]
 ---
 
 ## 第一季度

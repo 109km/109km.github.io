@@ -2,7 +2,7 @@
 layout: post
 title:  "【转】如何当好一名师长"
 date:   2017-12-02 00:00:00 +0800
-categories: 随想
+categories: ["随想"]
 ---
 作者：林彪，写于1936年12月
 

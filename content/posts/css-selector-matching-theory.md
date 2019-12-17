@@ -2,7 +2,7 @@
 layout: post
 title:  "css选择器匹配机制"
 date:   2017-11-29 00:00:00 +0800
-categories: css
+categories: ["css"]
 ---
 
 Keep in mind that when a browser is doing selector matching it has one element (the one it's trying to determine style for) and all your rules and their selectors and it needs to find which rules match the element. This is different from the usual jQuery thing, say, where you only have one selector and you need to find all the elements that match that selector.

@@ -3,7 +3,7 @@
 layout: post
 title:  "前端开发未来十年"
 date:   2018-12-09 12:00:00 +0800
-categories: 前端开发
+categories: ["前端开发"]
 ---
 
 # 语言
