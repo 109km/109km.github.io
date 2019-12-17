@@ -1,22 +1,19 @@
 /* global */
 
 body {
-  font-family: "Arvo", "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial,
-    "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC",
-    "Source Han Sans SC", "Source Han Sans CN", "Microsoft YaHei",
-    "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei,
-    "WenQuanYi Zen Hei Sharp", sans-serif;
-  margin: 0 20px;
+  font-family: "Arvo", "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC",
+    "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", "Source Han Sans CN", "Microsoft YaHei",
+    "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
+  color: #333;
 }
 
 a {
-  color: #000;
+  color: #333;
   text-decoration: none;
 }
 
 a:hover {
-  font-weight: 600;
-  text-decoration: underline;
+  color: #fa541c;
 }
 
 .post-ads {
@@ -81,15 +78,19 @@ a:hover {
   margin: 12px 0;
 }
 .posts-categories {
-  font-size: 0.8rem;
   margin: auto;
-  text-align: center;
+  text-align: right;
 }
 
 .posts-category {
+  font-size: 1rem;
+  display: inline-block;
   padding: 3px;
-  border: #000 2px solid;
+  border: #000 1px solid;
   margin-bottom: 3px;
+}
+.posts-category:hover {
+  border-color: #fa541c;
 }
 
 .site-footer {
