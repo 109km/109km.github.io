@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>前端开发 on 109km is a distance.</title>
+    <link>https://109km.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/</link>
+    <description>Recent content in 前端开发 on 109km is a distance.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 09 Dec 2018 12:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="https://109km.github.io/categories/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>前端开发未来十年</title>
+      <link>https://109km.github.io/posts/the-future-of-fe/</link>
+      <pubDate>Sun, 09 Dec 2018 12:00:00 +0800</pubDate>
+      
+      <guid>https://109km.github.io/posts/the-future-of-fe/</guid>
+      <description>语言 HTML 历史  超文本标记语言（第一版）——在1993年6月作为互联网工程工作小组（IETF）工作草案发布（并非标准） HTML 2.0——1995年11月作为RFC 1866发布，在RFC 2854于2000年6月发布之后被宣布已经过时 HTML 3.2——1997年1月14日，W3C推荐标准 HTML 4.0——1997年12月18日，W3C推荐标准 HTML 4.01（微小改进）——1999年12月24日，W3C推荐标准 HTML 5——2014年10月28日，W3C推荐标准
+ 问题 从html诞生开始，浏览器一直没有对HTML模块化的支持，从2016年起，w3c开始正式研究这个问题。 在以往的开发过程中，一直采用两种方式去模块化引入html：
+1.后端渲染的方式。以PHP的Smarty为例：
+&amp;lt;body&amp;gt; &amp;lt;h2&amp;gt;这个是模板文件输出的&amp;lt;/h2&amp;gt; &amp;lt;hr/&amp;gt; 子输出一：{block name=&amp;#39;first&amp;#39;}{/block} &amp;lt;hr/&amp;gt; &amp;lt;hr/&amp;gt; 子输出二：{block name=&amp;#39;second&amp;#39;}{/block} &amp;lt;hr/&amp;gt; &amp;lt;h2&amp;gt;这个是模板文件输出的&amp;lt;/h2&amp;gt; &amp;lt;/body&amp;gt; 2.前端通过script的方式，使用JS去解析里面内容：
+&amp;lt;script id=&amp;#34;tpl_res_ques&amp;#34; type=&amp;#34;text/html&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;q_re que_{{qid}}&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;que_{{qid}}&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;rep_person&amp;#34;&amp;gt; &amp;lt;span class=&amp;#34;{{role}}&amp;#34;&amp;gt;{{if role === &amp;#34;spadmin&amp;#34;}}[{{roleAlias.spadmin}}回答]:{{else if role === &amp;#34;admin&amp;#34;}}[{{roleAlias.admin}}回答]:{{else role === &amp;#34;user&amp;#34;}}[roleAlias.user]:{{/if}}&amp;lt;/span&amp;gt; &amp;lt;span class=&amp;#34;rep_msg&amp;#34;&amp;gt;{{content}}&amp;lt;/span&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/script&amp;gt; 未来 未来所期待的方式有两种：
+1.html中直接引入html模块。
+&amp;lt;script type=&amp;#34;module&amp;#34; url=&amp;#34;a.html&amp;#34;&amp;gt; 2.在js中把html作为文本/DOM对象引入。</description>
+    </item>
+    
+    <item>
+      <title>前端开发规范</title>
+      <link>https://109km.github.io/posts/front-end-developing-standard/</link>
+      <pubDate>Wed, 22 Nov 2017 16:47:12 +0800</pubDate>
+      
+      <guid>https://109km.github.io/posts/front-end-developing-standard/</guid>
+      <description>开发篇 总则 缩进 统一采用2个空格，禁止使用4个空格或者tab
+文件编码 所有文件均使用**UTF-8(无BOM)**模式，如果不知道怎么调整，查找自己编辑器的编码模式。
+大小写 目录、文件名统一使用小写，多词使用 -进行连接。比如 component-city
+注释 对复杂的模块/功能添加注释，阐述其逻辑。不同语言的具体注释方法请参考其相应部分。
+目录结构 良好的目录结构能提高开发效率，增强代码质量，保证多人协作的良好运行。 不同的项目可以有不同的目录结构，但大致应当遵循的规则如下：
+Hello 项目根目录，通常为项目名称 ├── README.md 项目说明文档 ├── config 配置目录 │ ├── config.dev.js dev环境配置 │ ├── config.js 本地环境配置 │ └── config.production.js 线上环境配置 ├── dist 部署后代码目录 ├── mock 模拟数据目录 │ └── mock.json 模拟数据文件，根据需要可添加多个 └── src 源代码目录 ├── common 全局通用代码目录，与业务相关 │ └── common.js ├── components 组件目录 │ └── swiper 组件名称 │ ├── index.css │ ├── index.html │ └── index.js ├── pages 页面目录 │ └── index 页面名称 │ ├── index.</description>
+    </item>
+    
+  </channel>
+</rss>
