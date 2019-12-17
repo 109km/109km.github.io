@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.59.0" />
+  <meta name="generator" content="Hugo 0.61.0" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "【React - 02】React Component生命周期详解",
       "headline" : "【React - 02】React Component生命周期详解",
-      "description" : "为什么需要明白Component生命周期？ React Component生命周期是React的重要设计思想和概念之一。所以如果想更深入了解React的工作机制，更好的使用React进行实战，这里就是开始。\nBefore 生命周期 Component设计思想 Component是从有限状态机（FSM）的思想中衍生出来的一个模型。主要工作原理跟有限状态机几乎一样：通过状态、条件、动作来描述信息流转。\n有限状态机的动作一般有下面几种：\n 进入动作：在进入状态时进行 退出动作：在退出状态时进行 输入动作：依赖于当前状态和输入条件进行 转移动作：在进行特定转移时进行  如下图（图片来自这里），通过这个图可以清楚看到数据在每个节点不同状态时候形成了不同的转换，最终形成有限状态机。说的生动一点：想象数据是河水，然后我们设置关卡控制河水的流向，运动，停止。\n\nDuring 生命周期 Component Initialization 在这个阶段实例首次被创建，后面创建的实例会与第一次创建的实例在此阶段稍有不同。下面是这个阶段中会顺序执行的函数。\ngetDefaultProps\n这个函数用于创建默认的props属性。返回值必须是 Object 或 NULL。由于这个函数比较特殊，只会在React.createClass第一次执行的时候调用一次，所以下面研究一下原因。\n在创建Component的时候会调用React.createClass这个函数，这个函数实际的实现是在ReactClass.createClass里。我们看看这个函数里都执行了哪些操作：\n Constructor函数：这个Constructor中主要包含了初始化props获取initialState等功能，并没有任何与getDefaultProps有关的东西。第一次实例化后，再次调用React.createClass实际上执行的只有这个函数。\n 其他部分：在Component实例化过程中只会执行一次。下面的代码就在这个部分中，所以解释了为什么getDefaultProps只会执行一次。\n\/\/ Initialize the defaultProps property after all mixins have been merged. if (Constructor.getDefaultProps) { Constructor.defaultProps = Constructor.getDefaultProps(); }   \n ps:更详细和具体的过程我也不清楚，希望有大神指导。\n getInitialState\n这个函数用于创建Component的初始化state。返回值必须是 Object 或 NULL。\n此函数会在每次Component创建的时候被调用。\ncomponentWillMount\n这个函数在Component每次被创建的阶段都会被调用，代表的意思是：组件即将创建。在server和client都会调用。\nrender\n这个函数是进行Component渲染的，React会将Component输出到页面中。server和client都会触发。\ncomponentDidMount\n这个函数是在Component渲染完毕之后触发。只在客户端触发，server不会触发\n\nComponent Creating（创建） 这个阶段是Component创建期，在这个阶段主要有以下几个方法会被触发。",
+      "description" : "为什么需要明白Component生命周期？  React Component生命周期是React的重要设计思想和概念之一。所以如果想更深入了解React的工作机制，更好的使用React进行实战，这里就是开始。\nBefore 生命周期  Component设计思想 Component是从有限状态机（FSM）的思想中衍生出来的一个模型。主要工作原理跟有限状态机几乎一样：通过状态、条件、动作来描述信息流转。\n有限状态机的动作一般有下面几种：\n 进入动作：在进入状态时进行 退出动作：在退出状态时进行 输入动作：依赖于当前状态和输入条件进行 转移动作：在进行特定转移时进行  如下图（图片来自这里），通过这个图可以清楚看到数据在每个节点不同状态时候形成了不同的转换，最终形成有限状态机。说的生动一点：想象数据是河水，然后我们设置关卡控制河水的流向，运动，停止。\nDuring 生命周期  Component Initialization 在这个阶段实例首次被创建，后面创建的实例会与第一次创建的实例在此阶段稍有不同。下面是这个阶段中会顺序执行的函数。\ngetDefaultProps\n这个函数用于创建默认的props属性。返回值必须是 Object 或 NULL。由于这个函数比较特殊，只会在React.createClass第一次执行的时候调用一次，所以下面研究一下原因。\n在创建Component的时候会调用React.createClass这个函数，这个函数实际的实现是在ReactClass.createClass里。我们看看这个函数里都执行了哪些操作：\n  Constructor函数：这个Constructor中主要包含了初始化props获取initialState等功能，并没有任何与getDefaultProps有关的东西。第一次实例化后，再次调用React.createClass实际上执行的只有这个函数。\n  其他部分：在Component实例化过程中只会执行一次。下面的代码就在这个部分中，所以解释了为什么getDefaultProps只会执行一次。\n \/\/ Initialize the defaultProps property after all mixins have been merged. if (Constructor.getDefaultProps) { Constructor.defaultProps = Constructor.getDefaultProps(); }     ps:更详细和具体的过程我也不清楚，希望有大神指导。\n getInitialState\n这个函数用于创建Component的初始化state。返回值必须是 Object 或 NULL。\n此函数会在每次Component创建的时候被调用。\ncomponentWillMount\n这个函数在Component每次被创建的阶段都会被调用，代表的意思是：组件即将创建。在server和client都会调用。\nrender\n这个函数是进行Component渲染的，React会将Component输出到页面中。server和client都会触发。",
       "inLanguage" : "en-US",
       "author" : "阿信",
       "creator" : "阿信",
@@ -36,48 +36,39 @@
 <title>【React - 02】React Component生命周期详解 - 109km is a distance.</title>
   <meta property="og:title" content="【React - 02】React Component生命周期详解 - 109km is a distance." />
   <meta property="og:type" content="article" />
-  <meta name="description" content="为什么需要明白Component生命周期？ React Component生命周期是React的重要设计思想和概念之一。所以如果想更深入了解React的工作机制，更好的使用React进行实战，这里就是开始。
-Before 生命周期 Component设计思想 Component是从有限状态机（FSM）的思想中衍生出来的一个模型。主要工作原理跟有限状态机几乎一样：通过状态、条件、动作来描述信息流转。
+  <meta name="description" content="为什么需要明白Component生命周期？  React Component生命周期是React的重要设计思想和概念之一。所以如果想更深入了解React的工作机制，更好的使用React进行实战，这里就是开始。
+Before 生命周期  Component设计思想 Component是从有限状态机（FSM）的思想中衍生出来的一个模型。主要工作原理跟有限状态机几乎一样：通过状态、条件、动作来描述信息流转。
 有限状态机的动作一般有下面几种：
  进入动作：在进入状态时进行 退出动作：在退出状态时进行 输入动作：依赖于当前状态和输入条件进行 转移动作：在进行特定转移时进行  如下图（图片来自这里），通过这个图可以清楚看到数据在每个节点不同状态时候形成了不同的转换，最终形成有限状态机。说的生动一点：想象数据是河水，然后我们设置关卡控制河水的流向，运动，停止。
-
-During 生命周期 Component Initialization 在这个阶段实例首次被创建，后面创建的实例会与第一次创建的实例在此阶段稍有不同。下面是这个阶段中会顺序执行的函数。
+During 生命周期  Component Initialization 在这个阶段实例首次被创建，后面创建的实例会与第一次创建的实例在此阶段稍有不同。下面是这个阶段中会顺序执行的函数。
 getDefaultProps
 这个函数用于创建默认的props属性。返回值必须是 Object 或 NULL。由于这个函数比较特殊，只会在React.createClass第一次执行的时候调用一次，所以下面研究一下原因。
 在创建Component的时候会调用React.createClass这个函数，这个函数实际的实现是在ReactClass.createClass里。我们看看这个函数里都执行了哪些操作：
- Constructor函数：这个Constructor中主要包含了初始化props获取initialState等功能，并没有任何与getDefaultProps有关的东西。第一次实例化后，再次调用React.createClass实际上执行的只有这个函数。
- 其他部分：在Component实例化过程中只会执行一次。下面的代码就在这个部分中，所以解释了为什么getDefaultProps只会执行一次。
-// Initialize the defaultProps property after all mixins have been merged. if (Constructor.getDefaultProps) { Constructor.defaultProps = Constructor.getDefaultProps(); }   
- ps:更详细和具体的过程我也不清楚，希望有大神指导。
+  Constructor函数：这个Constructor中主要包含了初始化props获取initialState等功能，并没有任何与getDefaultProps有关的东西。第一次实例化后，再次调用React.createClass实际上执行的只有这个函数。
+  其他部分：在Component实例化过程中只会执行一次。下面的代码就在这个部分中，所以解释了为什么getDefaultProps只会执行一次。
+ // Initialize the defaultProps property after all mixins have been merged. if (Constructor.getDefaultProps) { Constructor.defaultProps = Constructor.getDefaultProps(); }     ps:更详细和具体的过程我也不清楚，希望有大神指导。
  getInitialState
 这个函数用于创建Component的初始化state。返回值必须是 Object 或 NULL。
 此函数会在每次Component创建的时候被调用。
 componentWillMount
 这个函数在Component每次被创建的阶段都会被调用，代表的意思是：组件即将创建。在server和client都会调用。
 render
-这个函数是进行Component渲染的，React会将Component输出到页面中。server和client都会触发。
-componentDidMount
-这个函数是在Component渲染完毕之后触发。只在客户端触发，server不会触发
+这个函数是进行Component渲染的，React会将Component输出到页面中。server和client都会触发。" />
 
-Component Creating（创建） 这个阶段是Component创建期，在这个阶段主要有以下几个方法会被触发。" />
-
-  <link rel="stylesheet" href="https://unpkg.com/flexboxgrid@6.3.1/dist/flexboxgrid.min.css" />
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
   <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/2.10.0/github-markdown.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/tomorrow.min.css" />
+    href="/css/github-markdown.min.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
   <link rel="stylesheet" href="/css/index.css">
   <link href="/index.xml" rel="alternate" type="application/rss+xml" title="109km is a distance.">
   
   <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
   
-  <script>
-    
-
-    (function (undefined) { }).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
-  </script>
+  
 
   
 </head>
+
 
 <body>
   <article class="post " id="article">
@@ -120,106 +111,68 @@ Component Creating（创建） 这个阶段是Component创建期，在这个阶�
         </header>
 
         <div class="post-content markdown-body">
-          
-
-<h3 id="为什么需要明白component生命周期">为什么需要明白Component生命周期？</h3>
-
-<hr />
-
+          <h3 id="component">为什么需要明白Component生命周期？</h3>
+<hr>
 <p>React Component生命周期是React的重要设计思想和概念之一。所以如果想更深入了解React的工作机制，更好的使用React进行实战，这里就是开始。</p>
-
-<h3 id="before-生命周期">Before 生命周期</h3>
-
-<hr />
-
-<h4 id="component设计思想">Component设计思想</h4>
-
+<h3 id="before-">Before 生命周期</h3>
+<hr>
+<h4 id="component-1">Component设计思想</h4>
 <p>Component是从<a href="https://zh.wikipedia.org/wiki/%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA">有限状态机（FSM）</a>的思想中衍生出来的一个模型。主要工作原理跟有限状态机几乎一样：通过状态、条件、动作来描述信息流转。</p>
-
 <p>有限状态机的动作一般有下面几种：</p>
-
 <ul>
 <li>进入动作：在进入状态时进行</li>
 <li>退出动作：在退出状态时进行</li>
 <li>输入动作：依赖于当前状态和输入条件进行</li>
 <li>转移动作：在进行特定转移时进行</li>
 </ul>
-
 <p>如下图（图片来自<a href="https://segmentfault.com/a/1190000003940416">这里</a>），通过这个图可以清楚看到数据在每个节点不同状态时候形成了不同的转换，最终形成有限状态机。说的生动一点：想象数据是河水，然后我们设置关卡控制河水的流向，运动，停止。</p>
-
-<p><img src="/images/fsm.jpeg" alt="" /></p>
-
-<p><br></p>
-
-<h3 id="during-生命周期">During 生命周期</h3>
-
-<hr />
-
+<p><img src="/images/fsm.jpeg" alt=""></p>
+<!-- raw HTML omitted -->
+<h3 id="during-">During 生命周期</h3>
+<hr>
 <h4 id="component-initialization">Component Initialization</h4>
-
 <p>在这个阶段实例首次被创建，后面创建的实例会与第一次创建的实例在此阶段稍有不同。下面是这个阶段中会顺序执行的函数。</p>
-
-<p><img src="/images/react-component-initialization.jpeg" alt="" /></p>
-
+<p><img src="/images/react-component-initialization.jpeg" alt=""></p>
 <p><strong>getDefaultProps</strong></p>
-
 <p>这个函数用于创建默认的props属性。返回值必须是 <code>Object</code> 或 <code>NULL</code>。由于这个函数比较特殊，只会在<code>React.createClass</code>第一次执行的时候调用一次，所以下面研究一下原因。</p>
-
 <p>在创建Component的时候会调用<code>React.createClass</code>这个函数，这个函数实际的实现是在<code>ReactClass.createClass</code>里。我们看看这个函数里都执行了哪些操作：</p>
-
 <ul>
-<li><p>Constructor函数：这个Constructor中主要包含了初始化props获取initialState等功能，并没有任何与<code>getDefaultProps</code>有关的东西。第一次实例化后，再次调用<code>React.createClass</code>实际上执行的只有这个函数。</p></li>
-
-<li><p>其他部分：在Component实例化过程中只会执行一次。下面的代码就在这个部分中，所以解释了为什么<code>getDefaultProps</code>只会执行一次。</p>
-
-<pre><code>// Initialize the defaultProps property after all mixins have been merged.
-if (Constructor.getDefaultProps) {
-  Constructor.defaultProps = Constructor.getDefaultProps();
-}
-</code></pre></li>
+<li>
+<p>Constructor函数：这个Constructor中主要包含了初始化props获取initialState等功能，并没有任何与<code>getDefaultProps</code>有关的东西。第一次实例化后，再次调用<code>React.createClass</code>实际上执行的只有这个函数。</p>
+</li>
+<li>
+<p>其他部分：在Component实例化过程中只会执行一次。下面的代码就在这个部分中，所以解释了为什么<code>getDefaultProps</code>只会执行一次。</p>
+<pre><code>  // Initialize the defaultProps property after all mixins have been merged.
+  if (Constructor.getDefaultProps) {
+    Constructor.defaultProps = Constructor.getDefaultProps();
+  }
+</code></pre>
+</li>
 </ul>
-
-<p><br></p>
-
+<!-- raw HTML omitted -->
 <blockquote>
 <p>ps:更详细和具体的过程我也不清楚，希望有大神指导。</p>
 </blockquote>
-
 <p><strong>getInitialState</strong></p>
-
 <p>这个函数用于创建Component的初始化state。返回值必须是 <code>Object</code> 或 <code>NULL</code>。</p>
-
 <p>此函数会在每次Component创建的时候被调用。</p>
-
 <p><strong>componentWillMount</strong></p>
-
 <p>这个函数在Component每次被创建的阶段都会被调用，代表的意思是：组件即将创建。在server和client都会调用。</p>
-
 <p><strong>render</strong></p>
-
 <p>这个函数是进行Component渲染的，React会将Component输出到页面中。server和client都会触发。</p>
-
 <p><strong>componentDidMount</strong></p>
-
 <p>这个函数是在Component渲染完毕之后触发。只在客户端触发，server不会触发</p>
-
-<p><br></p>
-
-<h4 id="component-creating-创建">Component Creating（创建）</h4>
-
+<!-- raw HTML omitted -->
+<h4 id="component-creating">Component Creating（创建）</h4>
 <p>这个阶段是Component创建期，在这个阶段主要有以下几个方法会被触发。</p>
-
 <ul>
 <li>getInitialState</li>
 <li>componentWillMount</li>
 <li>render</li>
 <li>componentDidMount</li>
 </ul>
-
-<p><br></p>
-
-<h4 id="component-updating-更新">Component Updating（更新）</h4>
-
+<!-- raw HTML omitted -->
+<h4 id="component-updating">Component Updating（更新）</h4>
 <ul>
 <li>componentWillReceiveProps</li>
 <li>shouldComponentUpdate</li>
@@ -227,19 +180,13 @@ if (Constructor.getDefaultProps) {
 <li>render</li>
 <li>componentDidUpdate</li>
 </ul>
-
-<p><br></p>
-
-<h4 id="component-unmouting-销毁">Component Unmouting（销毁）</h4>
-
+<!-- raw HTML omitted -->
+<h4 id="component-unmouting">Component Unmouting（销毁）</h4>
 <ul>
 <li>componentWillUnmount</li>
 </ul>
-
-<p><br></p>
-
+<!-- raw HTML omitted -->
 <p>下面举个例子：</p>
-
 <pre><code>var React = require('react/addons');
 var LifeCycle = require('react-lifecycle');
 
@@ -257,9 +204,7 @@ React.unmountComponentAtNode(document.body);   // 2
 React.render(&lt;MyComponent /&gt;, document.body);  // 3
 React.render(&lt;MyComponent /&gt;, document.body);  // 4
 </code></pre>
-
 <p>下面是输出：</p>
-
 <pre><code>// 1
 getDefaultProps
 getInitialState
@@ -280,13 +225,9 @@ componentWillUpdate
 render
 componentDidUpdate
 </code></pre>
-
-<p><br></p>
-
+<!-- raw HTML omitted -->
 <p>参考链接：</p>
-
 <p><a href="http://facebook.github.io/react/docs/component-specs.html">http://facebook.github.io/react/docs/component-specs.html</a></p>
-
 <p><a href="https://segmentfault.com/a/1190000003940416">https://segmentfault.com/a/1190000003940416</a></p>
 
         </div>
@@ -327,16 +268,16 @@ componentDidUpdate
   </article>
 
   <script src="/js/highlight.pack.js"></script>
-<script src="https://unpkg.com/quicklink@0.1.1/dist/quicklink.umd.js"></script>
+
 
 <script>
   hljs.initHighlightingOnLoad();
   
-  var posts = document.getElementById('posts-list');
-  posts && quicklink({
-    el: posts,
-    priority: true,
-  });
+  
+  
+    
+    
+  
 </script>
 
   
