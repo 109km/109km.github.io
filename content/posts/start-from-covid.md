@@ -52,9 +52,9 @@ categories: ["研究"]
 
 ### 供
 
-先看
+先看下面这张我国历年竣工住宅面积图
 
-![start-from-covid-01.jpg](/images/start-from-covid-01.jpg)
+![start-from-covid-04.jpg](/images/start-from-covid-04.jpg)
 
 
 ## 金融业
