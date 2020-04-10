@@ -128,17 +128,454 @@
       <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
         <calculation class='tableau' formula='1' />
       </column>
-      <layout dim-ordering='alphabetic' dim-percentage='0.39084' measure-ordering='alphabetic' measure-percentage='0.60916' show-aliased-fields='true' show-structure='true' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.388976' measure-ordering='alphabetic' measure-percentage='0.611024' show-aliased-fields='true' show-structure='true' />
       <semantic-values>
         <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
       </semantic-values>
     </datasource>
     <datasource caption='主要城市年度数据 (start-from-covid-data)' inline='true' name='excel-direct.1khj6ih0s8ipbx1775bpj00nr9on' version='9.3'>
-      <connection class='excel-direct' cleaning='yes' compat='no' dataRefreshTime='' filename='/Users/xinhengs/Develop/109km.github.io/docs/start-from-covid-data.xlsx' interpretationMode='1' password='' server='' validate='no' />
+      <connection class='excel-direct' cleaning='yes' compat='no' dataRefreshTime='' filename='/Users/xinhengs/Develop/109km.github.io/docs/start-from-covid-data.xlsx' interpretationMode='1' password='' server='' validate='no'>
+        <relation name='Sheet1' table='[Sheet1$]' type='table'>
+          <columns gridOrigin='A1:F22:no:A1:F22:1' lost='0' outcome='1' processed='124'>
+            <column datatype='integer' name='年份' ordinal='0' />
+            <column datatype='real' name='商品住宅销售面积累计值(万平方米)' ordinal='1' />
+            <column datatype='real' name='商品住宅房屋施工面积(万平米)' ordinal='2' />
+            <column datatype='real' name='商品住宅竣工面积累计值(万平方米)' ordinal='3' />
+            <column datatype='real' name='商品住宅新开工施工面积累计值(万平方米)' ordinal='4' />
+            <column datatype='integer' name='房地产开发企业住宅竣工套数(套)' ordinal='5' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>年份</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[年份]</local-name>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias>年份</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>商品住宅销售面积累计值(万平方米)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[商品住宅销售面积累计值(万平方米)]</local-name>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias>商品住宅销售面积累计值(万平方米)</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>商品住宅房屋施工面积(万平米)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[商品住宅房屋施工面积(万平米)]</local-name>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias>商品住宅房屋施工面积(万平米)</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>商品住宅竣工面积累计值(万平方米)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[商品住宅竣工面积累计值(万平方米)]</local-name>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias>商品住宅竣工面积累计值(万平方米)</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>商品住宅新开工施工面积累计值(万平方米)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[商品住宅新开工施工面积累计值(万平方米)]</local-name>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias>商品住宅新开工施工面积累计值(万平方米)</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>房地产开发企业住宅竣工套数(套)</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[房地产开发企业住宅竣工套数(套)]</local-name>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias>房地产开发企业住宅竣工套数(套)</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:F22:no:A1:F22:1&quot;</attribute>
+              <attribute datatype='integer' name='lost'>0</attribute>
+              <attribute datatype='integer' name='outcome'>1</attribute>
+              <attribute datatype='integer' name='processed'>124</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
       <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
         <calculation class='tableau' formula='1' />
       </column>
-      <layout dim-ordering='alphabetic' dim-percentage='0.500763' measure-ordering='alphabetic' measure-percentage='0.499237' show-structure='true' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.386581' measure-ordering='alphabetic' measure-percentage='0.613419' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+    <datasource caption='主要城市年度数据 (2002-2018按城市房地产开发住宅竣工面积)' inline='true' name='excel-direct.0eugwmw15b8lnf1g0gngn10e6csl' version='9.3'>
+      <connection class='excel-direct' cleaning='yes' compat='no' dataRefreshTime='' filename='/Users/xinhengs/Develop/109km.github.io/docs/2002-2018按城市房地产开发住宅竣工面积.xls' interpretationMode='1' password='' server='' validate='no'>
+        <relation name='主要城市年度数据' table='[主要城市年度数据$]' type='table'>
+          <columns gridOrigin='A1:R40:no:A1:R40:1' header='no' lost='0' outcome='1' processed='595'>
+            <column datatype='string' name='地区' ordinal='0' />
+            <column datatype='real' name='2018年' ordinal='1' />
+            <column datatype='real' name='2017年' ordinal='2' />
+            <column datatype='real' name='2016年' ordinal='3' />
+            <column datatype='real' name='2015年' ordinal='4' />
+            <column datatype='real' name='2014年' ordinal='5' />
+            <column datatype='real' name='2013年' ordinal='6' />
+            <column datatype='real' name='2012年' ordinal='7' />
+            <column datatype='real' name='2011年' ordinal='8' />
+            <column datatype='real' name='2010年' ordinal='9' />
+            <column datatype='real' name='2009年' ordinal='10' />
+            <column datatype='real' name='2008年' ordinal='11' />
+            <column datatype='real' name='2007年' ordinal='12' />
+            <column datatype='real' name='2006年' ordinal='13' />
+            <column datatype='real' name='2005年' ordinal='14' />
+            <column datatype='real' name='2004年' ordinal='15' />
+            <column datatype='real' name='2003年' ordinal='16' />
+            <column datatype='real' name='2002年' ordinal='17' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>地区</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[地区]</local-name>
+            <parent-name>[主要城市年度数据]</parent-name>
+            <remote-alias>地区</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>2018年</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[2018年]</local-name>
+            <parent-name>[主要城市年度数据]</parent-name>
+            <remote-alias>2018年</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>2017年</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[2017年]</local-name>
+            <parent-name>[主要城市年度数据]</parent-name>
+            <remote-alias>2017年</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>2016年</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[2016年]</local-name>
+            <parent-name>[主要城市年度数据]</parent-name>
+            <remote-alias>2016年</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>2015年</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[2015年]</local-name>
+            <parent-name>[主要城市年度数据]</parent-name>
+            <remote-alias>2015年</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>2014年</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[2014年]</local-name>
+            <parent-name>[主要城市年度数据]</parent-name>
+            <remote-alias>2014年</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>2013年</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[2013年]</local-name>
+            <parent-name>[主要城市年度数据]</parent-name>
+            <remote-alias>2013年</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>2012年</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[2012年]</local-name>
+            <parent-name>[主要城市年度数据]</parent-name>
+            <remote-alias>2012年</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>2011年</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[2011年]</local-name>
+            <parent-name>[主要城市年度数据]</parent-name>
+            <remote-alias>2011年</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>2010年</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[2010年]</local-name>
+            <parent-name>[主要城市年度数据]</parent-name>
+            <remote-alias>2010年</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>2009年</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[2009年]</local-name>
+            <parent-name>[主要城市年度数据]</parent-name>
+            <remote-alias>2009年</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>2008年</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[2008年]</local-name>
+            <parent-name>[主要城市年度数据]</parent-name>
+            <remote-alias>2008年</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>2007年</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[2007年]</local-name>
+            <parent-name>[主要城市年度数据]</parent-name>
+            <remote-alias>2007年</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>2006年</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[2006年]</local-name>
+            <parent-name>[主要城市年度数据]</parent-name>
+            <remote-alias>2006年</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>2005年</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[2005年]</local-name>
+            <parent-name>[主要城市年度数据]</parent-name>
+            <remote-alias>2005年</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>2004年</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[2004年]</local-name>
+            <parent-name>[主要城市年度数据]</parent-name>
+            <remote-alias>2004年</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>2003年</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[2003年]</local-name>
+            <parent-name>[主要城市年度数据]</parent-name>
+            <remote-alias>2003年</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>2002年</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[2002年]</local-name>
+            <parent-name>[主要城市年度数据]</parent-name>
+            <remote-alias>2002年</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[主要城市年度数据]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>1</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:R40:no:A1:R40:1&quot;</attribute>
+              <attribute datatype='integer' name='lost'>0</attribute>
+              <attribute datatype='integer' name='outcome'>1</attribute>
+              <attribute datatype='integer' name='processed'>595</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='住宅竣工总面积（万平米）' datatype='real' name='[Calculation_1445092566624890884]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[2002年] + [2003年] + [2004年] + [2005年] &#10;+ [2006年] + [2007年] + [2008年] + [2009年]&#10;+ [2010年] + [2011年] + [2012年] + [2013年]&#10;+ [2014年] + [2015年] + [2016年] + [2017年]&#10;+ [2018年]' />
+      </column>
+      <layout dim-ordering='alphabetic' dim-percentage='0.379518' measure-ordering='alphabetic' measure-percentage='0.620482' show-structure='true' />
       <semantic-values>
         <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
       </semantic-values>
@@ -202,25 +639,525 @@
     <worksheet name='Sheet 2'>
       <table>
         <view>
-          <datasources />
+          <datasources>
+            <datasource caption='主要城市年度数据 (2002-2018按城市房地产开发住宅竣工面积)' name='excel-direct.0eugwmw15b8lnf1g0gngn10e6csl' />
+          </datasources>
+          <datasource-dependencies datasource='excel-direct.0eugwmw15b8lnf1g0gngn10e6csl'>
+            <column datatype='real' name='[2002年]' role='measure' type='quantitative' />
+            <column datatype='real' name='[2003年]' role='measure' type='quantitative' />
+            <column datatype='real' name='[2004年]' role='measure' type='quantitative' />
+            <column datatype='real' name='[2005年]' role='measure' type='quantitative' />
+            <column datatype='real' name='[2006年]' role='measure' type='quantitative' />
+            <column datatype='real' name='[2007年]' role='measure' type='quantitative' />
+            <column datatype='real' name='[2008年]' role='measure' type='quantitative' />
+            <column datatype='real' name='[2009年]' role='measure' type='quantitative' />
+            <column datatype='real' name='[2010年]' role='measure' type='quantitative' />
+            <column datatype='real' name='[2011年]' role='measure' type='quantitative' />
+            <column datatype='real' name='[2012年]' role='measure' type='quantitative' />
+            <column datatype='real' name='[2013年]' role='measure' type='quantitative' />
+            <column datatype='real' name='[2014年]' role='measure' type='quantitative' />
+            <column datatype='real' name='[2015年]' role='measure' type='quantitative' />
+            <column datatype='real' name='[2016年]' role='measure' type='quantitative' />
+            <column datatype='real' name='[2017年]' role='measure' type='quantitative' />
+            <column datatype='real' name='[2018年]' role='measure' type='quantitative' />
+            <column caption='住宅竣工总面积（万平米）' datatype='real' name='[Calculation_1445092566624890884]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[2002年] + [2003年] + [2004年] + [2005年] &#10;+ [2006年] + [2007年] + [2008年] + [2009年]&#10;+ [2010年] + [2011年] + [2012年] + [2013年]&#10;+ [2014年] + [2015年] + [2016年] + [2017年]&#10;+ [2018年]' />
+            </column>
+            <column-instance column='[地区]' derivation='None' name='[none:地区:nk]' pivot='key' type='nominal' />
+            <column-instance column='[2002年]' derivation='Sum' name='[sum:2002年:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[2003年]' derivation='Sum' name='[sum:2003年:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[2004年]' derivation='Sum' name='[sum:2004年:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[2005年]' derivation='Sum' name='[sum:2005年:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[2006年]' derivation='Sum' name='[sum:2006年:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[2007年]' derivation='Sum' name='[sum:2007年:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[2008年]' derivation='Sum' name='[sum:2008年:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[2009年]' derivation='Sum' name='[sum:2009年:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[2010年]' derivation='Sum' name='[sum:2010年:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[2011年]' derivation='Sum' name='[sum:2011年:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[2012年]' derivation='Sum' name='[sum:2012年:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[2013年]' derivation='Sum' name='[sum:2013年:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[2014年]' derivation='Sum' name='[sum:2014年:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[2015年]' derivation='Sum' name='[sum:2015年:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[2016年]' derivation='Sum' name='[sum:2016年:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[2017年]' derivation='Sum' name='[sum:2017年:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[2018年]' derivation='Sum' name='[sum:2018年:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1445092566624890884]' derivation='Sum' name='[sum:Calculation_1445092566624890884:qk]' pivot='key' type='quantitative' />
+            <column datatype='string' name='[地区]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[:Measure Names]'>
+            <groupfilter function='level-members' level='[:Measure Names]' />
+          </filter>
+          <filter class='categorical' column='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[none:地区:nk]'>
+            <groupfilter function='member' level='[none:地区:nk]' member='&quot;北京&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <sort class='computed' column='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[none:地区:nk]' direction='DESC' using='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:Calculation_1445092566624890884:qk]' />
+          <slices>
+            <column>[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[none:地区:nk]</column>
+            <column>[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[:Measure Names]</column>
+          </slices>
           <aggregation value='true' />
         </view>
-        <style />
+        <style>
+          <style-rule element='axis'>
+            <format attr='height' field='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[none:地区:nk]' value='66' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='width' field='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[none:地区:nk]' value='27' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='height-header' value='24' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='font-size' field='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[none:地区:nk]' value='8' />
+            <format attr='wrap' field='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[none:地区:nk]' value='off' />
+            <format attr='text-align' field='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[none:地区:nk]' value='left' />
+            <format attr='vertical-align' field='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[none:地区:nk]' value='bottom' />
+            <format attr='text-orientation' field='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[none:地区:nk]' value='-90' />
+            <format attr='font-size' field='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:Calculation_1445092566624890884:qk]' value='10' />
+            <format attr='color' field='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:Calculation_1445092566624890884:qk]' value='#000000' />
+          </style-rule>
+        </style>
         <panes>
           <pane>
             <view>
               <breakdown value='auto' />
             </view>
             <mark class='Automatic' />
+            <encodings>
+              <color column='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:Calculation_1445092566624890884:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-size' value='10' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.5382320880889893' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='1' y-axis-name='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:2002年:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:Calculation_1445092566624890884:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-size' value='10' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.5382320880889893' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' y-axis-name='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:2003年:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:Calculation_1445092566624890884:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-size' value='10' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.5382320880889893' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='3' y-axis-name='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:2004年:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:Calculation_1445092566624890884:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-size' value='10' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.5382320880889893' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='4' y-axis-name='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:2005年:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:Calculation_1445092566624890884:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-size' value='10' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.5382320880889893' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='5' y-axis-name='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:2006年:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:Calculation_1445092566624890884:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-size' value='10' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.5382320880889893' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='6' y-axis-name='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:2007年:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:Calculation_1445092566624890884:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-size' value='10' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.5382320880889893' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='7' y-axis-name='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:2008年:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:Calculation_1445092566624890884:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-size' value='10' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.5382320880889893' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='8' y-axis-name='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:2009年:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:Calculation_1445092566624890884:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-size' value='10' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.5382320880889893' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='9' y-axis-name='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:2010年:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:Calculation_1445092566624890884:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-size' value='10' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.5382320880889893' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='10' y-axis-name='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:2011年:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:Calculation_1445092566624890884:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-size' value='10' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.5382320880889893' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='11' y-axis-name='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:2012年:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:Calculation_1445092566624890884:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-size' value='10' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.5382320880889893' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='12' y-axis-name='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:2013年:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:Calculation_1445092566624890884:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-size' value='10' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.5382320880889893' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='13' y-axis-name='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:2014年:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:Calculation_1445092566624890884:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-size' value='10' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.5382320880889893' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='14' y-axis-name='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:2015年:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:Calculation_1445092566624890884:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-size' value='10' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.5382320880889893' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='15' y-axis-name='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:2016年:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:Calculation_1445092566624890884:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-size' value='10' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.5382320880889893' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='16' y-axis-name='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:2017年:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:Calculation_1445092566624890884:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-size' value='10' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.5382320880889893' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='17' y-axis-name='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:2018年:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:Calculation_1445092566624890884:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-size' value='10' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.5382320880889893' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
           </pane>
         </panes>
-        <rows />
-        <cols />
+        <rows>([excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:2002年:qk] + ([excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:2003年:qk] + ([excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:2004年:qk] + ([excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:2005年:qk] + ([excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:2006年:qk] + ([excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:2007年:qk] + ([excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:2008年:qk] + ([excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:2009年:qk] + ([excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:2010年:qk] + ([excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:2011年:qk] + ([excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:2012年:qk] + ([excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:2013年:qk] + ([excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:2014年:qk] + ([excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:2015年:qk] + ([excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:2016年:qk] + ([excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:2017年:qk] + [excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:2018年:qk]))))))))))))))))</rows>
+        <cols>[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[none:地区:nk]</cols>
       </table>
     </worksheet>
   </worksheets>
-  <windows source-height='48'>
-    <window class='worksheet' maximized='true' name='Sheet 1'>
+  <windows source-height='39'>
+    <window class='worksheet' name='Sheet 1'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -248,13 +1185,14 @@
         </highlight>
       </viewpoint>
     </window>
-    <window class='worksheet' name='Sheet 2'>
+    <window class='worksheet' maximized='true' name='Sheet 2'>
       <cards>
         <edge name='left'>
           <strip size='160'>
             <card type='pages' />
             <card type='filters' />
             <card type='marks' />
+            <card pane-specification-id='1' param='[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:Calculation_1445092566624890884:qk]' type='color' />
           </strip>
         </edge>
         <edge name='top'>
@@ -266,6 +1204,16 @@
           </strip>
         </edge>
       </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[:Measure Names]</field>
+            <field>[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[none:Calculation_1445092566621634562:qk]</field>
+            <field>[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[none:地区:nk]</field>
+            <field>[excel-direct.0eugwmw15b8lnf1g0gngn10e6csl].[sum:Calculation_1445092566624890884:qk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
     </window>
   </windows>
   <thumbnails>
@@ -594,28 +1542,240 @@
       KxaLmKaJ3+9nfX0dt9uNYRhd9cOXP43MAQghHHF8fEw0GrUX+4ODAwzDQFVVLi4uWFhY+JHj
       EnqZJAAhhCO+Wz6/Wz3/3QIqnCcJQAghetRfhVDLa5guyPUAAAAASUVORK5CYII=
     </thumbnail>
-    <thumbnail height='288' name='Sheet 2' width='348'>
-      iVBORw0KGgoAAAANSUhEUgAAAVwAAAEgCAYAAAD49suWAAAACXBIWXMAAA7DAAAOwwHHb6hk
-      AAAD60lEQVR4nO3UMQHAIBDAwFL/nh8VhIE7BZmyZmY+AI77bwcAvMJwASKGCxAxXICI4QJE
-      DBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJEDBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJE
-      DBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJEDBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJE
-      DBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJEDBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJE
-      DBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJEDBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJE
-      DBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJEDBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJE
-      DBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJEDBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJE
-      DBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJEDBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJE
-      DBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJEDBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJE
-      DBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJEDBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJE
-      DBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJEDBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJE
-      DBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJEDBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJE
-      DBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJEDBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJE
-      DBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJEDBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJE
-      DBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJEDBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJE
-      DBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJEDBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJE
-      DBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJEDBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJE
-      DBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJEDBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJE
-      DBcgYrgAEcMFiBguQMRwASKGCxAxXICI4QJEDBcgYrgAkQ3yPAY8hWYIbwAAAABJRU5ErkJg
-      gg==
+    <thumbnail height='384' name='Sheet 2' width='168'>
+      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
     </thumbnail>
   </thumbnails>
 </workbook>
