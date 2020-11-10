@@ -6,10 +6,19 @@
     <description>Recent content in Categories on 109km is a distance.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 Jan 2020 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 28 Mar 2020 00:00:00 +0800</lastBuildDate>
     
 	<atom:link href="https://109km.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>研究</title>
+      <link>https://109km.github.io/categories/%E7%A0%94%E7%A9%B6/</link>
+      <pubDate>Sat, 28 Mar 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://109km.github.io/categories/%E7%A0%94%E7%A9%B6/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>读书笔记</title>
