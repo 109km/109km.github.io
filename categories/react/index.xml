@@ -6,11 +6,7 @@
     <description>Recent content in react on 109km is a distance.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 09 Nov 2017 00:00:00 +0800</lastBuildDate>
-    
-	<atom:link href="https://109km.github.io/categories/react/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 09 Nov 2017 00:00:00 +0800</lastBuildDate><atom:link href="https://109km.github.io/categories/react/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【React - 02】React Component生命周期详解</title>
       <link>https://109km.github.io/posts/react-lifecycle-02/</link>

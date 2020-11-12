@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.61.0" />
+  <meta name="generator" content="Hugo 0.78.1" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "深入理解JavaScript数组",
       "headline" : "深入理解JavaScript数组",
-      "description" : "Let\x27s take a look the beginning part of Array\x27s defination in V8 engine.\n\/\/ The JSArray describes JavaScript Arrays \/\/ Such an array can be in one of two modes: \/\/ - fast, backing storage is a FixedArray and length \x26lt;= elements.length(); \/\/ Please note: push and pop can be used to grow and shrink the array. \/\/ - slow, backing storage is a HashTable with numbers as keys. class JSArray: public JSObject { public: \/\/ [length]: The length property.",
+      "description" : "Let\u0026rsquo;s take a look the beginning part of Array\u0026rsquo;s defination in V8 engine.\n\/\/ The JSArray describes JavaScript Arrays \/\/ Such an array can be in one of two modes: \/\/ - fast, backing storage is a FixedArray and length \u0026lt;= elements.length(); \/\/ Please note: push and pop can be used to grow and shrink the array. \/\/ - slow, backing storage is a HashTable with numbers as keys. class JSArray: public JSObject { public: \/\/ [length]: The length property.",
       "inLanguage" : "en-US",
       "author" : "阿信",
       "creator" : "阿信",
@@ -27,8 +27,8 @@
       "accountablePerson" : "阿信",
       "copyrightHolder" : "阿信",
       "copyrightYear" : "2020",
-      "datePublished": "2020-11-12 00:00:00 \x2b0800 CST",
-      "dateModified" : "2020-11-12 00:00:00 \x2b0800 CST",
+      "datePublished": "2020-11-12 00:00:00 \u002b0800 CST",
+      "dateModified" : "2020-11-12 00:00:00 \u002b0800 CST",
       "url" : "https:\/\/109km.github.io\/posts\/deep-into-js-array\/",
       "keywords" : [  ]
   }
@@ -36,12 +36,12 @@
 <title>深入理解JavaScript数组 - 109km is a distance.</title>
   <meta property="og:title" content="深入理解JavaScript数组 - 109km is a distance." />
   <meta property="og:type" content="article" />
-  <meta name="description" content="Let&#39;s take a look the beginning part of Array&#39;s defination in V8 engine.
+  <meta name="description" content="Let&rsquo;s take a look the beginning part of Array&rsquo;s defination in V8 engine.
 // The JSArray describes JavaScript Arrays // Such an array can be in one of two modes: // - fast, backing storage is a FixedArray and length &lt;= elements.length(); // Please note: push and pop can be used to grow and shrink the array. // - slow, backing storage is a HashTable with numbers as keys. class JSArray: public JSObject { public: // [length]: The length property." />
 
   <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
   <link rel="stylesheet" href="/css/github-markdown.min.css" />
-  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/highlight/vs2015.css" />
   <link rel="stylesheet" href="/css/index.css">
   <link href="/index.xml" rel="alternate" type="application/rss+xml"
     title="109km is a distance.">
@@ -94,12 +94,12 @@
         </header>
 
         <div class="post-content markdown-body">
-          <p>Let's take a look the beginning part of <code>Array</code>'s defination in V8 engine.</p>
+          <p>Let&rsquo;s take a look the beginning part of <code>Array</code>&rsquo;s defination in V8 engine.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// The JSArray describes JavaScript Arrays
-</span><span style="color:#75715e"></span><span style="color:#75715e">//  Such an array can be in one of two modes:
-</span><span style="color:#75715e"></span><span style="color:#75715e">//    - fast, backing storage is a FixedArray and length &lt;= elements.length();
-</span><span style="color:#75715e"></span><span style="color:#75715e">//       Please note: push and pop can be used to grow and shrink the array.
-</span><span style="color:#75715e"></span><span style="color:#75715e">//    - slow, backing storage is a HashTable with numbers as keys.
+</span><span style="color:#75715e">//  Such an array can be in one of two modes:
+</span><span style="color:#75715e">//    - fast, backing storage is a FixedArray and length &lt;= elements.length();
+</span><span style="color:#75715e">//       Please note: push and pop can be used to grow and shrink the array.
+</span><span style="color:#75715e">//    - slow, backing storage is a HashTable with numbers as keys.
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">JSArray</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">public</span> JSObject {
  <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
   <span style="color:#75715e">// [length]: The length property.
@@ -115,7 +115,7 @@
 <p>So it explains why <code>typeof [] === &quot;object&quot;</code>.</p>
 <h2 id="array-has-two-modes-of-storage"><code>Array</code> has two modes of storage.</h2>
 <h3 id="fast-mode">Fast mode</h3>
-<p>The data structure of this mode is <code>FixedArray</code>. It's like an array in <code>C</code> : it occupies some continuous space in memory.</p>
+<p>The data structure of this mode is <code>FixedArray</code>. It&rsquo;s like an array in <code>C</code> : it occupies some continuous space in memory.</p>
 <p>When a new empty array is created, the default mode is <code>fast</code>.</p>
 <h3 id="slow-mode">Slow mode</h3>
 <p>The data structure of this mode is <code>HashTable</code>. So this mode needs more memory and the efficiency is slow.</p>
@@ -126,7 +126,7 @@
   <span style="color:#66d9ef">using</span> DerivedHashTable <span style="color:#f92672">=</span> HashTable<span style="color:#f92672">&lt;</span>Derived, Shape<span style="color:#f92672">&gt;</span>;
 
  <span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
-  <span style="color:#66d9ef">using</span> Key <span style="color:#f92672">=</span> <span style="color:#66d9ef">typename</span> Shape<span style="color:#f92672">:</span><span style="color:#f92672">:</span>Key;
+  <span style="color:#66d9ef">using</span> Key <span style="color:#f92672">=</span> <span style="color:#66d9ef">typename</span> Shape<span style="color:#f92672">::</span>Key;
   <span style="color:#75715e">// Returns the value at entry.
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">inline</span> Object ValueAt(InternalIndex entry);
   <span style="color:#66d9ef">inline</span> Object ValueAt(<span style="color:#66d9ef">const</span> Isolate<span style="color:#f92672">*</span> isolate, InternalIndex entry);
@@ -144,13 +144,13 @@
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint32_t</span> kMinAddedElementsCapacity <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>;
 
 <span style="color:#75715e">// code-stub-assembler.cc
-</span><span style="color:#75715e"></span>Node<span style="color:#f92672">*</span> CodeStubAssembler<span style="color:#f92672">:</span><span style="color:#f92672">:</span>CalculateNewElementsCapacity(Node<span style="color:#f92672">*</span> old_capacity,
+</span><span style="color:#75715e"></span>Node<span style="color:#f92672">*</span> CodeStubAssembler<span style="color:#f92672">::</span>CalculateNewElementsCapacity(Node<span style="color:#f92672">*</span> old_capacity,
                                                       ParameterMode mode) {
   CSA_SLOW_ASSERT(<span style="color:#66d9ef">this</span>, MatchesParameterMode(old_capacity, mode));
   Node<span style="color:#f92672">*</span> half_old_capacity <span style="color:#f92672">=</span> WordOrSmiShr(old_capacity, <span style="color:#ae81ff">1</span>, mode);
   Node<span style="color:#f92672">*</span> new_capacity <span style="color:#f92672">=</span> IntPtrOrSmiAdd(half_old_capacity, old_capacity, mode);
   Node<span style="color:#f92672">*</span> padding <span style="color:#f92672">=</span>
-      IntPtrOrSmiConstant(JSObject<span style="color:#f92672">:</span><span style="color:#f92672">:</span>kMinAddedElementsCapacity, mode);
+      IntPtrOrSmiConstant(JSObject<span style="color:#f92672">::</span>kMinAddedElementsCapacity, mode);
   <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">IntPtrOrSmiAdd</span>(new_capacity, padding, mode);
 }
 </code></pre></div><p>The calculation formula:</p>
@@ -162,15 +162,15 @@
   <span style="color:#a6e22e">arr</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">i</span>;
 }
 <span style="color:#75715e">// when the size reaches 5
-</span><span style="color:#75715e"></span><span style="color:#75715e">// new capacity = 4 * 1.5 + 16 = 22
+</span><span style="color:#75715e">// new capacity = 4 * 1.5 + 16 = 22
 </span></code></pre></div><h4 id="decrease-the-capacity">Decrease the capacity</h4>
 <p>The calculation formula:</p>
 <p><code>current capacity &gt;= length * 2 + 16</code></p>
 <p>It means if the capacity is twice as the length of the array, it will decrease the capacity, and the new capacity will be the length of array.</p>
 <h3 id="convert-between-fast-and-slow">Convert between fast and slow</h3>
 <h4 id="from-fast-to-slow">From fast to slow</h4>
-<p><strong>Situation 1 : New index - array's length &gt;= 1024</strong></p>
-<p>Let's see the source code:</p>
+<p><strong>Situation 1 : New index - array&rsquo;s length &gt;= 1024</strong></p>
+<p>Let&rsquo;s see the source code:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// src/objects/js-objects.h
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint32_t</span> kMaxGap <span style="color:#f92672">=</span> <span style="color:#ae81ff">1024</span>;
 
@@ -178,20 +178,20 @@
                                                <span style="color:#66d9ef">uint32_t</span> capacity,
                                                <span style="color:#66d9ef">uint32_t</span> index,
                                                <span style="color:#66d9ef">uint32_t</span><span style="color:#f92672">*</span> new_capacity) {
-  STATIC_ASSERT(JSObject<span style="color:#f92672">:</span><span style="color:#f92672">:</span>kMaxUncheckedOldFastElementsLength <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span>
-                JSObject<span style="color:#f92672">:</span><span style="color:#f92672">:</span>kMaxUncheckedFastElementsLength);
+  STATIC_ASSERT(JSObject<span style="color:#f92672">::</span>kMaxUncheckedOldFastElementsLength <span style="color:#f92672">&lt;=</span>
+                JSObject<span style="color:#f92672">::</span>kMaxUncheckedFastElementsLength);
   <span style="color:#66d9ef">if</span> (index <span style="color:#f92672">&lt;</span> capacity) {
     <span style="color:#f92672">*</span>new_capacity <span style="color:#f92672">=</span> capacity;
     <span style="color:#66d9ef">return</span> false;
   }
   <span style="color:#75715e">// 当加入的索引值（例如例3中的2000）比当前容量capacity 大于等于 1024时，
 </span><span style="color:#75715e"></span>  <span style="color:#75715e">// 返回true，转为慢数组
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (index <span style="color:#f92672">-</span> capacity <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> JSObject<span style="color:#f92672">:</span><span style="color:#f92672">:</span>kMaxGap) <span style="color:#66d9ef">return</span> true;
-  <span style="color:#f92672">*</span>new_capacity <span style="color:#f92672">=</span> JSObject<span style="color:#f92672">:</span><span style="color:#f92672">:</span>NewElementsCapacity(index <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>);
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (index <span style="color:#f92672">-</span> capacity <span style="color:#f92672">&gt;=</span> JSObject<span style="color:#f92672">::</span>kMaxGap) <span style="color:#66d9ef">return</span> true;
+  <span style="color:#f92672">*</span>new_capacity <span style="color:#f92672">=</span> JSObject<span style="color:#f92672">::</span>NewElementsCapacity(index <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>);
   DCHECK_LT(index, <span style="color:#f92672">*</span>new_capacity);
   <span style="color:#75715e">// TODO(ulan): Check if it works with young large objects.
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">*</span>new_capacity <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> JSObject<span style="color:#f92672">:</span><span style="color:#f92672">:</span>kMaxUncheckedOldFastElementsLength <span style="color:#f92672">|</span><span style="color:#f92672">|</span>
-      (<span style="color:#f92672">*</span>new_capacity <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> JSObject<span style="color:#f92672">:</span><span style="color:#f92672">:</span>kMaxUncheckedFastElementsLength <span style="color:#f92672">&amp;</span><span style="color:#f92672">&amp;</span>
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (<span style="color:#f92672">*</span>new_capacity <span style="color:#f92672">&lt;=</span> JSObject<span style="color:#f92672">::</span>kMaxUncheckedOldFastElementsLength <span style="color:#f92672">||</span>
+      (<span style="color:#f92672">*</span>new_capacity <span style="color:#f92672">&lt;=</span> JSObject<span style="color:#f92672">::</span>kMaxUncheckedFastElementsLength <span style="color:#f92672">&amp;&amp;</span>
        ObjectInYoungGeneration(object))) {
     <span style="color:#66d9ef">return</span> false;
   }
@@ -204,40 +204,40 @@
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>];
 
 <span style="color:#75715e">// If new index is 100, 100 - 3 &lt; 1024,
-</span><span style="color:#75715e"></span><span style="color:#75715e">// now the empty elements will be filled with holes.
-</span><span style="color:#75715e"></span><span style="color:#75715e">// `hole` is a special element used as placeholder.
+</span><span style="color:#75715e">// now the empty elements will be filled with holes.
+</span><span style="color:#75715e">// `hole` is a special element used as placeholder.
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">arr</span>[<span style="color:#ae81ff">100</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
 
 <span style="color:#75715e">// But if new index is 2000, and array&#39;s length is 4.
-</span><span style="color:#75715e"></span><span style="color:#75715e">// 2000 - 4 &gt; 1024.
-</span><span style="color:#75715e"></span><span style="color:#75715e">// Now this array will be converted to slow mode.
+</span><span style="color:#75715e">// 2000 - 4 &gt; 1024.
+</span><span style="color:#75715e">// Now this array will be converted to slow mode.
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">arr</span>[<span style="color:#ae81ff">2000</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">100</span>;
 </code></pre></div><p><strong>Situation 2 :  new storage &gt; 3 * 3 * old storage</strong></p>
-<p>Let's see source code:</p>
+<p>Let&rsquo;s see source code:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// src/objects/dictionary.h
-</span><span style="color:#75715e"></span><span style="color:#75715e">// JSObjects prefer dictionary elements if the dictionary saves this much
-</span><span style="color:#75715e"></span><span style="color:#75715e">// memory compared to a fast elements backing store.
+</span><span style="color:#75715e">// JSObjects prefer dictionary elements if the dictionary saves this much
+</span><span style="color:#75715e">// memory compared to a fast elements backing store.
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint32_t</span> kPreferFastElementsSizeFactor <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
 
 <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> kEntrySize <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
 
 <span style="color:#75715e">// src/objects/js-objects-inl.h
-</span><span style="color:#75715e"></span><span style="color:#75715e">// If the fast-case backing storage takes up much more memory than a dictionary
-</span><span style="color:#75715e"></span><span style="color:#75715e">// backing storage would, the object should have slow elements.
-</span><span style="color:#75715e"></span><span style="color:#75715e">// static
+</span><span style="color:#75715e">// If the fast-case backing storage takes up much more memory than a dictionary
+</span><span style="color:#75715e">// backing storage would, the object should have slow elements.
+</span><span style="color:#75715e">// static
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">static</span> <span style="color:#66d9ef">inline</span> <span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">ShouldConvertToSlowElements</span>(<span style="color:#66d9ef">uint32_t</span> used_elements,
                                                <span style="color:#66d9ef">uint32_t</span> new_capacity) {
-  <span style="color:#66d9ef">uint32_t</span> size_threshold <span style="color:#f92672">=</span> NumberDictionary<span style="color:#f92672">:</span><span style="color:#f92672">:</span>kPreferFastElementsSizeFactor <span style="color:#f92672">*</span>
-                            NumberDictionary<span style="color:#f92672">:</span><span style="color:#f92672">:</span>ComputeCapacity(used_elements) <span style="color:#f92672">*</span>
-                            NumberDictionary<span style="color:#f92672">:</span><span style="color:#f92672">:</span>kEntrySize;
-  <span style="color:#66d9ef">return</span> size_threshold <span style="color:#f92672">&lt;</span><span style="color:#f92672">=</span> new_capacity;
+  <span style="color:#66d9ef">uint32_t</span> size_threshold <span style="color:#f92672">=</span> NumberDictionary<span style="color:#f92672">::</span>kPreferFastElementsSizeFactor <span style="color:#f92672">*</span>
+                            NumberDictionary<span style="color:#f92672">::</span>ComputeCapacity(used_elements) <span style="color:#f92672">*</span>
+                            NumberDictionary<span style="color:#f92672">::</span>kEntrySize;
+  <span style="color:#66d9ef">return</span> size_threshold <span style="color:#f92672">&lt;=</span> new_capacity;
 }
 </code></pre></div><p>For example:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// An empty array takes 4 slots, 32 bytes.
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [];
 <span style="color:#75715e">// Add 20 objects to the array.
-</span><span style="color:#75715e"></span><span style="color:#75715e">// It will convert to slow mode.
-</span><span style="color:#75715e"></span><span style="color:#75715e">// Because each object takes a lot memory.
+</span><span style="color:#75715e">// It will convert to slow mode.
+</span><span style="color:#75715e">// Because each object takes a lot memory.
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">20</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>){
   <span style="color:#a6e22e">arr</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">=</span> {};
 }
@@ -254,11 +254,11 @@
 </span><span style="color:#75715e"></span>  <span style="color:#75715e">// cannot go back to fast elements.
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (dictionary.requires_slow_elements()) <span style="color:#66d9ef">return</span> false;
   <span style="color:#75715e">// Adding a property with this index will require slow elements.
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (index <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#66d9ef">static_cast</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">uint32_t</span><span style="color:#f92672">&gt;</span>(Smi<span style="color:#f92672">:</span><span style="color:#f92672">:</span>kMaxValue)) <span style="color:#66d9ef">return</span> false;
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (index <span style="color:#f92672">&gt;=</span> <span style="color:#66d9ef">static_cast</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">uint32_t</span><span style="color:#f92672">&gt;</span>(Smi<span style="color:#f92672">::</span>kMaxValue)) <span style="color:#66d9ef">return</span> false;
   <span style="color:#66d9ef">if</span> (object.IsJSArray()) {
-    Object length <span style="color:#f92672">=</span> JSArray<span style="color:#f92672">:</span><span style="color:#f92672">:</span>cast(object).length();
+    Object length <span style="color:#f92672">=</span> JSArray<span style="color:#f92672">::</span>cast(object).length();
     <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span>length.IsSmi()) <span style="color:#66d9ef">return</span> false;
-    <span style="color:#f92672">*</span>new_capacity <span style="color:#f92672">=</span> <span style="color:#66d9ef">static_cast</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">uint32_t</span><span style="color:#f92672">&gt;</span>(Smi<span style="color:#f92672">:</span><span style="color:#f92672">:</span>ToInt(length));
+    <span style="color:#f92672">*</span>new_capacity <span style="color:#f92672">=</span> <span style="color:#66d9ef">static_cast</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">uint32_t</span><span style="color:#f92672">&gt;</span>(Smi<span style="color:#f92672">::</span>ToInt(length));
   } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (object.IsJSArgumentsObject()) {
     <span style="color:#66d9ef">return</span> false;
   } <span style="color:#66d9ef">else</span> {
@@ -266,9 +266,9 @@
   }
   <span style="color:#f92672">*</span>new_capacity <span style="color:#f92672">=</span> Max(index <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, <span style="color:#f92672">*</span>new_capacity);
   <span style="color:#66d9ef">uint32_t</span> dictionary_size <span style="color:#f92672">=</span> <span style="color:#66d9ef">static_cast</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">uint32_t</span><span style="color:#f92672">&gt;</span>(dictionary.Capacity()) <span style="color:#f92672">*</span>
-                             NumberDictionary<span style="color:#f92672">:</span><span style="color:#f92672">:</span>kEntrySize;
+                             NumberDictionary<span style="color:#f92672">::</span>kEntrySize;
   <span style="color:#75715e">// Turn fast if the dictionary only saves 50% space.
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> dictionary_size <span style="color:#f92672">&gt;</span><span style="color:#f92672">=</span> <span style="color:#f92672">*</span>new_capacity;
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">*</span> dictionary_size <span style="color:#f92672">&gt;=</span> <span style="color:#f92672">*</span>new_capacity;
 }
 </code></pre></div><p>This rules are clear:</p>
 <ul>
@@ -324,19 +324,18 @@
     </div>
   </article>
 
-  <script src="/js/highlight.pack.js"></script>
+  <script src="/js/highlight.min.js"></script>
 
 
 <script>
   hljs.initHighlightingOnLoad();
-  
+
   
   
     
     
   
 </script>
-
   
 
 </body>

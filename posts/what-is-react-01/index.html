@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.61.0" />
+  <meta name="generator" content="Hugo 0.78.1" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "【React - 01】What’s React",
       "headline" : "【React - 01】What’s React",
-      "description" : "React初识  React只是MVC中的V。\nReact核心是Component，Component是html \/ javascript的合集。\nReact相关基础概念  JSX 在javascript中写HTML的语法工具。\nVirtual DOM 虚拟DOM。React自己生成的一套DOM系统，用于渲染真实的DOM。\nReact.createClass 创建一个Component的方法。\nrender(method) Component的HTML模板。\nReact.render 渲染React Component到真实的DOM结点上。\nstate Component的状态，其实就是Component的内置数据，通过更改state属性，可以对实现对Component的更新。 例如，下面的代码里通过this.state.name控制Component中的内容展示。\nrender: function() { return ( \x26lt;header\x26gt; { this.state.name ? this.state.name : \x26lt;span\x26gt;Not Logged In\x26lt;\/span\x26gt; } \x26lt;\/header\x26gt; ); }  getInitialState 获取Component的初始化state。\nsetState 设置Component的state属性。\nprops 父级Component传递给子级Component的属性。比如onClick也是props的一种。在下面这个例子中父级节点 传递了 name=“Tyler” 给子节点 var HelloUser = React.createClass({ render: function(){ return ( \x26lt;div\x26gt; Hello, {this.props.name}\x26lt;\/div\x26gt; ) } }); React.render(\x26lt;HelloUser name=\x26quot;Tyler\x26quot;\/\x26gt;, document.getElementById(\x27app\x27));  setProps 设置props属性。需要注意的是这个函数只能在父级节点设置子级节点的props，不能调用 this.",
+      "description" : "React初识  React只是MVC中的V。\nReact核心是Component，Component是html \/ javascript的合集。\nReact相关基础概念  JSX 在javascript中写HTML的语法工具。\nVirtual DOM 虚拟DOM。React自己生成的一套DOM系统，用于渲染真实的DOM。\nReact.createClass 创建一个Component的方法。\nrender(method) Component的HTML模板。\nReact.render 渲染React Component到真实的DOM结点上。\nstate Component的状态，其实就是Component的内置数据，通过更改state属性，可以对实现对Component的更新。 例如，下面的代码里通过this.state.name控制Component中的内容展示。\nrender: function() { return ( \u0026lt;header\u0026gt; { this.state.name ? this.state.name : \u0026lt;span\u0026gt;Not Logged In\u0026lt;\/span\u0026gt; } \u0026lt;\/header\u0026gt; ); }  getInitialState 获取Component的初始化state。\nsetState 设置Component的state属性。\nprops 父级Component传递给子级Component的属性。比如onClick也是props的一种。在下面这个例子中父级节点 传递了 name=“Tyler” 给子节点 var HelloUser = React.createClass({ render: function(){ return ( \u0026lt;div\u0026gt; Hello, {this.props.name}\u0026lt;\/div\u0026gt; ) } }); React.render(\u0026lt;HelloUser name=\u0026quot;Tyler\u0026quot;\/\u0026gt;, document.getElementById(\u0027app\u0027));  setProps 设置props属性。需要注意的是这个函数只能在父级节点设置子级节点的props，不能调用 this.",
       "inLanguage" : "en-US",
       "author" : "阿信",
       "creator" : "阿信",
@@ -27,8 +27,8 @@
       "accountablePerson" : "阿信",
       "copyrightHolder" : "阿信",
       "copyrightYear" : "2017",
-      "datePublished": "2017-11-06 15:47:12 \x2b0800 CST",
-      "dateModified" : "2017-11-06 15:47:12 \x2b0800 CST",
+      "datePublished": "2017-11-06 15:47:12 \u002b0800 CST",
+      "dateModified" : "2017-11-06 15:47:12 \u002b0800 CST",
       "url" : "https:\/\/109km.github.io\/posts\/what-is-react-01\/",
       "keywords" : [  ]
   }
@@ -50,7 +50,7 @@ props 父级Component传递给子级Component的属性。比如onClick也是prop
 
   <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
   <link rel="stylesheet" href="/css/github-markdown.min.css" />
-  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/highlight/vs2015.css" />
   <link rel="stylesheet" href="/css/index.css">
   <link href="/index.xml" rel="alternate" type="application/rss+xml"
     title="109km is a distance.">
@@ -103,12 +103,12 @@ props 父级Component传递给子级Component的属性。比如onClick也是prop
         </header>
 
         <div class="post-content markdown-body">
-          <h3 id="react">React初识</h3>
+          <h3 id="react初识">React初识</h3>
 <hr>
 <p>React只是MVC中的V。</p>
 <p>React核心是Component，Component是html / javascript的合集。</p>
 <p><!-- raw HTML omitted --></p>
-<h3 id="react-1">React相关基础概念</h3>
+<h3 id="react相关基础概念">React相关基础概念</h3>
 <hr>
 <p><!-- raw HTML omitted --></p>
 <h4 id="jsx">JSX</h4>
@@ -184,9 +184,9 @@ React.render(&lt;HelloUser name=&quot;Tyler&quot;/&gt;, document.getElementById(
 <li>onChange</li>
 </ul>
 <!-- raw HTML omitted -->
-<h3 id="react-2">React生命周期</h3>
+<h3 id="react生命周期">React生命周期</h3>
 <hr>
-<h4 id="initializing">实例化(Initializing)</h4>
+<h4 id="实例化initializing">实例化(Initializing)</h4>
 <p>一个组件类首次实例化的时候，会依次调用下面的方法：</p>
 <ul>
 <li>getDefaultProps</li>
@@ -204,7 +204,7 @@ React.render(&lt;HelloUser name=&quot;Tyler&quot;/&gt;, document.getElementById(
 </ul>
 <p>可以看到，此时已经不再调用getDefaultProps。</p>
 <!-- raw HTML omitted -->
-<h4 id="updating">存在期(Updating)</h4>
+<h4 id="存在期updating">存在期(Updating)</h4>
 <p>当组件在使用过程中，组件的状态会发生变化，会触发不同的方法：</p>
 <ul>
 <li>componentWillReceiveProps</li>
@@ -214,7 +214,7 @@ React.render(&lt;HelloUser name=&quot;Tyler&quot;/&gt;, document.getElementById(
 <li>componentDidUpdate</li>
 </ul>
 <!-- raw HTML omitted -->
-<h4 id="unmounting">销毁期(Unmounting)</h4>
+<h4 id="销毁期unmounting">销毁期(Unmounting)</h4>
 <ul>
 <li>componentWillMount</li>
 </ul>
@@ -272,19 +272,18 @@ React.render(&lt;HelloUser name=&quot;Tyler&quot;/&gt;, document.getElementById(
     </div>
   </article>
 
-  <script src="/js/highlight.pack.js"></script>
+  <script src="/js/highlight.min.js"></script>
 
 
 <script>
   hljs.initHighlightingOnLoad();
-  
+
   
   
     
     
   
 </script>
-
   
 
 </body>

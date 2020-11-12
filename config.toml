@@ -3,13 +3,14 @@ languageCode = "en-us"
 DefaultContentLanguage = "cn"
 title = "109km is a distance."
 theme = "yinyang"
+pygmentsStyle = "monokai"
 
 [params]
   mainSections = ["posts"]
   description = "109km 是一段路程。"
   headTitle = "109km"
   favicon = "/images/default_avatar.png"
-
+  
 [taxonomies]
   category = "categories"
   tag = "tags"

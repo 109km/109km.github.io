@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.61.0" />
+  <meta name="generator" content="Hugo 0.78.1" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -27,8 +27,8 @@
       "accountablePerson" : "阿信",
       "copyrightHolder" : "阿信",
       "copyrightYear" : "2017",
-      "datePublished": "2017-11-22 16:47:12 \x2b0800 CST",
-      "dateModified" : "2017-11-22 16:47:12 \x2b0800 CST",
+      "datePublished": "2017-11-22 16:47:12 \u002b0800 CST",
+      "dateModified" : "2017-11-22 16:47:12 \u002b0800 CST",
       "url" : "https:\/\/109km.github.io\/posts\/front-end-developing-standard\/",
       "keywords" : [  ]
   }
@@ -45,7 +45,7 @@ Hello 项目根目录，通常为项目名称 ├── README.md 项目说明�
 
   <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
   <link rel="stylesheet" href="/css/github-markdown.min.css" />
-  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/highlight/vs2015.css" />
   <link rel="stylesheet" href="/css/index.css">
   <link href="/index.xml" rel="alternate" type="application/rss+xml"
     title="109km is a distance.">
@@ -98,17 +98,17 @@ Hello 项目根目录，通常为项目名称 ├── README.md 项目说明�
         </header>
 
         <div class="post-content markdown-body">
-          <h2 id="heading">开发篇</h2>
-<h3 id="heading-1">总则</h3>
-<h4 id="heading-2">缩进</h4>
+          <h2 id="开发篇">开发篇</h2>
+<h3 id="总则">总则</h3>
+<h4 id="缩进">缩进</h4>
 <p>统一采用2个空格，禁止使用4个空格或者<code>tab</code></p>
-<h4 id="heading-3">文件编码</h4>
+<h4 id="文件编码">文件编码</h4>
 <p>所有文件均使用**UTF-8(无BOM)**模式，如果不知道怎么调整，查找自己编辑器的编码模式。</p>
-<h4 id="heading-4">大小写</h4>
+<h4 id="大小写">大小写</h4>
 <p>目录、文件名统一使用小写，多词使用 <code>-</code>进行连接。比如 <code>component-city</code></p>
-<h4 id="heading-5">注释</h4>
+<h4 id="注释">注释</h4>
 <p>对复杂的模块/功能添加注释，阐述其逻辑。不同语言的具体注释方法请参考其相应部分。</p>
-<h4 id="heading-6">目录结构</h4>
+<h4 id="目录结构">目录结构</h4>
 <p>良好的目录结构能提高开发效率，增强代码质量，保证多人协作的良好运行。
 不同的项目可以有不同的目录结构，但大致应当遵循的规则如下：</p>
 <pre><code>Hello                               项目根目录，通常为项目名称
@@ -144,18 +144,18 @@ Hello 项目根目录，通常为项目名称 ├── README.md 项目说明�
         ├── array.js
         └── fetch.js
 </code></pre><h3 id="html">HTML</h3>
-<h4 id="heading-7">标签</h4>
+<h4 id="标签">标签</h4>
 <ul>
 <li>自闭合标签：需要闭合，例如： <code>&lt;img src=&quot;&quot; /&gt;</code> <code>&lt;br /&gt;</code>等。</li>
 <li>正常闭合标签：需要闭合，例如 <code>&lt;div&gt;&lt;/div&gt;</code>等。</li>
 <li>标签嵌套：按嵌套规范进行，禁止出现 <code>&lt;span&gt;&lt;div&gt;&lt;/div&gt;&lt;/span&gt;</code> 或者 <code>&lt;p&gt;&lt;div&gt;&lt;/div&gt;&lt;/p&gt;</code>等类似情况。</li>
 </ul>
-<h4 id="heading-8">语义化</h4>
+<h4 id="语义化">语义化</h4>
 <ul>
 <li>标签使用语义化标签。例如 <code>&lt;header&gt;&lt;/header&gt;</code>,<code>&lt;footer&gt;&lt;/footer&gt;</code></li>
 <li>如果标签无法语义化，请在id，class命名时语义化。</li>
 </ul>
-<h4 id="classid">class与id</h4>
+<h4 id="class与id">class与id</h4>
 <ul>
 <li>命名采用小写字母及<code>-</code>组成，例如：<code>icon-logo</code></li>
 <li>命名尽量体现功能或者内容，例如：<code>popular-video-list</code>；尽量不要使用意义不明确的，例如：<code>round</code> <code>item</code></li>
@@ -171,18 +171,18 @@ Hello 项目根目录，通常为项目名称 ├── README.md 项目说明�
     &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav nav-hot-classes&#34;</span>&gt;热门课程导航&lt;/<span style="color:#f92672">div</span>&gt;
   &lt;/<span style="color:#f92672">div</span>&gt;
 &lt;/<span style="color:#f92672">div</span>&gt;
-</code></pre></div><h4 id="heading-9">文档相关</h4>
+</code></pre></div><h4 id="文档相关">文档相关</h4>
 <ul>
 <li>使用 <code>&lt;!DOCTYPE html&gt;</code> 进行文档声明。</li>
 <li>使用 <code>&lt;meta charset=&quot;utf-8&quot;&gt;</code> 指定页面字符编码。</li>
 </ul>
 <h3 id="css">CSS</h3>
-<h4 id="classid-1">class与id</h4>
+<h4 id="class与id-1">class与id</h4>
 <ul>
 <li>保持与HTML中的命名方式一致。</li>
 <li>尽量避免选择器，calss，id的叠加使用。比如：<code>ul#nav</code>。</li>
 </ul>
-<h4 id="heading-10">书写格式</h4>
+<h4 id="书写格式">书写格式</h4>
 <ul>
 <li>每一条css规则独占一行。示例如下：</li>
 </ul>
@@ -223,7 +223,7 @@ Hello 项目根目录，通常为项目名称 ├── README.md 项目说明�
   <span style="color:#66d9ef">background-color</span>:<span style="color:#ae81ff">#fff</span>;
   <span style="color:#66d9ef">opacity</span>:<span style="color:#ae81ff">0.8</span>;
 }
-</code></pre></div><h4 id="heading-11">性能优化</h4>
+</code></pre></div><h4 id="性能优化">性能优化</h4>
 <ul>
 <li>
 <p>css中消耗较高的属性：</p>
@@ -258,7 +258,7 @@ css选择器是<strong>从右向左</strong>进行，所以下面中的css选择
 .<span style="color:#a6e22e">item</span> {}
 .<span style="color:#a6e22e">td</span> {}
 </code></pre></div><h3 id="javascript">Javascript</h3>
-<h4 id="heading-12">注释</h4>
+<h4 id="注释-1">注释</h4>
 <ul>
 <li>
 <p>单行注释。一条注释占一行， <code>//</code>后加空格缩进与下面代码一致，注释内容是对下方代码的解释说明。</p>
@@ -282,7 +282,7 @@ css选择器是<strong>从右向左</strong>进行，所以下面中的css选择
 </span><span style="color:#75715e"> * @param {object.name} p3.name p3.name的说明
 </span><span style="color:#75715e"> * @return {object} 返回值描述
 </span><span style="color:#75715e"> */</span>
-</code></pre></div><h4 id="heading-13">命名</h4>
+</code></pre></div><h4 id="命名">命名</h4>
 <ul>
 <li>变量。采用驼峰式命名。</li>
 </ul>
@@ -324,7 +324,7 @@ css选择器是<strong>从右向左</strong>进行，所以下面中的css选择
 </ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">isFromShare</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">hasDrawedPrice</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
-</code></pre></div><h4 id="heading-14">性能优化</h4>
+</code></pre></div><h4 id="性能优化-1">性能优化</h4>
 <ul>
 <li>减少DOM操作，如果多次使用，缓存DOM</li>
 </ul>
@@ -351,9 +351,9 @@ css选择器是<strong>从右向左</strong>进行，所以下面中的css选择
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">100</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
   document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;myList&#34;</span>).<span style="color:#a6e22e">innerHTML</span> <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#34;&lt;span&gt;&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;&lt;/span&gt;&#34;</span>;
 }
-</code></pre></div><h2 id="heading-15">流程篇</h2>
-<h3 id="heading-16">发布流程</h3>
-<h4 id="heading-17">预发布环境测试步骤</h4>
+</code></pre></div><h2 id="流程篇">流程篇</h2>
+<h3 id="发布流程">发布流程</h3>
+<h4 id="预发布环境测试步骤">预发布环境测试步骤</h4>
 <ol>
 <li>需求Review。与相关PM确认本次发布需求，列出所有待发布的产品功能点。</li>
 <li>预发布代码分支准备。开发人员将开发分支合并到预发布分支，需要开发人员明确每一处改动的作用，保证所有合并代码是本次发布所需要。</li>
@@ -363,7 +363,7 @@ css选择器是<strong>从右向左</strong>进行，所以下面中的css选择
 <li>制定上线步骤。预发布环境测试通过后，与开发人员及运营人员制定严格的上线步骤，上线阶段按此步骤进行。</li>
 <li>输出文档。以上所有步骤落实到《发布说明书》。<a href="http://172.16.117.161:3000/documents/19">查看示例</a></li>
 </ol>
-<h4 id="heading-18">上线步骤</h4>
+<h4 id="上线步骤">上线步骤</h4>
 <ol>
 <li>按步骤执行《发布说明书-上线步骤》，每一步骤需要相应负责人确认，确认无误方可执行。全部步骤执行完毕之后，所有内容应已发布到线上环境。</li>
 <li>在线上环境按步骤执行《发布说明书-上线后检查步骤》。</li>
@@ -418,19 +418,18 @@ css选择器是<strong>从右向左</strong>进行，所以下面中的css选择
     </div>
   </article>
 
-  <script src="/js/highlight.pack.js"></script>
+  <script src="/js/highlight.min.js"></script>
 
 
 <script>
   hljs.initHighlightingOnLoad();
-  
+
   
   
     
     
   
 </script>
-
   
 
 </body>

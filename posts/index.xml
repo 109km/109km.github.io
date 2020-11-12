@@ -6,18 +6,14 @@
     <description>Recent content in Posts on 109km is a distance.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 12 Nov 2020 00:00:00 +0800</lastBuildDate>
-    
-	<atom:link href="https://109km.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 12 Nov 2020 00:00:00 +0800</lastBuildDate><atom:link href="https://109km.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>深入理解JavaScript数组</title>
       <link>https://109km.github.io/posts/deep-into-js-array/</link>
       <pubDate>Thu, 12 Nov 2020 00:00:00 +0800</pubDate>
       
       <guid>https://109km.github.io/posts/deep-into-js-array/</guid>
-      <description>Let&#39;s take a look the beginning part of Array&#39;s defination in V8 engine.
+      <description>Let&amp;rsquo;s take a look the beginning part of Array&amp;rsquo;s defination in V8 engine.
 // The JSArray describes JavaScript Arrays // Such an array can be in one of two modes: // - fast, backing storage is a FixedArray and length &amp;lt;= elements.length(); // Please note: push and pop can be used to grow and shrink the array. // - slow, backing storage is a HashTable with numbers as keys. class JSArray: public JSObject { public: // [length]: The length property.</description>
     </item>
     
@@ -417,7 +413,7 @@ We are born alone.</description>
       <pubDate>Wed, 29 Nov 2017 00:00:00 +0800</pubDate>
       
       <guid>https://109km.github.io/posts/css-selector-matching-theory/</guid>
-      <description>Keep in mind that when a browser is doing selector matching it has one element (the one it&#39;s trying to determine style for) and all your rules and their selectors and it needs to find which rules match the element. This is different from the usual jQuery thing, say, where you only have one selector and you need to find all the elements that match that selector.
+      <description>Keep in mind that when a browser is doing selector matching it has one element (the one it&amp;rsquo;s trying to determine style for) and all your rules and their selectors and it needs to find which rules match the element. This is different from the usual jQuery thing, say, where you only have one selector and you need to find all the elements that match that selector.
 If you only had one selector and only one element to compare against that selector, then left-to-right makes more sense in some cases.</description>
     </item>
     

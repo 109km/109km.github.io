@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.61.0" />
+  <meta name="generator" content="Hugo 0.78.1" />
 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -27,8 +27,8 @@
       "accountablePerson" : "阿信",
       "copyrightHolder" : "阿信",
       "copyrightYear" : "2020",
-      "datePublished": "2020-11-10 00:00:00 \x2b0800 CST",
-      "dateModified" : "2020-11-10 00:00:00 \x2b0800 CST",
+      "datePublished": "2020-11-10 00:00:00 \u002b0800 CST",
+      "dateModified" : "2020-11-10 00:00:00 \u002b0800 CST",
       "url" : "https:\/\/109km.github.io\/posts\/start-from-covid\/",
       "keywords" : [  ]
   }
@@ -70,7 +70,7 @@
 
   <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
   <link rel="stylesheet" href="/css/github-markdown.min.css" />
-  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/highlight/vs2015.css" />
   <link rel="stylesheet" href="/css/index.css">
   <link href="/index.xml" rel="alternate" type="application/rss+xml"
     title="109km is a distance.">
@@ -123,7 +123,7 @@
         </header>
 
         <div class="post-content markdown-body">
-          <h2 id="heading">前言</h2>
+          <h2 id="前言">前言</h2>
 <p>2020年的开始全球发生了世界级疫情，COVID-19。</p>
 <p>这次疫情对全球都产生了巨大的影响，世界经济形势也将在这次的疫情催化下加速变化。我们更加关心的国内经济形势以及多数国内人民的命根子：房子，将会何去何从呢？</p>
 <p>本质上来说，任何商品的价格变化最终都反应在以下三个方面</p>
@@ -135,8 +135,8 @@
 <p>这三者与最终价格的<strong>关系</strong>可以用一个公式来表达的：</p>
 <pre><code>价格 = 需 / 供 * 货币量
 </code></pre><p>下面将这三点拆开开看。</p>
-<h2 id="heading-1">供</h2>
-<h3 id="heading-2">全国</h3>
+<h2 id="供">供</h2>
+<h3 id="全国">全国</h3>
 <p>我国房屋一共分为四大类：</p>
 <ul>
 <li>商品房</li>
@@ -146,7 +146,7 @@
 </ul>
 <p>下面按分类进行数据统计和估算。</p>
 <p>部分数据来源于国家统计局，部分数据来源于这篇文章<a href="https://www.huxiu.com/article/298563.html">中国住房总量估算：我们的房子过剩了吗？</a></p>
-<h4 id="heading-3">商品房</h4>
+<h4 id="商品房">商品房</h4>
 <p>先看下面这张我国历年（2000-2018）竣工商品住宅面积和套数图。</p>
 <p>柱状的是面积，橙色线条是每年竣工套数。</p>
 <p><img src="/images/start-from-covid-05.jpg" alt="start-from-covid-05.jpg"></p>
@@ -164,17 +164,17 @@
 <p><img src="/images/start-from-covid-12.jpg" alt="start-from-covid-12.jpg"></p>
 <p>2018年-2024年总竣工为5810万套，销售为1680万，届时竣工总数量将与销售总数量持平。</p>
 <p>结合我们已知的2000-2018年竣工套数为1亿套，预计到2025年左右，总的竣工商品住宅数量是1.6亿套。</p>
-<h4 id="heading-4">已购公房</h4>
+<h4 id="已购公房">已购公房</h4>
 <p>按照这篇文章<a href="https://www.huxiu.com/article/298563.html">中国住房总量估算：我们的房子过剩了吗？</a>中的说法</p>
 <pre><code>第四，已购公房等房改存量住房约为41亿平方米，占比约为14%。
 </code></pre><p>我们只看数据的部分41亿平方米。文中对这个数字的算法是用全社会住房总面积减去其他三种的面积得到的。因为对于其他三种类型的住房的数据是比较明确，而实际上这个公房分类里可能是最模糊和不明确的数字了。</p>
 <p>但是我们假设这个数字与实际相差不大，那么如何计算出房屋的套数？关键在于搞清楚平均每套的建筑面积。</p>
 <p>由于在1998年之前我国的城市住房可以说都是公房，所以根据1998年城市人均住宅建筑面积18.66平方米来计算的话，</p>
 <p>如果按以上两个数据来算，1991年左右的城镇住宅的总面积约5.6亿平米，与41亿平米相差巨大。</p>
-<h4 id="heading-5">保障房</h4>
-<h4 id="heading-6">小产权房</h4>
+<h4 id="保障房">保障房</h4>
+<h4 id="小产权房">小产权房</h4>
 <p>2017年城镇小产权房累计面积为73亿平方米</p>
-<h3 id="heading-7">按城市</h3>
+<h3 id="按城市">按城市</h3>
 <p>下面再看一下按城市区分的从2002年-2018年，商品住宅竣工面积总和。</p>
 <p><img src="/images/start-from-covid-06.jpg" alt="start-from-covid-06.jpg"></p>
 <p>这样就能大致计算出每个城市大约新增了多少商品住宅。</p>
@@ -183,7 +183,7 @@
 </code></pre><p>而根据恒大研究院测算的数据，截止2018年北京住宅总量是760万套。那么减去上面得到的273万，还剩490万。这490万套包含全时间段非商品房的住宅（比如福利房、经济适用房、公租房、小产权房等），以及2002年之前的商品住宅。 在这里做一个不那么严谨的假设，假设2002年之前的商品住宅有80万套，那就意味着全北京约有350万套商品住宅，410万套其他类型住宅。</p>
 <p>北京市2018年常住人口是2154万。如果看总量，2154万/760万=2.8人/套。也就是平均每套房子住2.8人，这个是肯定足够的了。但是为什么还会有住房紧张的情况出现？</p>
 <p>从18年到2020年北京市人口负增长，房价跌幅并不大，主要原因在于放水，钱变毛了。2018年12月北京市平均房价是59800左右，而2020年11月北京市平均房价是57300左右。价格看起来是跌了4-5%左右，但考虑通货膨胀每年2.5%，18年的59800相当于今天的62380，房子实际跌幅大约有10%了。但很多人实际并意识不到这个的转折，通货膨胀是慢性杀手。</p>
-<h2 id="heading-8">需</h2>
+<h2 id="需">需</h2>
 <p>需求端最大影响就是人口。<strong>人口流向哪里，哪里房价就有支撑，否则必然是扯蛋。</strong></p>
 <p>但实际情况是我国老龄化非常严重，到2025年左右人口可能就要出现负增长，因此从全国的角度来看，房价已经失去支撑，再加上我国已经不可能再维持像过去20年的经济高增长，因此房价再疯涨是必然不可能了。</p>
 <p>接下来房价的分化会很严重，比如人口大量流入的城市：深圳，杭州，东莞等等房价都是有支撑。而对于流出的城市来说，必然没希望，而人口变化不大的城市很可能会稳中有跌，慢慢跌下来，因此已经失去投资价值。</p>
@@ -236,19 +236,18 @@
     </div>
   </article>
 
-  <script src="/js/highlight.pack.js"></script>
+  <script src="/js/highlight.min.js"></script>
 
 
 <script>
   hljs.initHighlightingOnLoad();
-  
+
   
   
     
     
   
 </script>
-
   
 
 </body>
