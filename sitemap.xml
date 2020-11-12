@@ -4,17 +4,27 @@
   
   <url>
     <loc>https://109km.github.io/</loc>
-    <lastmod>2020-11-10T00:00:00+08:00</lastmod>
+    <lastmod>2020-11-12T00:00:00+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://109km.github.io/categories/</loc>
-    <lastmod>2020-11-10T00:00:00+08:00</lastmod>
+    <lastmod>2020-11-12T00:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://109km.github.io/categories/javascript/</loc>
+    <lastmod>2020-11-12T00:00:00+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://109km.github.io/posts/</loc>
-    <lastmod>2020-11-10T00:00:00+08:00</lastmod>
+    <lastmod>2020-11-12T00:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://109km.github.io/posts/deep-into-js-array/</loc>
+    <lastmod>2020-11-12T00:00:00+08:00</lastmod>
   </url>
   
   <url>
