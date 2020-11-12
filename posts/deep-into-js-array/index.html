@@ -40,19 +40,18 @@
 // The JSArray describes JavaScript Arrays // Such an array can be in one of two modes: // - fast, backing storage is a FixedArray and length &lt;= elements.length(); // Please note: push and pop can be used to grow and shrink the array. // - slow, backing storage is a HashTable with numbers as keys. class JSArray: public JSObject { public: // [length]: The length property." />
 
   <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
-  <link rel="stylesheet"
-    href="/css/github-markdown.min.css" />
+  <link rel="stylesheet" href="/css/github-markdown.min.css" />
   <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
   <link rel="stylesheet" href="/css/index.css">
-  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="109km is a distance.">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="109km is a distance.">
   
-  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
+  
   
   
 
   
 </head>
-
 
 <body>
   <article class="post " id="article">
@@ -115,10 +114,10 @@
 <p>And also from the code above we can see that <code>Array</code> is inherited from <code>Object</code>. It means the array in JavaScript is just a special formed object.</p>
 <p>So it explains why <code>typeof [] === &quot;object&quot;</code>.</p>
 <h2 id="array-has-two-modes-of-storage"><code>Array</code> has two modes of storage.</h2>
-<h3 id="fast">Fast</h3>
+<h3 id="fast-mode">Fast mode</h3>
 <p>The data structure of this mode is <code>FixedArray</code>. It's like an array in <code>C</code> : it occupies some continuous space in memory.</p>
 <p>When a new empty array is created, the default mode is <code>fast</code>.</p>
-<h3 id="slow">Slow</h3>
+<h3 id="slow-mode">Slow mode</h3>
 <p>The data structure of this mode is <code>HashTable</code>. So this mode needs more memory and the efficiency is slow.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">
 <span style="color:#75715e">// src/objects/dictionary.h

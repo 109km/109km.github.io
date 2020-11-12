@@ -6,7 +6,6 @@ date:   2020-11-12 00:00:00 +0800
 categories: ["javascript"]
 ---
 
-
 Let's take a look the beginning part of `Array`'s defination in V8 engine.
 
 ```c++
@@ -36,13 +35,13 @@ So it explains why `typeof [] === "object"`.
 
 ## `Array` has two modes of storage.
 
-### Fast
+### Fast mode
 
 The data structure of this mode is `FixedArray`. It's like an array in `C` : it occupies some continuous space in memory.
 
 When a new empty array is created, the default mode is `fast`.
 
-### Slow
+### Slow mode
 
 The data structure of this mode is `HashTable`. So this mode needs more memory and the efficiency is slow.
 

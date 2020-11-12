@@ -49,19 +49,18 @@ setState 设置Component的state属性。
 props 父级Component传递给子级Component的属性。比如onClick也是props的一种。在下面这个例子中父级节点 传递了 name=“Tyler” 给子节点 var HelloUser = React.createClass({ render: function(){ return ( &lt;div&gt; Hello, {this.props.name}&lt;/div&gt; ) } }); React.render(&lt;HelloUser name=&quot;Tyler&quot;/&gt;, document.getElementById(&#39;app&#39;));  setProps 设置props属性。需要注意的是这个函数只能在父级节点设置子级节点的props，不能调用 this." />
 
   <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
-  <link rel="stylesheet"
-    href="/css/github-markdown.min.css" />
+  <link rel="stylesheet" href="/css/github-markdown.min.css" />
   <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
   <link rel="stylesheet" href="/css/index.css">
-  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="109km is a distance.">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="109km is a distance.">
   
-  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker" rel="stylesheet">
+  
   
   
 
   
 </head>
-
 
 <body>
   <article class="post " id="article">
