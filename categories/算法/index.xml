@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>算法 on 109km is a distance.</title>
+    <link>https://109km.github.io/categories/%E7%AE%97%E6%B3%95/</link>
+    <description>Recent content in 算法 on 109km is a distance.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 16 Nov 2020 00:00:00 +0800</lastBuildDate><atom:link href="https://109km.github.io/categories/%E7%AE%97%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LRU淘汰策略在前端中的应用</title>
+      <link>https://109km.github.io/posts/algorithm-lru/</link>
+      <pubDate>Mon, 16 Nov 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://109km.github.io/posts/algorithm-lru/</guid>
+      <description>LRU algorithm in front end LRU evict policy When we are using browsers, they can cache many web resources for us. But the storage is always limited. When the cache capacity reaches maximum, what the browsers will do?
+In short, the browsers will clean the least recently used items. The policy is quite easy to understand from its name.
+For example:
+// Let&amp;#39;s assume the cache can only store 3 resouces.</description>
+    </item>
+    
+  </channel>
+</rss>
