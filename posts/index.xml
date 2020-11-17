@@ -6,7 +6,19 @@
     <description>Recent content in Posts on 109km is a distance.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 Nov 2020 00:00:00 +0800</lastBuildDate><atom:link href="https://109km.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 17 Nov 2020 00:00:00 +0800</lastBuildDate><atom:link href="https://109km.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>链表入门</title>
+      <link>https://109km.github.io/posts/linked-list/</link>
+      <pubDate>Tue, 17 Nov 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://109km.github.io/posts/linked-list/</guid>
+      <description>Linked List Singly Linked List The singly linked list is easy to understand. Its structure is as the picture showed below.
+This structure is like a chain, and there could be many nodes in the chain. It has 3 features:
+  Each node has two properties: data and next. data stores the value and next points to the next node.
+  Each list must have a head node, it&amp;rsquo;s the start of the chain.</description>
+    </item>
+    
     <item>
       <title>LRU淘汰策略在前端中的应用</title>
       <link>https://109km.github.io/posts/algorithm-lru/</link>

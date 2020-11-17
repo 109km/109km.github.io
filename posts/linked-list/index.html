@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.78.1" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="阿信" />
+  <meta property="og:url" content="https://109km.github.io/posts/linked-list/" />
+  <link rel="canonical" href="https://109km.github.io/posts/linked-list/" /><link rel="shortcut icon" href="/images/default_avatar.png" type="image/x-png" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/109km.github.io\/"
+      },
+      "articleSection" : "posts",
+      "name" : "链表入门",
+      "headline" : "链表入门",
+      "description" : "Linked List Singly Linked List The singly linked list is easy to understand. Its structure is as the picture showed below.\nThis structure is like a chain, and there could be many nodes in the chain. It has 3 features:\n  Each node has two properties: data and next. data stores the value and next points to the next node.\n  Each list must have a head node, it\u0026rsquo;s the start of the chain.",
+      "inLanguage" : "en-US",
+      "author" : "阿信",
+      "creator" : "阿信",
+      "publisher": "阿信",
+      "accountablePerson" : "阿信",
+      "copyrightHolder" : "阿信",
+      "copyrightYear" : "2020",
+      "datePublished": "2020-11-17 00:00:00 \u002b0800 CST",
+      "dateModified" : "2020-11-17 00:00:00 \u002b0800 CST",
+      "url" : "https:\/\/109km.github.io\/posts\/linked-list\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>链表入门 - 109km is a distance.</title>
+  <meta property="og:title" content="链表入门 - 109km is a distance." />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="Linked List Singly Linked List The singly linked list is easy to understand. Its structure is as the picture showed below.
+This structure is like a chain, and there could be many nodes in the chain. It has 3 features:
+  Each node has two properties: data and next. data stores the value and next points to the next node.
+  Each list must have a head node, it&rsquo;s the start of the chain." />
+
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet" href="/css/github-markdown.min.css" />
+  <link rel="stylesheet" href="/css/highlight/vs2015.css" />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="109km is a distance.">
+  
+  
+  
+  
+
+  
+</head>
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="/">109km</a>
+  </div>
+</header>
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">链表入门</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2020-11-17 00:00:00 CST">
+                17 Nov 2020
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="">@阿信</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          <h1 id="linked-list">Linked List</h1>
+<h2 id="singly-linked-list">Singly Linked List</h2>
+<p>The singly linked list is easy to understand. Its structure is as the picture showed below.</p>
+<p><img src="/images/singly-linked-list.drawio.svg" alt="Singly Linked List"></p>
+<p>This structure is like a chain, and there could be many nodes in the chain. It has 3 features:</p>
+<ol>
+<li>
+<p>Each <code>node</code> has two properties: <code>data</code> and <code>next</code>. <code>data</code> stores the value and <code>next</code> points to the next node.</p>
+</li>
+<li>
+<p>Each list must have a <code>head</code> node, it&rsquo;s the start of the chain.</p>
+</li>
+<li>
+<p>The last node&rsquo;s <code>next</code> points to value <code>NULL</code>.</p>
+</li>
+</ol>
+<p>According to the features, we can write some sample code on it.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Class defination of the singly linked list node.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SinglyLinkedListNode</span> {
+  <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">data</span>) {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">data</span>;
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">next</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+  }
+}
+<span style="color:#75715e">// Creat the head node.
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">head</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SinglyLinkedListNode</span>(<span style="color:#66d9ef">null</span>, <span style="color:#66d9ef">null</span>);
+
+<span style="color:#75715e">// Create a node with data = 1
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">node1</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SinglyLinkedListNode</span>(<span style="color:#ae81ff">1</span>, <span style="color:#66d9ef">null</span>);
+
+<span style="color:#75715e">// Link head and node1
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">head</span>.<span style="color:#a6e22e">next</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">node1</span>;
+</code></pre></div><p>Obviously, if we only have the class of the node, it&rsquo;s not convenient to use.</p>
+<p>Next, we can make a class of the list, and this class supports some functions like:</p>
+<ol>
+<li><code>append</code>: Add a new node to the list.</li>
+<li><code>remove</code>: Remove a node which value equals the given value.</li>
+<li><code>length</code>: Return the length of the list.</li>
+</ol>
+<p>Eample code is here:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SinglyLinkedList</span> {
+  <span style="color:#a6e22e">constructor</span>() {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">head</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">size</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  }
+  <span style="color:#a6e22e">get</span> <span style="color:#a6e22e">length</span>() {
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">size</span>;
+  }
+  <span style="color:#a6e22e">append</span>(<span style="color:#a6e22e">data</span>) {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">node</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SinglyLinkedListNode</span>(<span style="color:#a6e22e">data</span>, <span style="color:#66d9ef">null</span>);
+    <span style="color:#75715e">// List is empty
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">head</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">null</span>) {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">head</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">node</span>;
+    }
+    <span style="color:#75715e">// List is not empty, append the new node to the last node.
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// Time complexity is O(n)
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">else</span> {
+      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">current</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">head</span>;
+      <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">current</span>.<span style="color:#a6e22e">next</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">null</span>) {
+        <span style="color:#a6e22e">current</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">current</span>.<span style="color:#a6e22e">next</span>;
+      }
+      <span style="color:#a6e22e">current</span>.<span style="color:#a6e22e">next</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">node</span>;
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">size</span> <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>;
+    }
+  }
+  <span style="color:#a6e22e">remove</span>(<span style="color:#a6e22e">data</span>) {
+
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">current</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">head</span>;
+    <span style="color:#75715e">// Record previous node.
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">prev</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+
+    <span style="color:#75715e">// List has only one node,
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// and happen to remove it.
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">current</span>.<span style="color:#a6e22e">data</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">data</span>) {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">head</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">size</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+      <span style="color:#66d9ef">return</span>;
+    }
+
+    <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">current</span>.<span style="color:#a6e22e">next</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">null</span>) {
+      <span style="color:#75715e">// Check if is the target node
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">current</span>.<span style="color:#a6e22e">data</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">data</span>) {
+        <span style="color:#a6e22e">prev</span>.<span style="color:#a6e22e">next</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">current</span>.<span style="color:#a6e22e">next</span>;
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">size</span> <span style="color:#f92672">-=</span> <span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">break</span>;
+      }
+      <span style="color:#75715e">// Move to the next
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">else</span> {
+        <span style="color:#a6e22e">prev</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">current</span>;
+        <span style="color:#a6e22e">current</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">current</span>.<span style="color:#a6e22e">next</span>;
+      }
+    }
+
+  }
+}
+</code></pre></div><h2 id="doubly-linked-list">Doubly Linked List</h2>
+<p>This type of linked list only has a little difference with <code>SinglyLinkedList</code> which is each <code>node</code> has one more property : <code>prev</code> points to the previous <code>node</code>.</p>
+<p><img src="/images/doubly-linked-list.drawio.svg" alt="Doubly Linked List"></p>
+<p>The code won&rsquo;t be showed here, hope readers can try to implement it.</p>
+<h2 id="circular-linked-list">Circular Linked List</h2>
+<p>Let&rsquo;s take a look at the structures of circular linked lists.</p>
+<p><img src="/images/circular-linked-list.drawio.svg" alt="Circular Linked List"></p>
+<p>As we can see, there&rsquo;re two types of circular linked lists:</p>
+<ol>
+<li>Circular singly linked list.</li>
+<li>Circular doubly linked list.</li>
+</ol>
+<h2 id="a-question-from-leetcode">A question from leetcode</h2>
+<p>Merge two ascending singly linked list, and the new linked list must contain all nodes in the two linked list.</p>
+<pre><code>Input : 1-&gt;2-&gt;4 , 3-&gt;4-&gt;8
+Output: 1-&gt;2-&gt;3-&gt;4-&gt;4-&gt;8
+</code></pre>
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-category">
+              <a href="/categories/%e7%ae%97%e6%b3%95/">
+                算法
+              </a>
+            </div>
+            
+          </div>
+        </div>
+
+        
+        
+
+        
+        
+        <div style="height: 50px;"></div>
+        
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/109km/index.xml" target="_blank">RSS</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/109km" target="_blank">Github</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://gohugo.io/" target="_blank">Powered by Hugo</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/joway/hugo-theme-yinyang" target="_blank">Theme: Yingyang</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.min.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+
+  
+  
+    
+    
+  
+</script>
+  
+
+</body>
+
+</html>
