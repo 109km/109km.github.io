@@ -207,7 +207,50 @@ This structure is like a chain, and there could be many nodes in the chain. It h
 <p>Merge two ascending singly linked list, and the new linked list must contain all nodes in the two linked list.</p>
 <pre><code>Input : 1-&gt;2-&gt;4 , 3-&gt;4-&gt;8
 Output: 1-&gt;2-&gt;3-&gt;4-&gt;4-&gt;8
-</code></pre>
+</code></pre><p>One example answer:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">list1</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SinglyLinkedList</span>();
+<span style="color:#a6e22e">list1</span>.<span style="color:#a6e22e">append</span>(<span style="color:#ae81ff">1</span>);
+<span style="color:#a6e22e">list1</span>.<span style="color:#a6e22e">append</span>(<span style="color:#ae81ff">2</span>);
+<span style="color:#a6e22e">list1</span>.<span style="color:#a6e22e">append</span>(<span style="color:#ae81ff">4</span>);
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">list2</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SinglyLinkedList</span>();
+<span style="color:#a6e22e">list2</span>.<span style="color:#a6e22e">append</span>(<span style="color:#ae81ff">3</span>);
+<span style="color:#a6e22e">list2</span>.<span style="color:#a6e22e">append</span>(<span style="color:#ae81ff">4</span>);
+<span style="color:#a6e22e">list2</span>.<span style="color:#a6e22e">append</span>(<span style="color:#ae81ff">6</span>);
+<span style="color:#a6e22e">list2</span>.<span style="color:#a6e22e">append</span>(<span style="color:#ae81ff">8</span>);
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">mergedList</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">SinglyLinkedList</span>();
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">pointer1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">list1</span>.<span style="color:#a6e22e">head</span>;
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">pointer2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">list2</span>.<span style="color:#a6e22e">head</span>;
+
+<span style="color:#66d9ef">while</span> (<span style="color:#66d9ef">true</span>) {
+  <span style="color:#75715e">// Both linked lists reach the end.
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">pointer1</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">pointer2</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">null</span>) {
+    <span style="color:#66d9ef">break</span>;
+  }
+
+  <span style="color:#75715e">// One list reaches the end
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">pointer1</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">pointer2</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">null</span>) {
+    <span style="color:#a6e22e">mergedList</span>.<span style="color:#a6e22e">append</span>(<span style="color:#a6e22e">pointer2</span>.<span style="color:#a6e22e">data</span>);
+    <span style="color:#a6e22e">pointer2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">pointer2</span>.<span style="color:#a6e22e">next</span>;
+    <span style="color:#66d9ef">continue</span>;
+  }
+  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">pointer2</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">pointer1</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">null</span>) {
+    <span style="color:#a6e22e">mergedList</span>.<span style="color:#a6e22e">append</span>(<span style="color:#a6e22e">pointer1</span>.<span style="color:#a6e22e">data</span>);
+    <span style="color:#a6e22e">pointer1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">pointer1</span>.<span style="color:#a6e22e">next</span>;
+    <span style="color:#66d9ef">continue</span>;
+  }
+
+  <span style="color:#75715e">// Compare the value, append smaller value first.
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">pointer2</span>.<span style="color:#a6e22e">data</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">pointer1</span>.<span style="color:#a6e22e">data</span>) {
+    <span style="color:#a6e22e">mergedList</span>.<span style="color:#a6e22e">append</span>(<span style="color:#a6e22e">pointer1</span>.<span style="color:#a6e22e">data</span>);
+    <span style="color:#a6e22e">pointer1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">pointer1</span>.<span style="color:#a6e22e">next</span>;
+  } <span style="color:#66d9ef">else</span> {
+    <span style="color:#a6e22e">mergedList</span>.<span style="color:#a6e22e">append</span>(<span style="color:#a6e22e">pointer2</span>.<span style="color:#a6e22e">data</span>);
+    <span style="color:#a6e22e">pointer2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">pointer2</span>.<span style="color:#a6e22e">next</span>;
+  }
+}
+</code></pre></div>
         </div>
 
         <div class="row middle-xs">
