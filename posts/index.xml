@@ -6,7 +6,20 @@
     <description>Recent content in Posts on 109km is a distance.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 17 Nov 2020 00:00:00 +0800</lastBuildDate><atom:link href="https://109km.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 30 Nov 2020 00:00:00 +0800</lastBuildDate><atom:link href="https://109km.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>前端开发中的栈</title>
+      <link>https://109km.github.io/posts/stack-in-front-end/</link>
+      <pubDate>Mon, 30 Nov 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://109km.github.io/posts/stack-in-front-end/</guid>
+      <description>Stack in front end A brief introduction of stack This data structure is like a cup, if we pouring some water into the cup, the last water to be poured is the first to be drunk.
+In another word, this structure reverses the origin order: first in last out.
+The picture below shows how the mechanism works.
+Here is the example implementation of stack:
+class Stack { constructor() { this.elements = []; } get length() { return this.</description>
+    </item>
+    
     <item>
       <title>链表入门</title>
       <link>https://109km.github.io/posts/linked-list/</link>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.78.1" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="阿信" />
+  <meta property="og:url" content="https://109km.github.io/posts/stack-in-front-end/" />
+  <link rel="canonical" href="https://109km.github.io/posts/stack-in-front-end/" /><link rel="shortcut icon" href="/images/default_avatar.png" type="image/x-png" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/109km.github.io\/"
+      },
+      "articleSection" : "posts",
+      "name" : "前端开发中的栈",
+      "headline" : "前端开发中的栈",
+      "description" : "Stack in front end A brief introduction of stack This data structure is like a cup, if we pouring some water into the cup, the last water to be poured is the first to be drunk.\nIn another word, this structure reverses the origin order: first in last out.\nThe picture below shows how the mechanism works.\nHere is the example implementation of stack:\nclass Stack { constructor() { this.elements = []; } get length() { return this.",
+      "inLanguage" : "en-US",
+      "author" : "阿信",
+      "creator" : "阿信",
+      "publisher": "阿信",
+      "accountablePerson" : "阿信",
+      "copyrightHolder" : "阿信",
+      "copyrightYear" : "2020",
+      "datePublished": "2020-11-30 00:00:00 \u002b0800 CST",
+      "dateModified" : "2020-11-30 00:00:00 \u002b0800 CST",
+      "url" : "https:\/\/109km.github.io\/posts\/stack-in-front-end\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>前端开发中的栈 - 109km is a distance.</title>
+  <meta property="og:title" content="前端开发中的栈 - 109km is a distance." />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="Stack in front end A brief introduction of stack This data structure is like a cup, if we pouring some water into the cup, the last water to be poured is the first to be drunk.
+In another word, this structure reverses the origin order: first in last out.
+The picture below shows how the mechanism works.
+Here is the example implementation of stack:
+class Stack { constructor() { this.elements = []; } get length() { return this." />
+
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet" href="/css/github-markdown.min.css" />
+  <link rel="stylesheet" href="/css/highlight/vs2015.css" />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="109km is a distance.">
+  
+  
+  
+  
+
+  
+</head>
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="/">109km</a>
+  </div>
+</header>
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">前端开发中的栈</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2020-11-30 00:00:00 CST">
+                30 Nov 2020
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="">@阿信</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          <h1 id="stack-in-front-end">Stack in front end</h1>
+<h2 id="a-brief-introduction-of-stack">A brief introduction of <code>stack</code></h2>
+<p>This data structure is like a cup, if we pouring some water into the cup, the last water to be poured is the first to be drunk.</p>
+<p>In another word, this structure reverses the origin order: first in last out.</p>
+<p>The picture below shows how the mechanism works.</p>
+<p><img src="/images/stack-water.jpg" alt="stack-water"></p>
+<p>Here is the example implementation of <code>stack</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Stack</span> {
+  <span style="color:#a6e22e">constructor</span>() {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span> <span style="color:#f92672">=</span> [];
+  }
+  <span style="color:#a6e22e">get</span> <span style="color:#a6e22e">length</span>() {
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">length</span>;
+  }
+  <span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">element</span>) {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">element</span>);
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>;
+  }
+  <span style="color:#a6e22e">pop</span>() {
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">pop</span>();
+  }
+  <span style="color:#a6e22e">isEmpty</span>() {
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">?</span> <span style="color:#66d9ef">true</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>;
+  }
+  <span style="color:#a6e22e">getTop</span>() {
+    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">isEmpty</span>()) {
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>[<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>];
+  }
+}
+</code></pre></div><p>The key actions are <code>push</code> and <code>pop</code>:</p>
+<ul>
+<li>push : Put an element into stack.</li>
+<li>pop : Take an element out of the stack.</li>
+</ul>
+<p>Now we can know if there are n elements in a stack, the searching time complexity is <code>O(n)</code>.</p>
+<p><code>push</code> and <code>pop</code>&rsquo;s time complexity is <code>O(1)</code>.</p>
+<h2 id="how-stack-works-when-a-browsers-running-javascript">How <code>stack</code> works when a browser&rsquo;s running JavaScript</h2>
+<p>A browser runs JavaScript with single thread.</p>
+<p>Why?</p>
+<p>Because of <code>DOM</code>&rsquo;s operations. Let&rsquo;s assume that there&rsquo;re multiple threads can operate <code>DOM</code> at the same time, we&rsquo;ve got two solutions:</p>
+<ol>
+<li>Single thread.</li>
+<li>A <code>DOM</code> lock.</li>
+</ol>
+<p>And JavaScript used the first solution. But this solution has got one problem: if some task needs a lot of time to excute, other tasks had to be wait in line. This may cause page stucked which is not a good experience for users.</p>
+<p>To solve this problem, JavaScript has two excution modes:</p>
+<p><strong>Sync</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+
+<span style="color:#66d9ef">if</span> ( <span style="color:#a6e22e">a</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>){
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;This is a sync task&#34;</span>);
+}
+</code></pre></div><p><strong>Async</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// async task
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">setTimeout</span>(()=&gt;{
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Print later&#39;</span>);
+},<span style="color:#ae81ff">100</span>);
+
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Print first&#39;</span>); <span style="color:#75715e">// sync task
+</span></code></pre></div><h2 id="call-stack">Call Stack</h2>
+<p>A <code>call stack</code> is used to manage the order of function calls.</p>
+<p>It records the position of the program is at.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+
+<span style="color:#75715e">// function defination
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">plusOne</span>(<span style="color:#a6e22e">b</span>){
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">c</span>;
+}
+
+<span style="color:#75715e">// function call
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">plusOne</span>(<span style="color:#ae81ff">2</span>);
+</code></pre></div><p>When JavaScript starts to run, the global context is like <code>main</code> in <code>C</code>.</p>
+<p>The call stack working flow:</p>
+<p><img src="/images/call-stack.drawio.svg" alt="call-stack"></p>
+<p>The right column shows how the call stack changes.</p>
+<p>We can use <code>console.trace</code> to trace a function call stacks:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#66d9ef">double</span>(<span style="color:#a6e22e">n</span>){
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">trace</span>(<span style="color:#e6db74">&#34;Tracing function `double`&#34;</span>);
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>;
+}
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">calculate</span>(<span style="color:#a6e22e">n</span>){
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">double</span>(<span style="color:#a6e22e">n</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+}
+<span style="color:#a6e22e">calculate</span>(<span style="color:#ae81ff">1</span>);
+</code></pre></div><p>The code will print:</p>
+<p><img src="/images/console-trace.jpg" alt="console-trace.jpg"></p>
+<p>We can find <code>double</code> is on the top, then <code>calculate</code>, and <code>anonymous</code> means <code>calculate</code> is called in the global context.</p>
+<p>The numbers <code>2,4,6</code> show the line numbers of the code that each context starts at.</p>
+<h2 id="types-of-memory-in-javascript">Types of memory in JavaScript</h2>
+<p>The space types in memory can be classsified into 3 types:</p>
+<ol>
+<li>Code space: store the executable code.</li>
+<li>Stack space: store the call stacks and data of basic type.</li>
+<li>Heap space: store data of reference type.</li>
+</ol>
+<p>There are two data types based on the way of visiting the value:</p>
+<ol>
+<li>Basic type: visit by value.</li>
+<li>Reference type : visit by memory address.</li>
+</ol>
+<p><strong>Basic types are:</strong></p>
+<ul>
+<li><code>undefined</code></li>
+<li><code>null</code></li>
+<li><code>boolean</code></li>
+<li><code>number</code></li>
+<li><code>string</code></li>
+<li><code>bigint</code></li>
+<li><code>symbol</code></li>
+</ul>
+<p><strong>Reference types are:</strong></p>
+<ul>
+<li><code>object</code></li>
+<li><code>array</code></li>
+</ul>
+<p>Basic types are stored in <code>stack</code>, reference types are stored in <code>heap</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#75715e">// basic type
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>; <span style="color:#75715e">// copy value of a to b
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>; <span style="color:#75715e">// change value of a
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">b</span>); <span style="color:#75715e">// b is still 1  
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">o1</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">age</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>}; <span style="color:#75715e">// reference type
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">o2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">o1</span>; <span style="color:#75715e">// copy the memory address of o1 to o2
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">o1</span>.<span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>; <span style="color:#75715e">// change o1&#39;s data
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">o2</span>); <span style="color:#75715e">// o2.age is 2, because o1 and o2 points to the same address in memory.
+</span></code></pre></div><h2 id="garbage-recycling">Garbage recycling</h2>
+<p>Garbage memory is recycled automatically in JavaScript. So many developers don&rsquo;t know the its mechanism.</p>
+<h3 id="recycle-stack-space">Recycle stack space</h3>
+<p>The main process uses an ESP pointer, it points to the executing context. When current function is executed, ESP moves down.</p>
+<p><img src="/images/stack-recycling.drawio.svg" alt=""></p>
+<h3 id="recylce-heap-space">Recylce heap space</h3>
+<p>Heap space is divided into two areas:</p>
+<ul>
+<li><code>New generation space</code>: stores short living objects, supporting capacity is 1-8M.</li>
+<li><code>Old generation space</code>: stores long living objects or large objects, supporting capcacity has no limit.</li>
+</ul>
+<p>And differient collectors are used for the two areas, sub-collector is used for <code>new</code> area, and main collector is used for <code>old</code> area.</p>
+<p>But the collectors have the same working flow:</p>
+<ol>
+<li>Mark: mark active objects(is being using) and unactive objects(can be recycled).</li>
+<li>Garbage cleaning: recycling the space of unactive objects.</li>
+<li>Memory consolidation: after recycling a lot of space, there might be many memory fragments. When the program needs a large continue memory space, there could be lack of memory.</li>
+</ol>
+<p>The main and sub collector use different strategies and algorithms.</p>
+<p><strong>Sub collector</strong></p>
+<p>It uses Scavenge algorithm and object promotion strategy for recycling.</p>
+<p>Scavenge algorithm splits the <code>new generation space</code> into two areas: objects area and free area. The following picture shows the structure of memory space in v8.</p>
+<p><img src="/images/scavenge-algorithm.drawio.svg" alt=""></p>
+<p>All the new objects are added to the <code>objects area</code>, when this area is full, gabage recyling starts to run, its working flow is:</p>
+<ol>
+<li>Mark: mark active and unactive objects.</li>
+<li>Gabage cleaning: copy all the active objects from <code>objects area</code> to <code>free area</code>, and then reverse the two areas, so <code>free areas</code> becomes <code>objects area</code> and former <code>objects area</code> becomes <code>free area</code>.</li>
+<li>Object promotion: if some active objects are still active after gabage cleaning twice.</li>
+</ol>
+<p><strong>Main collector</strong></p>
+<p><code>Old generation space</code> includes active objects from <code>new generation space</code> and large objects.</p>
+<p>So Scavenge algorithm is not suitale here. <code>Mark clearance</code> algorithm is used here. Its flow has 3 steps:</p>
+<ol>
+<li>Mark: traverse whole call stack, mark the objects which are referenced as <code>active</code>, mark the objects which are not referenced as <code>gabage</code>.</li>
+<li>Gabage cleaning: clean all the gabage data.</li>
+<li>Finishing memory: collect all the active objects together.</li>
+</ol>
+<p><strong>Incremental mark</strong></p>
+<p>V8 Engine executes the gabage collection automatically, but as we know, the JavaScript code also runs on the main process, so when gabage collection is executing, the JavaScript must stop.</p>
+<p>To not disturb the users' experience, V8 splits gabage collections into many small tasks, these small tasks and JavaScript will be executed in turn.</p>
+<h2 id="summary">Summary</h2>
+<ol>
+<li>Stack: a Last-In-First-Out ordered set.</li>
+<li>JavaScript running mechanism:
+<ul>
+<li>Single thread.</li>
+<li>Event loop.</li>
+<li>Call stack.</li>
+</ul>
+</li>
+<li>Memory spaces:
+<ul>
+<li>Code space: store executable code.</li>
+<li>Stack space: store basic type data and pointers.</li>
+<li>Heap space: store referenced type data.</li>
+</ul>
+</li>
+<li>Gabage recycling:
+<ul>
+<li>Recycle stack: move ESP pointer in the context stack.</li>
+<li>Recycle heap: sub collector for <code>new generation space</code>, main collector for <code>old generation space</code>.</li>
+</ul>
+</li>
+</ol>
+<h2 id="exercise">Exercise</h2>
+<p>Design a stack which support <code>push</code>, <code>pop</code>, <code>top</code>, <code>getMin</code>. And <code>getMin</code>&rsquo;s time complexity must be O(1).</p>
+<p>All elements are numbers.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MinStack</span> {
+  <span style="color:#a6e22e">constructor</span>() {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">min</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span> <span style="color:#f92672">=</span> [];
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">__orderedElements</span> <span style="color:#f92672">=</span> [];
+  }
+  <span style="color:#a6e22e">get</span> <span style="color:#a6e22e">top</span>() {
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>[<span style="color:#ae81ff">0</span>];
+  }
+  <span style="color:#a6e22e">get</span> <span style="color:#a6e22e">size</span>() {
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">length</span>;
+  }
+  <span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">el</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">min</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">null</span>) {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">min</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">el</span>;
+    } <span style="color:#66d9ef">else</span> {
+      <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">size</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+        <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">__orderedElements</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">el</span>) {
+          <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">__orderedElements</span>.<span style="color:#a6e22e">splice</span>(<span style="color:#a6e22e">i</span>, <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">el</span>);
+          <span style="color:#66d9ef">break</span>;
+        }
+      }
+    }
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">unshift</span>(<span style="color:#a6e22e">el</span>);
+  }
+  <span style="color:#a6e22e">pop</span>() {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ele</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">shift</span>();
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">size</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+      <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">__orderedElements</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">===</span> <span style="color:#a6e22e">ele</span>) {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">__orderedElements</span>.<span style="color:#a6e22e">splice</span>(<span style="color:#a6e22e">i</span>, <span style="color:#ae81ff">1</span>);
+        <span style="color:#66d9ef">break</span>;
+      }
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ele</span>;
+  }
+  <span style="color:#a6e22e">getMin</span>() {
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">min</span>;
+  }
+}
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">s</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MinStack</span>();
+<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">push</span>(<span style="color:#ae81ff">2</span>);
+<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">push</span>(<span style="color:#ae81ff">3</span>);
+<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">push</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">push</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>);
+<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">pop</span>();
+<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">pop</span>();
+
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">getMin</span>()); <span style="color:#75715e">// 2
+</span></code></pre></div>
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-category">
+              <a href="/categories/%e7%ae%97%e6%b3%95/">
+                算法
+              </a>
+            </div>
+            
+          </div>
+        </div>
+
+        
+        
+
+        
+        
+        <div style="height: 50px;"></div>
+        
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/109km/index.xml" target="_blank">RSS</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/109km" target="_blank">Github</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://gohugo.io/" target="_blank">Powered by Hugo</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/joway/hugo-theme-yinyang" target="_blank">Theme: Yingyang</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.min.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+
+  
+  
+    
+    
+  
+</script>
+  
+
+</body>
+
+</html>
