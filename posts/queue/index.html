@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.78.1" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="阿信" />
+  <meta property="og:url" content="https://109km.github.io/posts/queue/" />
+  <link rel="canonical" href="https://109km.github.io/posts/queue/" /><link rel="shortcut icon" href="/images/default_avatar.png" type="image/x-png" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/109km.github.io\/"
+      },
+      "articleSection" : "posts",
+      "name" : "",
+      "headline" : "",
+      "description" : "Queue One-way queue Queue\u0026rsquo;s structure is simple, check out the picture below:\nAnd the implementation is simple too.\nThis version of implementation supports 6 actions: enqueue dequeue isEmpty front end clear and one property size.\nclass Queue { constructor() { this.elements = []; } get size() { return this.elements.length; } enqueue(el) { this.elements.push(el); } dequeue() { return this.elements.shift(); } isEmpty() { return this.elements.length === 0 ? true : false; } front() { return this.",
+      "inLanguage" : "en-US",
+      "author" : "阿信",
+      "creator" : "阿信",
+      "publisher": "阿信",
+      "accountablePerson" : "阿信",
+      "copyrightHolder" : "阿信",
+      "copyrightYear" : "0001",
+      "datePublished": "0001-01-01 00:00:00 \u002b0000 UTC",
+      "dateModified" : "0001-01-01 00:00:00 \u002b0000 UTC",
+      "url" : "https:\/\/109km.github.io\/posts\/queue\/",
+      "keywords" : [  ]
+  }
+</script>
+<title> - 109km is a distance.</title>
+  <meta property="og:title" content=" - 109km is a distance." />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="Queue One-way queue Queue&rsquo;s structure is simple, check out the picture below:
+And the implementation is simple too.
+This version of implementation supports 6 actions: enqueue dequeue isEmpty front end clear and one property size.
+class Queue { constructor() { this.elements = []; } get size() { return this.elements.length; } enqueue(el) { this.elements.push(el); } dequeue() { return this.elements.shift(); } isEmpty() { return this.elements.length === 0 ? true : false; } front() { return this." />
+
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet" href="/css/github-markdown.min.css" />
+  <link rel="stylesheet" href="/css/highlight/vs2015.css" />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="109km is a distance.">
+  
+  
+  
+  
+
+  
+</head>
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="/">109km</a>
+  </div>
+</header>
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title"></h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="">@阿信</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          <h1 id="queue">Queue</h1>
+<h2 id="one-way-queue">One-way queue</h2>
+<p>Queue&rsquo;s structure is simple, check out the picture below:</p>
+<p><img src="/images/one-way-queue.drawio.svg" alt="one-way-queue.drawio.svg"></p>
+<p>And the implementation is simple too.</p>
+<p>This version of implementation supports 6 actions: <code>enqueue</code> <code>dequeue</code> <code>isEmpty</code> <code>front</code> <code>end</code> <code>clear</code> and one property <code>size</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Queue</span> {
+  <span style="color:#a6e22e">constructor</span>() {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span> <span style="color:#f92672">=</span> [];
+  }
+  <span style="color:#a6e22e">get</span> <span style="color:#a6e22e">size</span>() {
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">length</span>;
+  }
+  <span style="color:#a6e22e">enqueue</span>(<span style="color:#a6e22e">el</span>) {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">el</span>);
+  }
+  <span style="color:#a6e22e">dequeue</span>() {
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">shift</span>();
+  }
+  <span style="color:#a6e22e">isEmpty</span>() {
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">?</span> <span style="color:#66d9ef">true</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>;
+  }
+  <span style="color:#a6e22e">front</span>() {
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>[<span style="color:#ae81ff">0</span>];
+  }
+  <span style="color:#a6e22e">end</span>() {
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>[<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">size</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>];
+  }
+  <span style="color:#a6e22e">clear</span>() {
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span> <span style="color:#f92672">=</span> [];
+  }
+}
+</code></pre></div><p>Searching&rsquo;s time complexity is O(n), <code>enqueue</code> and <code>dequeue</code>&rsquo;s time complexity are O(1).</p>
+<h2 id="deque">Deque</h2>
+<p>A deque can enqueue or dequeue from both sides.</p>
+<p><img src="/images/deque.drawio.svg" alt="dqueue.drawio.svg"></p>
+<p>An example implementation is here:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Dequeue</span> {
+  <span style="color:#a6e22e">constructor</span>() {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span> <span style="color:#f92672">=</span> [];
+  }
+  <span style="color:#a6e22e">get</span> <span style="color:#a6e22e">size</span>() {
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">length</span>;
+  }
+  <span style="color:#a6e22e">addFront</span>(<span style="color:#a6e22e">el</span>) {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">unshift</span>(<span style="color:#a6e22e">el</span>);
+  }
+  <span style="color:#a6e22e">removeFront</span>() {
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">shift</span>(<span style="color:#a6e22e">el</span>);
+  }
+  <span style="color:#a6e22e">addEnd</span>(<span style="color:#a6e22e">el</span>) {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">el</span>);
+  }
+  <span style="color:#a6e22e">removeEnd</span>() {
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">pop</span>();
+  }
+  <span style="color:#a6e22e">clear</span>() {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span> <span style="color:#f92672">=</span> [];
+  }
+  <span style="color:#a6e22e">front</span>() {
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>[<span style="color:#ae81ff">0</span>];
+  }
+  <span style="color:#a6e22e">end</span>() {
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>[<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">size</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>];
+  }
+}
+</code></pre></div><h2 id="exercises">Exercises</h2>
+<h3 id="reverse-the-words-in-a-string-and-the-result-must-have-correct-blanks">Reverse the words in a string. And the result must have correct blanks.</h3>
+<p>Sample 1:</p>
+<pre><code>Input: &quot;  hello world!  &quot;
+Output: &quot;world! hello&quot;
+</code></pre><p>Sample 2:</p>
+<pre><code>Input: &quot;a good   example&quot;
+Output: &quot;example good a&quot;
+</code></pre><p>An example of implementation:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">reverseWords</span>(<span style="color:#a6e22e">str</span>) {
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">q</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Dequeue</span>();
+
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">left</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">right</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">str</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>;
+
+  <span style="color:#75715e">// Step1 : Remove blanks on both ends.
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">str</span>.<span style="color:#a6e22e">charAt</span>(<span style="color:#a6e22e">left</span>) <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39; &#39;</span>) <span style="color:#a6e22e">left</span><span style="color:#f92672">++</span>;
+  <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">str</span>.<span style="color:#a6e22e">charAt</span>(<span style="color:#a6e22e">right</span>) <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39; &#39;</span>) <span style="color:#a6e22e">right</span><span style="color:#f92672">--</span>;
+
+  <span style="color:#75715e">// Step2: Compose a word by moving `left` and `right` pointers,
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// when it is composed, add it to the front of a dequeue.
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">word</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+  <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">left</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">right</span>) {
+    <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">str</span>.<span style="color:#a6e22e">charAt</span>(<span style="color:#a6e22e">left</span>);
+    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">char</span> <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#39; &#39;</span>) {
+      <span style="color:#a6e22e">word</span> <span style="color:#f92672">+=</span> <span style="color:#66d9ef">char</span>;
+    } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">char</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39; &#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">word</span> <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#39;&#39;</span>) {
+      <span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">addFront</span>(<span style="color:#a6e22e">word</span>);
+      <span style="color:#a6e22e">word</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;&#39;</span>;
+    }
+    <span style="color:#a6e22e">left</span><span style="color:#f92672">++</span>;
+  }
+  <span style="color:#75715e">// Step 3 : Convert the dequeue&#39;s elements to a string.
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39; &#39;</span>);
+}
+</code></pre></div><h3 id="find-the-longest-sub-string-without-repeated-chars-of-a-string">Find the longest sub-string without repeated chars of a string.</h3>
+<p>Sample 1</p>
+<pre><code>Input: &quot;abcabcbb&quot;
+Output: &quot;abc&quot;
+</code></pre><p>Sample 2</p>
+<pre><code>Input: &quot;pwwkew&quot;
+Output: &quot;wke&quot;
+</code></pre><p>Example answer using a dequeue as a window.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">maxNoneRepeatSubstring</span>(<span style="color:#a6e22e">str</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">win</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Dequeue</span>();
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">max</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">left</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">right</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+  <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">left</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">str</span>.<span style="color:#a6e22e">length</span>) {
+    <span style="color:#66d9ef">let</span> <span style="color:#66d9ef">char</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">str</span>.<span style="color:#a6e22e">charAt</span>(<span style="color:#a6e22e">right</span>);
+    <span style="color:#75715e">// Find the char in current queue,
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// or reached the right end.
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">win</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">indexOf</span>(<span style="color:#66d9ef">char</span>) <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">right</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">str</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>) {
+      <span style="color:#a6e22e">left</span><span style="color:#f92672">++</span>;
+      <span style="color:#a6e22e">right</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">left</span>;
+      <span style="color:#a6e22e">max</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">win</span>.<span style="color:#a6e22e">size</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">max</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">win</span>.<span style="color:#a6e22e">size</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">max</span>;
+      <span style="color:#a6e22e">win</span>.<span style="color:#a6e22e">clear</span>();
+    }
+    <span style="color:#75715e">// Can&#39;t find repeated char
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">char</span>) {
+      <span style="color:#a6e22e">win</span>.<span style="color:#a6e22e">addEnd</span>(<span style="color:#66d9ef">char</span>);
+      <span style="color:#a6e22e">right</span><span style="color:#f92672">++</span>;
+    }
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">max</span>;
+}
+</code></pre></div><h3 id="find-the-max-number-with-a-given-array-and-the-window-which-length-is-k">Find the max number with a given array and the window which length is <code>k</code>.</h3>
+<pre><code>Input: nums = [1,3,5,2,6,4,5] and k = 3.
+Output: [5,6,6,6]
+</code></pre><p>Here&rsquo;s an example answer without using dqueue:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">findMaxNumbersInWindow</span>(<span style="color:#a6e22e">nums</span>, <span style="color:#a6e22e">k</span>) {
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">result</span> <span style="color:#f92672">=</span> [];
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">start</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">start</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">k</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">nums</span>.<span style="color:#a6e22e">length</span>) {
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">currentMax</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#75715e">// Check each number in the window
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">k</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+      <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">start</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">i</span>];
+      <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">num</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">currentMax</span>) {
+        <span style="color:#a6e22e">currentMax</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">num</span>;
+      }
+    }
+    <span style="color:#a6e22e">result</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">currentMax</span>);
+    <span style="color:#a6e22e">start</span><span style="color:#f92672">++</span>;
+  }
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">result</span>;
+}
+</code></pre></div>
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+          </div>
+        </div>
+
+        
+        
+
+        
+        
+        <div style="height: 50px;"></div>
+        
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/109km/index.xml" target="_blank">RSS</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/109km" target="_blank">Github</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://gohugo.io/" target="_blank">Powered by Hugo</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/joway/hugo-theme-yinyang" target="_blank">Theme: Yingyang</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.min.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+
+  
+  
+    
+    
+  
+</script>
+  
+
+</body>
+
+</html>
