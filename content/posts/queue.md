@@ -1,3 +1,10 @@
+---
+layout: post
+title: "队列的使用"
+date:   2020-12-01 00:00:00 +0800
+categories: ["算法"]
+---
+
 # Queue
 
 ## One-way queue
