@@ -292,7 +292,7 @@ class Stack { constructor() { this.elements = []; } get length() { return this."
 <h2 id="exercise">Exercise</h2>
 <p>Design a stack which support <code>push</code>, <code>pop</code>, <code>top</code>, <code>getMin</code>. And <code>getMin</code>&rsquo;s time complexity must be O(1).</p>
 <p>All elements are numbers.</p>
-<p>Example answer:</p>
+<p><strong>Example answer(stupid version):</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MinStack</span> {
   <span style="color:#a6e22e">constructor</span>() {
     <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">min</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
@@ -341,6 +341,44 @@ class Stack { constructor() { this.elements = []; } get length() { return this."
 <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">pop</span>();
 <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">pop</span>();
 
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">getMin</span>()); <span style="color:#75715e">// 2
+</span></code></pre></div><p><strong>Another example answer (clever version):</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MinStack</span> {
+  <span style="color:#a6e22e">constructor</span>() {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">min</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">Infinity</span>;
+    <span style="color:#75715e">// Each element is also an array [currentValue,currentMin]
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span> <span style="color:#f92672">=</span> [];
+  }
+  <span style="color:#a6e22e">get</span> <span style="color:#a6e22e">top</span>() {
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>[<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">size</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>];
+  }
+  <span style="color:#a6e22e">get</span> <span style="color:#a6e22e">size</span>() {
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">length</span>;
+  }
+  <span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">el</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">min</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">el</span>) {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">min</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">el</span>;
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">push</span>([<span style="color:#a6e22e">el</span>, <span style="color:#a6e22e">el</span>]);
+    } <span style="color:#66d9ef">else</span> {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">push</span>([<span style="color:#a6e22e">el</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">min</span>]);
+    }
+  }
+  <span style="color:#a6e22e">pop</span>() {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ele</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">pop</span>();
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ele</span>[<span style="color:#ae81ff">0</span>];
+  }
+  <span style="color:#a6e22e">getMin</span>() {
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>[<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">size</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>];
+  }
+}
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">s</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MinStack</span>();
+<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">push</span>(<span style="color:#ae81ff">2</span>);
+<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">push</span>(<span style="color:#ae81ff">3</span>);
+<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">push</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
+<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">push</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>);
+<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">pop</span>();
+<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">pop</span>();
 <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">getMin</span>()); <span style="color:#75715e">// 2
 </span></code></pre></div>
         </div>
