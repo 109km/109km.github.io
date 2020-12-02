@@ -190,7 +190,7 @@ Input: nums = [1,3,5,2,6,4,5] and k = 3.
 Output: [5,6,6,6]
 ```
 
-Here's an example answer without using dqueue:
+Here's an example answer without using dqueue, its time complexity is O(n * k).
 
 ```js
 function findMaxNumbersInWindow(nums, k) {
@@ -211,6 +211,40 @@ function findMaxNumbersInWindow(nums, k) {
   return result;
 }
 ```
+
+Here is another solution which time complexity is O(n).
+
+```js
+function getMaxSlidingWindow_V2(nums, k) {
+  const result = [];
+  const maxQueue = new Dequeue();
+  for (let i = 0; i < nums.length; i++) {
+
+    // Remove the element out of the window
+    if (i - maxQueue.front() + 1 > k) {
+      maxQueue.removeFront();
+    }
+
+    // Remove all the smaller nums
+    // Tip: Each element can `enqueue` once and `dequeue` once,
+    // and all the elements' times of operations are maximum 2n,
+    // so this algorithm's time complexity is O(n)
+    while (nums[maxQueue.elements[maxQueue.size - 1]] <= nums[i]) {
+      maxQueue.removeEnd();
+    }
+
+    // Add the larger num into the end.
+    maxQueue.addEnd(i);
+
+    // Add the max num into result
+    if (i + 1 >= k) {
+      result.push(nums[maxQueue.front()]);
+    }
+  }
+  return result;
+}
+```
+
 
 
 
