@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.78.1" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="阿信" />
+  <meta property="og:url" content="https://109km.github.io/posts/this-in-javascript/" />
+  <link rel="canonical" href="https://109km.github.io/posts/this-in-javascript/" /><link rel="shortcut icon" href="/images/default_avatar.png" type="image/x-png" /><script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/109km.github.io\/"
+      },
+      "articleSection" : "posts",
+      "name" : "理解JavaScript中的this",
+      "headline" : "理解JavaScript中的this",
+      "description" : "Confusing this in JavaScript this is used to create a connection between inside environment and outside environment.\nIt can be understood like this: who\u0026rsquo;s calling me? And this who is this.\nSo the key is we must find who is executing the function, so that we find this.\nIt depends on 3 things:\n How the function\u0026rsquo;s name is be found How the function is called Whether it\u0026rsquo;s be called in strict mode or not  Example 1: function foo(){ console.",
+      "inLanguage" : "en-US",
+      "author" : "阿信",
+      "creator" : "阿信",
+      "publisher": "阿信",
+      "accountablePerson" : "阿信",
+      "copyrightHolder" : "阿信",
+      "copyrightYear" : "2018",
+      "datePublished": "2018-12-02 12:00:00 \u002b0800 CST",
+      "dateModified" : "2018-12-02 12:00:00 \u002b0800 CST",
+      "url" : "https:\/\/109km.github.io\/posts\/this-in-javascript\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>理解JavaScript中的this - 109km is a distance.</title>
+  <meta property="og:title" content="理解JavaScript中的this - 109km is a distance." />
+  <meta property="og:type" content="article" />
+  <meta name="description" content="Confusing this in JavaScript this is used to create a connection between inside environment and outside environment.
+It can be understood like this: who&rsquo;s calling me? And this who is this.
+So the key is we must find who is executing the function, so that we find this.
+It depends on 3 things:
+ How the function&rsquo;s name is be found How the function is called Whether it&rsquo;s be called in strict mode or not  Example 1: function foo(){ console." />
+
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet" href="/css/github-markdown.min.css" />
+  <link rel="stylesheet" href="/css/highlight/vs2015.css" />
+  <link rel="stylesheet" href="/css/index.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="109km is a distance.">
+  
+  
+  
+  
+
+  
+</head>
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 col-lg-6 col-lg-offset-3">
+        <div class="site-header">
+          
+<header>
+  <div class="signatures site-title">
+    <a href="/">109km</a>
+  </div>
+</header>
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">理解JavaScript中的this</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2018-12-02 12:00:00 CST">
+                02 Dec 2018
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="">@阿信</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          <h1 id="confusing-this-in-javascript">Confusing <code>this</code> in JavaScript</h1>
+<p><code>this</code> is used to create a connection between inside environment and outside environment.</p>
+<p>It can be understood like this: who&rsquo;s calling me? And this who is <code>this</code>.</p>
+<p>So the key is we must find <code>who</code> is executing the function, so that we find <code>this</code>.</p>
+<p>It depends on 3 things:</p>
+<ol>
+<li>How the function&rsquo;s name is be found</li>
+<li>How the function is called</li>
+<li>Whether it&rsquo;s be called in strict mode or not</li>
+</ol>
+<h3 id="example-1">Example 1:</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>(){
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>);
+}
+<span style="color:#a6e22e">foo</span>(); <span style="color:#75715e">// window
+</span></code></pre></div><p>The function&rsquo;s name is be found in global enviroment through the name <code>foo</code>. It&rsquo;s called just as a normal function by adding <code>()</code> after its name.</p>
+<p>So its <code>this</code> is <code>Global</code>, if the global enviroment is browser, it will be <code>window</code>, but if the mode is strict, it will be <code>undefined</code>.</p>
+<h3 id="example-2">Example 2:</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">p</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;John&#34;</span>,
+  <span style="color:#a6e22e">sayName</span><span style="color:#f92672">:</span><span style="color:#66d9ef">function</span>(){
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span>);
+  }
+}
+
+<span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">sayName</span>(); <span style="color:#75715e">// John
+</span></code></pre></div><p>Now the function&rsquo;s name is a little complex : <code>p.sayName</code>.</p>
+<p>And it&rsquo;s be found through object <code>p</code>&rsquo;s property <code>sayName</code>, it&rsquo;s like: hey <code>p</code> can you find <code>sayName</code> for me?</p>
+<p>So the connector between <code>sayName</code> and global enviroment is <code>p</code>, and it&rsquo;s called in a normal way without strict mode.</p>
+<p>We can conclude that <code>this</code> in <code>sayName</code> is <code>p</code>.</p>
+<h3 id="example-3">Example 3:</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">p</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;John&#34;</span>,
+  <span style="color:#a6e22e">sayName</span><span style="color:#f92672">:</span><span style="color:#66d9ef">function</span>(){
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span>);
+  }
+}
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">sayName</span>;
+<span style="color:#a6e22e">a</span>(); <span style="color:#75715e">// window
+</span></code></pre></div><p>This example is nearly the same with previous one, but here we&rsquo;ve got a new variable <code>a</code>, and its value points to <code>p.sayName</code>.</p>
+<p>This time when we call <code>a</code>, there&rsquo;s no intermediary, the enviroment is global, so <code>this</code> equals <code>window</code>.</p>
+<h3 id="example-4">Example 4:</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">p</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;John&#34;</span>,
+  <span style="color:#a6e22e">sayName</span><span style="color:#f92672">:</span><span style="color:#66d9ef">function</span>(){
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span>);
+  }
+}
+(<span style="color:#66d9ef">false</span> <span style="color:#f92672">||</span> <span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">sayName</span>)(); <span style="color:#75715e">// window
+</span></code></pre></div><p>This code is a little confusing: the left part <code>(false || p.sayName)</code>&rsquo;s value is <code>p.sayName</code> with no doubt. According to the example 2, <code>this</code> should be <code>p</code>.</p>
+<p>But the result shows <code>this</code> is <code>window</code>! Why?</p>
+<p>The trap is that <code>(false || p.sayName)</code> is executed in the global environment, the result is stored in a hidden anonymous variable in global environment!</p>
+<p>Now you can see the reason.</p>
+<h3 id="example-5">Example 5:</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Human</span>(){
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>);
+}
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">someone</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Human</span>();
+</code></pre></div><p>This situation is so easy, just remember when a function is used as a constructor, the <code>this</code> is the instance which it creates.</p>
+
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-category">
+              <a href="/categories/javascript/">
+                javascript
+              </a>
+            </div>
+            
+          </div>
+        </div>
+
+        
+        
+
+        
+        
+        <div style="height: 50px;"></div>
+        
+        
+
+        <div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/109km/index.xml" target="_blank">RSS</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/109km" target="_blank">Github</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://gohugo.io/" target="_blank">Powered by Hugo</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://github.com/joway/hugo-theme-yinyang" target="_blank">Theme: Yingyang</a>
+  </div>
+  
+  
+</div>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.min.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+
+  
+  
+    
+    
+  
+</script>
+  
+
+</body>
+
+</html>

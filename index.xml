@@ -368,6 +368,19 @@ We are born alone.</description>
     </item>
     
     <item>
+      <title>理解JavaScript中的this</title>
+      <link>https://109km.github.io/posts/this-in-javascript/</link>
+      <pubDate>Sun, 02 Dec 2018 12:00:00 +0800</pubDate>
+      
+      <guid>https://109km.github.io/posts/this-in-javascript/</guid>
+      <description>Confusing this in JavaScript this is used to create a connection between inside environment and outside environment.
+It can be understood like this: who&amp;rsquo;s calling me? And this who is this.
+So the key is we must find who is executing the function, so that we find this.
+It depends on 3 things:
+ How the function&amp;rsquo;s name is be found How the function is called Whether it&amp;rsquo;s be called in strict mode or not  Example 1: function foo(){ console.</description>
+    </item>
+    
+    <item>
       <title>这场被野心绑架的修宪，逆转了土耳其</title>
       <link>https://109km.github.io/posts/the-constitution-changed-turkey/</link>
       <pubDate>Tue, 06 Nov 2018 00:00:00 +0800</pubDate>
