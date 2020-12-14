@@ -6,7 +6,19 @@
     <description>Recent content in Posts on 109km is a distance.</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 01 Dec 2020 00:00:00 +0800</lastBuildDate><atom:link href="https://109km.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Dec 2020 00:00:00 +0800</lastBuildDate><atom:link href="https://109km.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>浅入哈希表</title>
+      <link>https://109km.github.io/posts/hash-table-in-fe/</link>
+      <pubDate>Sat, 12 Dec 2020 00:00:00 +0800</pubDate>
+      
+      <guid>https://109km.github.io/posts/hash-table-in-fe/</guid>
+      <description>HashTable introductions HashTable It&amp;rsquo;s easy to find this structure around us, like the ID card&amp;rsquo;s number is a kind of hash table:
+Different digit indicates different message. We have to convert the whole string of numbers to its real meanings.
+Like if 61 shows in position of province, it means ShaanXi Province, and in this case the city&amp;rsquo;s number 01 means Xi&#39;an.
+But when province&amp;rsquo;s number is 11, city&amp;rsquo;s number 01 means Beijing.</description>
+    </item>
+    
     <item>
       <title>队列的使用</title>
       <link>https://109km.github.io/posts/queue/</link>
@@ -536,18 +548,6 @@ state Component的状态，其实就是Component的内置数据，通过更改st
 render: function() { return ( &amp;lt;header&amp;gt; { this.state.name ? this.state.name : &amp;lt;span&amp;gt;Not Logged In&amp;lt;/span&amp;gt; } &amp;lt;/header&amp;gt; ); }  getInitialState 获取Component的初始化state。
 setState 设置Component的state属性。
 props 父级Component传递给子级Component的属性。比如onClick也是props的一种。在下面这个例子中父级节点 传递了 name=“Tyler” 给子节点 var HelloUser = React.createClass({ render: function(){ return ( &amp;lt;div&amp;gt; Hello, {this.props.name}&amp;lt;/div&amp;gt; ) } }); React.render(&amp;lt;HelloUser name=&amp;quot;Tyler&amp;quot;/&amp;gt;, document.getElementById(&#39;app&#39;));  setProps 设置props属性。需要注意的是这个函数只能在父级节点设置子级节点的props，不能调用 this.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://109km.github.io/posts/hash-table-in-fe/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://109km.github.io/posts/hash-table-in-fe/</guid>
-      <description>HashTable introductions HashTable It&amp;rsquo;s easy to find this structure around us, like the ID card&amp;rsquo;s number is a kind of hash table:
-Different digit indicates different message. We have to convert the whole string of numbers to its real meanings.
-Like if 61 shows in position of province, it means ShaanXi Province, and in this case the city&amp;rsquo;s number 01 means Xi&#39;an.
-But when province&amp;rsquo;s number is 11, city&amp;rsquo;s number 01 means Beijing.</description>
     </item>
     
   </channel>

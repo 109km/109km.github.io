@@ -1,3 +1,10 @@
+---
+layout: post
+title: "浅入哈希表"
+date:   2020-12-12 00:00:00 +0800
+categories: ["算法"]
+---
+
 # HashTable introductions
 
 ## HashTable
