@@ -2,7 +2,7 @@ baseURL = "https://109km.github.io/"
 languageCode = "en-us"
 DefaultContentLanguage = "cn"
 title = "109km is a distance."
-theme = "yinyang2"
+theme = "yinyang"
 pygmentsStyle = "monokai"
 
 [params]
