@@ -1,54 +1,55 @@
 ---
 layout: post
-title: "前端开发中的栈"
-date:   2020-11-25 00:00:00 +0800
-categories: ["算法"]
+title: '前端开发中的栈'
+date: 2020-11-25 00:00:00 +0800
+categories: ['算法']
 ---
 
 # Stack in front end
 
 ## A brief introduction of `stack`
 
-This data structure is like a cup, if we pouring some water into the cup, the last water to be poured is the first to be drunk.  
+This data structure is like a cup, if we pouring some water into the cup, the last water to be poured is the first to be drunk.
 
 In another word, this structure reverses the origin order: first in last out.
 
-The picture below shows how the mechanism works. 
+The picture below shows how the mechanism works.
 
 ![stack-water](/images/stack-water.jpg)
 
-Here is the example implementation of `stack`: 
+Here is the example implementation of `stack`:
 
 ```js
 class Stack {
   constructor() {
-    this.elements = [];
+    this.elements = []
   }
   get length() {
-    return this.elements.length;
+    return this.elements.length
   }
   push(element) {
-    this.elements.push(element);
-    return this;
+    this.elements.push(element)
+    return this
   }
   pop() {
-    return this.elements.pop();
+    return this.elements.pop()
   }
   isEmpty() {
-    return this.elements.length === 0 ? true : false;
+    return this.elements.length === 0 ? true : false
   }
   getTop() {
     if (this.isEmpty()) {
-      return null;
+      return null
     }
-    return this.elements[this.elements.length - 1];
+    return this.elements[this.elements.length - 1]
   }
 }
 ```
 
 The key actions are `push` and `pop`:
-* push : Put an element into stack.
-* pop : Take an element out of the stack.
+
+- push : Put an element into stack.
+- pop : Take an element out of the stack.
 
 Now we can know if there are n elements in a stack, the searching time complexity is `O(n)`.
 
@@ -72,10 +73,10 @@ To solve this problem, JavaScript has two excution modes:
 **Sync**
 
 ```js
-let a = 1;
+let a = 1
 
-if ( a > 0){
-  console.log("This is a sync task");
+if (a > 0) {
+  console.log('This is a sync task')
 }
 ```
 
@@ -83,11 +84,11 @@ if ( a > 0){
 
 ```js
 // async task
-setTimeout(()=>{
-  console.log('Print later');
-},100);
+setTimeout(() => {
+  console.log('Print later')
+}, 100)
 
-console.log('Print first'); // sync task
+console.log('Print first') // sync task
 ```
 
 ## Call Stack
@@ -97,16 +98,16 @@ A `call stack` is used to manage the order of function calls.
 It records the position of the program is at.
 
 ```js
-var a = 1;
+var a = 1
 
 // function defination
-function plusOne(b){
-  var c = 0;
-  return a + b + c;
+function plusOne(b) {
+  var c = 0
+  return a + b + c
 }
 
 // function call
-plusOne(2);
+plusOne(2)
 ```
 
 When JavaScript starts to run, the global context is like `main` in `C`.
@@ -120,15 +121,16 @@ The right column shows how the call stack changes.
 We can use `console.trace` to trace a function call stacks:
 
 ```js
-function double(n){
-  console.trace("Tracing function `double`");
-  return n * 2;
+function double(n) {
+  console.trace('Tracing function `double`')
+  return n * 2
 }
-function calculate(n){
-  return double(n) + 1;
+function calculate(n) {
+  return double(n) + 1
 }
-calculate(1);
+calculate(1)
 ```
+
 The code will print:
 
 ![console-trace.jpg](/images/console-trace.jpg)
@@ -136,7 +138,6 @@ The code will print:
 We can find `double` is on the top, then `calculate`, and `anonymous` means `calculate` is called in the global context.
 
 The numbers `2,4,6` show the line numbers of the code that each context starts at.
-
 
 ## Types of memory in JavaScript
 
@@ -146,7 +147,6 @@ The space types in memory can be classsified into 3 types:
 2. Stack space: store the call stacks and data of basic type.
 3. Heap space: store data of reference type.
 
-
 There are two data types based on the way of visiting the value:
 
 1. Basic type: visit by value.
@@ -154,31 +154,31 @@ There are two data types based on the way of visiting the value:
 
 **Basic types are:**
 
-* `undefined`
-* `null`
-* `boolean`
-* `number`
-* `string`
-* `bigint`
-* `symbol`
+- `undefined`
+- `null`
+- `boolean`
+- `number`
+- `string`
+- `bigint`
+- `symbol`
 
 **Reference types are:**
 
-* `object`
-* `array`
+- `object`
+- `array`
 
 Basic types are stored in `stack`, reference types are stored in `heap`.
 
 ```js
-var a = 1; // basic type
-var b = a; // copy value of a to b
-a = 2; // change value of a
-console.log(b); // b is still 1  
+var a = 1 // basic type
+var b = a // copy value of a to b
+a = 2 // change value of a
+console.log(b) // b is still 1
 
-var o1 = {age:1}; // reference type
-var o2 = o1; // copy the memory address of o1 to o2
-o1.age = 2; // change o1's data
-console.log(o2); // o2.age is 2, because o1 and o2 points to the same address in memory.
+var o1 = { age: 1 } // reference type
+var o2 = o1 // copy the memory address of o1 to o2
+o1.age = 2 // change o1's data
+console.log(o2) // o2.age is 2, because o1 and o2 points to the same address in memory.
 ```
 
 ## Garbage recycling
@@ -193,10 +193,10 @@ The main process uses an ESP pointer, it points to the executing context. When c
 
 ### Recylce heap space
 
-Heap space is divided into two areas: 
+Heap space is divided into two areas:
 
-* `New generation space`: stores short living objects, supporting capacity is 1-8M.
-* `Old generation space`: stores long living objects or large objects, supporting capcacity has no limit.
+- `New generation space`: stores short living objects, supporting capacity is 1-8M.
+- `Old generation space`: stores long living objects or large objects, supporting capcacity has no limit.
 
 And differient collectors are used for the two areas, sub-collector is used for `new` area, and main collector is used for `old` area.
 
@@ -241,18 +241,17 @@ To not disturb the users' experience, V8 splits gabage collections into many sma
 ## Summary
 
 1. Stack: a Last-In-First-Out ordered set.
-2. JavaScript running mechanism: 
-   * Single thread.
-   * Event loop.
-   * Call stack.
-3. Memory spaces: 
-   * Code space: store executable code.
-   * Stack space: store basic type data and pointers.
-   * Heap space: store referenced type data.
+2. JavaScript running mechanism:
+   - Single thread.
+   - Event loop.
+   - Call stack.
+3. Memory spaces:
+   - Code space: store executable code.
+   - Stack space: store basic type data and pointers.
+   - Heap space: store referenced type data.
 4. Gabage recycling:
-   * Recycle stack: move ESP pointer in the context stack.
-   * Recycle heap: sub collector for `new generation space`, main collector for `old generation space`.
-
+   - Recycle stack: move ESP pointer in the context stack.
+   - Recycle heap: sub collector for `new generation space`, main collector for `old generation space`.
 
 ## Exercise
 
@@ -265,53 +264,53 @@ All elements are numbers.
 ```javascript
 class MinStack {
   constructor() {
-    this.min = null;
-    this.elements = [];
-    this.__orderedElements = [];
+    this.min = null
+    this.elements = []
+    this.__orderedElements = []
   }
   get top() {
-    return this.elements[this.size - 1];
+    return this.elements[this.size - 1]
   }
   get size() {
-    return this.elements.length;
+    return this.elements.length
   }
   push(el) {
     if (this.min === null) {
-      this.min = el;
+      this.min = el
     } else {
       for (let i = 0; i < this.size; i++) {
         if (this.__orderedElements[i] > el) {
-          this.__orderedElements.splice(i, 0, el);
-          break;
+          this.__orderedElements.splice(i, 0, el)
+          break
         }
       }
     }
-    this.elements.push(el);
+    this.elements.push(el)
   }
   pop() {
-    const ele = this.elements.pop();
+    const ele = this.elements.pop()
     for (let i = 0; i < this.size; i++) {
       if (this.__orderedElements[i] === ele) {
-        this.__orderedElements.splice(i, 1);
-        break;
+        this.__orderedElements.splice(i, 1)
+        break
       }
     }
-    return ele;
+    return ele
   }
   getMin() {
-    return this.min;
+    return this.min
   }
 }
 
-const s = new MinStack();
-s.push(2);
-s.push(3);
-s.push(-1);
-s.push(-3);
-s.pop();
-s.pop();
+const s = new MinStack()
+s.push(2)
+s.push(3)
+s.push(-1)
+s.push(-3)
+s.pop()
+s.pop()
 
-console.log(s.getMin()); // 2
+console.log(s.getMin()) // 2
 ```
 
 **Another example answer (clever version):**
@@ -319,39 +318,39 @@ console.log(s.getMin()); // 2
 ```js
 class MinStack {
   constructor() {
-    this.min = Infinity;
+    this.min = Infinity
     // Each element is also an array [currentValue,currentMin]
-    this.elements = [];
+    this.elements = []
   }
   get top() {
-    return this.elements[this.size - 1][0];
+    return this.elements[this.size - 1][0]
   }
   get size() {
-    return this.elements.length;
+    return this.elements.length
   }
   push(el) {
     if (this.min > el) {
-      this.min = el;
-      this.elements.push([el, el]);
+      this.min = el
+      this.elements.push([el, el])
     } else {
-      this.elements.push([el, this.min]);
+      this.elements.push([el, this.min])
     }
   }
   pop() {
-    const ele = this.elements.pop();
-    return ele[0];
+    const ele = this.elements.pop()
+    return ele[0]
   }
   getMin() {
-    return this.elements[this.size - 1][1];
+    return this.elements[this.size - 1][1]
   }
 }
 
-const s = new MinStack();
-s.push(2);
-s.push(3);
-s.push(-1);
-s.push(-3);
-s.pop();
-s.pop();
-console.log(s.getMin()); // 2
+const s = new MinStack()
+s.push(2)
+s.push(3)
+s.push(-1)
+s.push(-3)
+s.pop()
+s.pop()
+console.log(s.getMin()) // 2
 ```
