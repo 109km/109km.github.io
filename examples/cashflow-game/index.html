@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>现金流游戏-选股器</title>
+    <link rel="stylesheet" href="./pure-min.css" />
+    <style>
+      .main {
+        width: 80%;
+        margin: 50px auto;
+      }
+      .button-xlarge {
+        font-size: 125%;
+      }
+      .stock-result{
+        margin-top: 50px;
+      }
+      .stock-result p{
+        line-height: 2;
+        font-size: 110%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <button class="button-xlarge pure-button pure-button-primary btn-start">
+        开始选股
+      </button>
+      <div class="stock-result">
+        <h2>选股结果：</h2>
+        <p>
+          股票代码：
+          <span class="stock-code"></span>
+        </p>
+        <p>
+          当前价格：
+          <span class="stock-price"></span>
+        </p>
+        <p class="tips">
+          可能范围：
+          <span class="stock-range"></span>
+        </p>
+      </div>
+    </div>
+    <script src="./zepto.min.js"></script>
+    <script>
+      $(function () {
+        const STOCKS = [
+          {
+            code: 'AYU1',
+            range: [50, 100],
+            gap: 10,
+          },
+          {
+            code: 'BTN2',
+            range: [100, 250],
+            gap: 10,
+          },
+          {
+            code: 'COP3',
+            range: [300, 800],
+            gap: 10,
+          },
+          {
+            code: 'DRQ4',
+            range: [500, 1700],
+            gap: 100,
+          },
+          {
+            code: 'EWK5',
+            range: [1000, 4000],
+            gap: 100,
+          },
+          {
+            code: 'LKO6',
+            range: [2000, 10000],
+            gap: 100,
+          },
+          {
+            code: 'POE7',
+            range: [3500, 20000],
+            gap: 1000,
+          },
+          {
+            code: 'CKM8',
+            range: [5000, 50000],
+            gap: 1000,
+          },
+          {
+            code: 'WWT9',
+            range: [10000, 150000],
+            gap: 10000,
+          },
+        ]
+
+        function random(min, max, gap = 1) {
+          const diff = (max - min) / gap
+          const current = min + parseInt(Math.random() * diff) * gap
+          return current
+        }
+
+        function selectStock() {
+          const i = random(0, STOCKS.length - 1, 1)
+          const stock = STOCKS[i]
+          const price = random(stock.range[0], stock.range[1], stock.gap)
+          stock.price = price
+          return stock
+        }
+        const btnDefaultText = '开始选股'
+        const btn = $('.btn-start')
+        const code = $('.stock-code')
+        const price = $('.stock-price')
+        const range = $('.stock-range')
+
+        let isSelecting = false
+        let i = 0
+        let timer = 0;
+        btn.click(() => {
+          if (isSelecting) return
+          isSelecting = true
+          btn.html('选股中...').addClass('pure-button-disabled')
+
+          timer = setInterval(() => {
+            if (i === 20){
+              i = 0;
+              isSelecting = false;
+              clearInterval(timer)
+              btn.html(btnDefaultText).removeClass('pure-button-disabled')
+              return;
+            }
+            const stock = selectStock()
+            code.html(stock.code)
+            price.html(stock.price)
+            range.html(`${stock.range[0]}~${stock.range[1]}`)
+            i++;
+          }, 100)
+        })
+      })
+    </script>
+  </body>
+</html>
