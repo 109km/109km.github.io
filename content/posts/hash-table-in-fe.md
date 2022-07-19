@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "浅入哈希表"
-date:   2020-12-12 00:00:00 +0800
-categories: ["算法"]
+title: '浅入哈希表'
+date: 2020-12-13 18:00:00 +0800
+categories: ['算法']
 ---
 
 # HashTable introductions
@@ -26,7 +26,6 @@ The way of conversion is called `hash function` in computer science.
 ![](/images/hash-table.drawio.svg)
 
 This picture shows the process of the hash table.
-
 
 ## Hash function
 
@@ -52,9 +51,7 @@ So each `hash value` is the address of a linked list!
 
 ![](/images/hash-value-linked-list.drawio.svg)
 
-
 Here is another problem sometims the keys are different, but the `hash value` is the same, how to solve this confict?
-
 
 ## Conflict resolution
 
@@ -62,8 +59,8 @@ One of the most commonly used method is **chaining**.
 
 The picture above shows this method:
 
-* Each hash value is the address of the head of a linked list.
-* Same hash values are stored in a linked list.
+- Each hash value is the address of the head of a linked list.
+- Same hash values are stored in a linked list.
 
 In this way, a million numbers can be put into 1000 linked lists, and also we can think each linked list as a `bucket`, and the `hash value` is the number of a `bucket`.
 
@@ -182,7 +179,6 @@ cityHashTable.put('110011', 'hello2');
 console.log(cityHashTable.get('110011'));
 ```
 
-
 ## Exercises
 
 ### Find the common part of two arrays(only contain numbers). Each number can only be consumed once.
@@ -192,7 +188,7 @@ Input: nums1=[1,3,5,2] nums2=[5,1,1,6,9]
 Output: [1,5]
 ```
 
-An example answer: 
+An example answer:
 
 ```ts
 /**
@@ -200,76 +196,77 @@ An example answer:
  **/
 
 const findCommonArray = (nums1: number[], nums2: number[]): number[] => {
-  const map: object = {};
-  const res: number[] = [];
+  const map: object = {}
+  const res: number[] = []
   nums1.forEach((num, index) => {
-    map[num] = 1;
-  });
+    map[num] = 1
+  })
   nums2.forEach((num, index) => {
     if (map[num] === 1) {
-      res.push(num);
+      res.push(num)
       // This number is consumed.
-      map[num] = 0;
+      map[num] = 0
     }
-  });
-  return res;
+  })
+  return res
 }
 
-const nums1 = [1, 1, 1, 5, 2, 4, 9];
-const nums2 = [5, 8, 5, 9, 1, 1];
-console.log(findCommonArray(nums1, nums2)); // [5,9,1]
+const nums1 = [1, 1, 1, 5, 2, 4, 9]
+const nums2 = [5, 8, 5, 9, 1, 1]
+console.log(findCommonArray(nums1, nums2)) // [5,9,1]
 ```
 
 ### Given an array `nums` and a target number `target`, find two numbers' sum equals `target`. And each number can only be used once. And a pair of numbers are enough.
 
 ```ts
-
 /**
  * Here is an prerequisite:
  * Each number in `nums` are unique.
-*/
+ */
 const findTwoNumbersByTarget = (nums: number[], target: number): number[] => {
-  const map = new Map();
+  const map = new Map()
   for (let i = 0; i < nums.length; i++) {
-    const num = nums[i];
-    map.set(num, i);
-    const d = target - num;
+    const num = nums[i]
+    map.set(num, i)
+    const d = target - num
     if (map.has(d)) {
-      return [i, map.get(d)];
+      return [i, map.get(d)]
     }
   }
-  return null;
+  return null
 }
 
-const nums = [1, 6, 9, 5];
-const target = 14;
-console.log(findTwoNumbersByTarget(nums, target)); // [3,2]
+const nums = [1, 6, 9, 5]
+const target = 14
+console.log(findTwoNumbersByTarget(nums, target)) // [3,2]
 ```
 
 ### Given an array `nums` and a target number `target`, find all matched combinations of three numbers' sum equals `target`. And each combination can only be used once.
 
 ```ts
-
-const findThreeNumbersByTarget = (nums: number[], target: number): number[][] => {
-  const res: number[][] = [];
-  const map = new Map();
-  const len = nums.length;
-  let left = 0;
-  let mid = 1;
+const findThreeNumbersByTarget = (
+  nums: number[],
+  target: number,
+): number[][] => {
+  const res: number[][] = []
+  const map = new Map()
+  const len = nums.length
+  let left = 0
+  let mid = 1
 
   // Sort the numbers from min to max
-  nums.sort((a, b) => (a - b));
+  nums.sort((a, b) => a - b)
 
   // Put all nums into a set
   // Time complexity is O(n)
   for (let i = 0; i < len; i++) {
-    const num = nums[i];
+    const num = nums[i]
     if (typeof map.get(num) === 'undefined') {
-      map.set(num, [i]);
+      map.set(num, [i])
     } else {
-      const indexs = map.get(num);
-      indexs.push(i);
-      map.set(num, indexs);
+      const indexs = map.get(num)
+      indexs.push(i)
+      map.set(num, indexs)
     }
   }
 
@@ -279,21 +276,21 @@ const findThreeNumbersByTarget = (nums: number[], target: number): number[][] =>
   while (left < len - 2) {
     // Minimum number is still bigger than target
     if (nums[left] > target) {
-      break;
+      break
     }
     // mid number reach the end
     if (mid === len - 2) {
-      left++;
-      mid = left + 1;
-      continue;
+      left++
+      mid = left + 1
+      continue
     }
 
-    let lastNum = target - nums[left] - nums[mid];
-    const matchedNums: number[] = map.get(lastNum);
+    let lastNum = target - nums[left] - nums[mid]
+    const matchedNums: number[] = map.get(lastNum)
     // Can't find the match number,
     // move the pointer.
     if (typeof matchedNums === 'undefined') {
-      mid++;
+      mid++
     }
     // find the matched number
     else {
@@ -305,16 +302,16 @@ const findThreeNumbersByTarget = (nums: number[], target: number): number[][] =>
           nums[left] !== nums[left - 1] &&
           nums[mid] !== nums[mid - 1]
         ) {
-          const combination = [nums[left], nums[mid], nums[matchNum]];
-          res.push(combination);
+          const combination = [nums[left], nums[mid], nums[matchNum]]
+          res.push(combination)
         }
-      });
-      mid++;
+      })
+      mid++
     }
   }
-  return res;
+  return res
 }
 
-const nums: number[] = [1, 0, -1, 5, 9, 7, 7, 6, 0, -1];
-console.log(findThreeNumbersByTarget(nums, 15)); // [ [ -1, 7, 9 ], [ 0, 6, 9 ], [ 1, 5, 9 ], [ 1, 7, 7 ] ]
+const nums: number[] = [1, 0, -1, 5, 9, 7, 7, 6, 0, -1]
+console.log(findThreeNumbersByTarget(nums, 15)) // [ [ -1, 7, 9 ], [ 0, 6, 9 ], [ 1, 5, 9 ], [ 1, 7, 7 ] ]
 ```

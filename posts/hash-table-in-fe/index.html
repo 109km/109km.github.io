@@ -27,8 +27,8 @@
       "accountablePerson" : "阿信",
       "copyrightHolder" : "阿信",
       "copyrightYear" : "2020",
-      "datePublished": "2020-12-12 00:00:00 \u002b0800 CST",
-      "dateModified" : "2020-12-12 00:00:00 \u002b0800 CST",
+      "datePublished": "2020-12-13 18:00:00 \u002b0800 CST",
+      "dateModified" : "2020-12-13 18:00:00 \u002b0800 CST",
       "url" : "https:\/\/109km.github.io\/posts\/hash-table-in-fe\/",
       "keywords" : [  ]
   }
@@ -79,8 +79,8 @@ But when province&rsquo;s number is 11, city&rsquo;s number 01 means Beijing." /
           <div class="row post-desc">
             <div class="col-xs-6">
               
-              <time class="post-date" datetime="2020-12-12 00:00:00 CST">
-                12 Dec 2020
+              <time class="post-date" datetime="2020-12-13 18:00:00 CST">
+                13 Dec 2020
               </time>
               
             </div>
@@ -251,68 +251,69 @@ Output: [1,5]
 </span><span style="color:#75715e"> **/</span>
 
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">findCommonArray</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">nums1</span>: <span style="color:#66d9ef">number</span>[], <span style="color:#a6e22e">nums2</span>: <span style="color:#66d9ef">number</span>[])<span style="color:#f92672">:</span> <span style="color:#66d9ef">number</span>[] <span style="color:#f92672">=&gt;</span> {
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">map</span>: <span style="color:#66d9ef">object</span> <span style="color:#f92672">=</span> {};
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">res</span>: <span style="color:#66d9ef">number</span>[] <span style="color:#f92672">=</span> [];
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">map</span>: <span style="color:#66d9ef">object</span> <span style="color:#f92672">=</span> {}
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">res</span>: <span style="color:#66d9ef">number</span>[] <span style="color:#f92672">=</span> []
   <span style="color:#a6e22e">nums1</span>.<span style="color:#a6e22e">forEach</span>((<span style="color:#a6e22e">num</span>, <span style="color:#a6e22e">index</span>) <span style="color:#f92672">=&gt;</span> {
-    <span style="color:#a6e22e">map</span>[<span style="color:#a6e22e">num</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
-  });
+    <span style="color:#a6e22e">map</span>[<span style="color:#a6e22e">num</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+  })
   <span style="color:#a6e22e">nums2</span>.<span style="color:#a6e22e">forEach</span>((<span style="color:#a6e22e">num</span>, <span style="color:#a6e22e">index</span>) <span style="color:#f92672">=&gt;</span> {
     <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">map</span>[<span style="color:#a6e22e">num</span>] <span style="color:#f92672">===</span> <span style="color:#ae81ff">1</span>) {
-      <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">num</span>);
+      <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">num</span>)
       <span style="color:#75715e">// This number is consumed.
-</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">map</span>[<span style="color:#a6e22e">num</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">map</span>[<span style="color:#a6e22e">num</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
     }
-  });
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>;
+  })
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>
 }
 
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">nums1</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">9</span>];
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">nums2</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>];
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">findCommonArray</span>(<span style="color:#a6e22e">nums1</span>, <span style="color:#a6e22e">nums2</span>)); <span style="color:#75715e">// [5,9,1]
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">nums1</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">9</span>]
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">nums2</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>]
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">findCommonArray</span>(<span style="color:#a6e22e">nums1</span>, <span style="color:#a6e22e">nums2</span>)) <span style="color:#75715e">// [5,9,1]
 </span></code></pre></div><h3 id="given-an-array-nums-and-a-target-number-target-find-two-numbers-sum-equals-target-and-each-number-can-only-be-used-once-and-a-pair-of-numbers-are-enough">Given an array <code>nums</code> and a target number <code>target</code>, find two numbers' sum equals <code>target</code>. And each number can only be used once. And a pair of numbers are enough.</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts">
-<span style="color:#75715e">/**
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#75715e">/**
 </span><span style="color:#75715e"> * Here is an prerequisite:
 </span><span style="color:#75715e"> * Each number in `nums` are unique.
-</span><span style="color:#75715e">*/</span>
+</span><span style="color:#75715e"> */</span>
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">findTwoNumbersByTarget</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">nums</span>: <span style="color:#66d9ef">number</span>[], <span style="color:#a6e22e">target</span>: <span style="color:#66d9ef">number</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">number</span>[] <span style="color:#f92672">=&gt;</span> {
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>();
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>()
   <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">nums</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>];
-    <span style="color:#a6e22e">map</span>.<span style="color:#66d9ef">set</span>(<span style="color:#a6e22e">num</span>, <span style="color:#a6e22e">i</span>);
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">d</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">target</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">num</span>;
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>]
+    <span style="color:#a6e22e">map</span>.<span style="color:#66d9ef">set</span>(<span style="color:#a6e22e">num</span>, <span style="color:#a6e22e">i</span>)
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">d</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">target</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">num</span>
     <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">map</span>.<span style="color:#a6e22e">has</span>(<span style="color:#a6e22e">d</span>)) {
-      <span style="color:#66d9ef">return</span> [<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">map</span>.<span style="color:#66d9ef">get</span>(<span style="color:#a6e22e">d</span>)];
+      <span style="color:#66d9ef">return</span> [<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">map</span>.<span style="color:#66d9ef">get</span>(<span style="color:#a6e22e">d</span>)]
     }
   }
-  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>
 }
 
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">nums</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">5</span>];
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">target</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">14</span>;
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">findTwoNumbersByTarget</span>(<span style="color:#a6e22e">nums</span>, <span style="color:#a6e22e">target</span>)); <span style="color:#75715e">// [3,2]
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">nums</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">5</span>]
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">target</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">14</span>
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">findTwoNumbersByTarget</span>(<span style="color:#a6e22e">nums</span>, <span style="color:#a6e22e">target</span>)) <span style="color:#75715e">// [3,2]
 </span></code></pre></div><h3 id="given-an-array-nums-and-a-target-number-target-find-all-matched-combinations-of-three-numbers-sum-equals-target-and-each-combination-can-only-be-used-once">Given an array <code>nums</code> and a target number <code>target</code>, find all matched combinations of three numbers' sum equals <code>target</code>. And each combination can only be used once.</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts">
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">findThreeNumbersByTarget</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">nums</span>: <span style="color:#66d9ef">number</span>[], <span style="color:#a6e22e">target</span>: <span style="color:#66d9ef">number</span>)<span style="color:#f92672">:</span> <span style="color:#66d9ef">number</span>[][] <span style="color:#f92672">=&gt;</span> {
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">res</span>: <span style="color:#66d9ef">number</span>[][] <span style="color:#f92672">=</span> [];
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>();
-  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">len</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">nums</span>.<span style="color:#a6e22e">length</span>;
-  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">left</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">mid</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ts" data-lang="ts"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">findThreeNumbersByTarget</span> <span style="color:#f92672">=</span> (
+  <span style="color:#a6e22e">nums</span>: <span style="color:#66d9ef">number</span>[],
+  <span style="color:#a6e22e">target</span>: <span style="color:#66d9ef">number</span>,
+)<span style="color:#f92672">:</span> <span style="color:#66d9ef">number</span>[][] <span style="color:#f92672">=&gt;</span> {
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">res</span>: <span style="color:#66d9ef">number</span>[][] <span style="color:#f92672">=</span> []
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">map</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Map</span>()
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">len</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">nums</span>.<span style="color:#a6e22e">length</span>
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">left</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">mid</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
 
   <span style="color:#75715e">// Sort the numbers from min to max
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">nums</span>.<span style="color:#a6e22e">sort</span>((<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) <span style="color:#f92672">=&gt;</span> (<span style="color:#a6e22e">a</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">b</span>));
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">nums</span>.<span style="color:#a6e22e">sort</span>((<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) <span style="color:#f92672">=&gt;</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">b</span>)
 
   <span style="color:#75715e">// Put all nums into a set
 </span><span style="color:#75715e"></span>  <span style="color:#75715e">// Time complexity is O(n)
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">len</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>];
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">num</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">i</span>]
     <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">map</span>.<span style="color:#66d9ef">get</span>(<span style="color:#a6e22e">num</span>) <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;undefined&#39;</span>) {
-      <span style="color:#a6e22e">map</span>.<span style="color:#66d9ef">set</span>(<span style="color:#a6e22e">num</span>, [<span style="color:#a6e22e">i</span>]);
+      <span style="color:#a6e22e">map</span>.<span style="color:#66d9ef">set</span>(<span style="color:#a6e22e">num</span>, [<span style="color:#a6e22e">i</span>])
     } <span style="color:#66d9ef">else</span> {
-      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">indexs</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">map</span>.<span style="color:#66d9ef">get</span>(<span style="color:#a6e22e">num</span>);
-      <span style="color:#a6e22e">indexs</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">i</span>);
-      <span style="color:#a6e22e">map</span>.<span style="color:#66d9ef">set</span>(<span style="color:#a6e22e">num</span>, <span style="color:#a6e22e">indexs</span>);
+      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">indexs</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">map</span>.<span style="color:#66d9ef">get</span>(<span style="color:#a6e22e">num</span>)
+      <span style="color:#a6e22e">indexs</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">i</span>)
+      <span style="color:#a6e22e">map</span>.<span style="color:#66d9ef">set</span>(<span style="color:#a6e22e">num</span>, <span style="color:#a6e22e">indexs</span>)
     }
   }
 
@@ -322,21 +323,21 @@ Output: [1,5]
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">while</span> (<span style="color:#a6e22e">left</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">len</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>) {
     <span style="color:#75715e">// Minimum number is still bigger than target
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">left</span>] <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">target</span>) {
-      <span style="color:#66d9ef">break</span>;
+      <span style="color:#66d9ef">break</span>
     }
     <span style="color:#75715e">// mid number reach the end
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">mid</span> <span style="color:#f92672">===</span> <span style="color:#a6e22e">len</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">2</span>) {
-      <span style="color:#a6e22e">left</span><span style="color:#f92672">++</span>;
-      <span style="color:#a6e22e">mid</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">left</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
-      <span style="color:#66d9ef">continue</span>;
+      <span style="color:#a6e22e">left</span><span style="color:#f92672">++</span>
+      <span style="color:#a6e22e">mid</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">left</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+      <span style="color:#66d9ef">continue</span>
     }
 
-    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">lastNum</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">target</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">left</span>] <span style="color:#f92672">-</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">mid</span>];
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">matchedNums</span>: <span style="color:#66d9ef">number</span>[] <span style="color:#f92672">=</span> <span style="color:#a6e22e">map</span>.<span style="color:#66d9ef">get</span>(<span style="color:#a6e22e">lastNum</span>);
+    <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">lastNum</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">target</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">left</span>] <span style="color:#f92672">-</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">mid</span>]
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">matchedNums</span>: <span style="color:#66d9ef">number</span>[] <span style="color:#f92672">=</span> <span style="color:#a6e22e">map</span>.<span style="color:#66d9ef">get</span>(<span style="color:#a6e22e">lastNum</span>)
     <span style="color:#75715e">// Can&#39;t find the match number,
 </span><span style="color:#75715e"></span>    <span style="color:#75715e">// move the pointer.
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> <span style="color:#a6e22e">matchedNums</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;undefined&#39;</span>) {
-      <span style="color:#a6e22e">mid</span><span style="color:#f92672">++</span>;
+      <span style="color:#a6e22e">mid</span><span style="color:#f92672">++</span>
     }
     <span style="color:#75715e">// find the matched number
 </span><span style="color:#75715e"></span>    <span style="color:#66d9ef">else</span> {
@@ -348,18 +349,18 @@ Output: [1,5]
           <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">left</span>] <span style="color:#f92672">!==</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">left</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>] <span style="color:#f92672">&amp;&amp;</span>
           <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">mid</span>] <span style="color:#f92672">!==</span> <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">mid</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>]
         ) {
-          <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">combination</span> <span style="color:#f92672">=</span> [<span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">left</span>], <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">mid</span>], <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">matchNum</span>]];
-          <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">combination</span>);
+          <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">combination</span> <span style="color:#f92672">=</span> [<span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">left</span>], <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">mid</span>], <span style="color:#a6e22e">nums</span>[<span style="color:#a6e22e">matchNum</span>]]
+          <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">combination</span>)
         }
-      });
-      <span style="color:#a6e22e">mid</span><span style="color:#f92672">++</span>;
+      })
+      <span style="color:#a6e22e">mid</span><span style="color:#f92672">++</span>
     }
   }
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>;
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">res</span>
 }
 
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">nums</span>: <span style="color:#66d9ef">number</span>[] <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">0</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>];
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">findThreeNumbersByTarget</span>(<span style="color:#a6e22e">nums</span>, <span style="color:#ae81ff">15</span>)); <span style="color:#75715e">// [ [ -1, 7, 9 ], [ 0, 6, 9 ], [ 1, 5, 9 ], [ 1, 7, 7 ] ]
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">nums</span>: <span style="color:#66d9ef">number</span>[] <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">9</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">0</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">findThreeNumbersByTarget</span>(<span style="color:#a6e22e">nums</span>, <span style="color:#ae81ff">15</span>)) <span style="color:#75715e">// [ [ -1, 7, 9 ], [ 0, 6, 9 ], [ 1, 5, 9 ], [ 1, 7, 7 ] ]
 </span></code></pre></div>
         </div>
 
