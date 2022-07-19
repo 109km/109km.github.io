@@ -41,7 +41,7 @@ class Queue { constructor() { this.elements = []; } get size() { return this.ele
 In another word, this structure reverses the origin order: first in last out.
 The picture below shows how the mechanism works.
 Here is the example implementation of stack:
-class Stack { constructor() { this.elements = []; } get length() { return this.</description>
+class Stack { constructor() { this.elements = [] } get length() { return this.</description>
     </item>
     
     <item>
