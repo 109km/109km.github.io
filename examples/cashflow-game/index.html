@@ -14,10 +14,10 @@
       .button-xlarge {
         font-size: 125%;
       }
-      .stock-result{
+      .stock-result {
         margin-top: 50px;
       }
-      .stock-result p{
+      .stock-result p {
         line-height: 2;
         font-size: 110%;
       }
@@ -116,25 +116,27 @@
 
         let isSelecting = false
         let i = 0
-        let timer = 0;
+        let timer = 0
         btn.click(() => {
           if (isSelecting) return
           isSelecting = true
           btn.html('选股中...').addClass('pure-button-disabled')
 
           timer = setInterval(() => {
-            if (i === 20){
-              i = 0;
-              isSelecting = false;
-              clearInterval(timer)
-              btn.html(btnDefaultText).removeClass('pure-button-disabled')
-              return;
-            }
-            const stock = selectStock()
-            code.html(stock.code)
-            price.html(stock.price)
-            range.html(`${stock.range[0]}~${stock.range[1]}`)
-            i++;
+            requestAnimationFrame(() => {
+              if (i === 20) {
+                i = 0
+                isSelecting = false
+                clearInterval(timer)
+                btn.html(btnDefaultText).removeClass('pure-button-disabled')
+                return
+              }
+              const stock = selectStock()
+              code.html(stock.code)
+              price.html(stock.price)
+              range.html(`${stock.range[0]}~${stock.range[1]}`)
+              i++
+            })
           }, 100)
         })
       })
