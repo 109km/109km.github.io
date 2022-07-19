@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 'Token研究'
-date: 2021-4-25 00:00:00 +0800
+date: 2021-04-25 00:00:00 +0800
 categories: ['Tokens']
 ---
 

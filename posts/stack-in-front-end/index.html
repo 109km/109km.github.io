@@ -19,7 +19,7 @@
       "articleSection" : "posts",
       "name" : "前端开发中的栈",
       "headline" : "前端开发中的栈",
-      "description" : "Stack in front end A brief introduction of stack This data structure is like a cup, if we pouring some water into the cup, the last water to be poured is the first to be drunk.\nIn another word, this structure reverses the origin order: first in last out.\nThe picture below shows how the mechanism works.\nHere is the example implementation of stack:\nclass Stack { constructor() { this.elements = []; } get length() { return this.",
+      "description" : "Stack in front end A brief introduction of stack This data structure is like a cup, if we pouring some water into the cup, the last water to be poured is the first to be drunk.\nIn another word, this structure reverses the origin order: first in last out.\nThe picture below shows how the mechanism works.\nHere is the example implementation of stack:\nclass Stack { constructor() { this.elements = [] } get length() { return this.",
       "inLanguage" : "en-US",
       "author" : "阿信",
       "creator" : "阿信",
@@ -40,7 +40,7 @@
 In another word, this structure reverses the origin order: first in last out.
 The picture below shows how the mechanism works.
 Here is the example implementation of stack:
-class Stack { constructor() { this.elements = []; } get length() { return this." />
+class Stack { constructor() { this.elements = [] } get length() { return this." />
 
   <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
   <link rel="stylesheet" href="/css/github-markdown.min.css" />
@@ -106,26 +106,26 @@ class Stack { constructor() { this.elements = []; } get length() { return this."
 <p>Here is the example implementation of <code>stack</code>:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Stack</span> {
   <span style="color:#a6e22e">constructor</span>() {
-    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span> <span style="color:#f92672">=</span> [];
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span> <span style="color:#f92672">=</span> []
   }
   <span style="color:#a6e22e">get</span> <span style="color:#a6e22e">length</span>() {
-    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">length</span>;
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">length</span>
   }
   <span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">element</span>) {
-    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">element</span>);
-    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>;
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">element</span>)
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>
   }
   <span style="color:#a6e22e">pop</span>() {
-    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">pop</span>();
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">pop</span>()
   }
   <span style="color:#a6e22e">isEmpty</span>() {
-    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">?</span> <span style="color:#66d9ef">true</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>;
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">?</span> <span style="color:#66d9ef">true</span> <span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>
   }
   <span style="color:#a6e22e">getTop</span>() {
     <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">isEmpty</span>()) {
-      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>
     }
-    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>[<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>];
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>[<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>]
   }
 }
 </code></pre></div><p>The key actions are <code>push</code> and <code>pop</code>:</p>
@@ -146,44 +146,44 @@ class Stack { constructor() { this.elements = []; } get length() { return this."
 <p>And JavaScript used the first solution. But this solution has got one problem: if some task needs a lot of time to excute, other tasks had to be wait in line. This may cause page stucked which is not a good experience for users.</p>
 <p>To solve this problem, JavaScript has two excution modes:</p>
 <p><strong>Sync</strong></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
 
-<span style="color:#66d9ef">if</span> ( <span style="color:#a6e22e">a</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>){
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;This is a sync task&#34;</span>);
+<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">a</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>) {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;This is a sync task&#39;</span>)
 }
 </code></pre></div><p><strong>Async</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// async task
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">setTimeout</span>(()=&gt;{
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Print later&#39;</span>);
-},<span style="color:#ae81ff">100</span>);
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">setTimeout</span>(() =&gt; {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Print later&#39;</span>)
+}, <span style="color:#ae81ff">100</span>)
 
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Print first&#39;</span>); <span style="color:#75715e">// sync task
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;Print first&#39;</span>) <span style="color:#75715e">// sync task
 </span></code></pre></div><h2 id="call-stack">Call Stack</h2>
 <p>A <code>call stack</code> is used to manage the order of function calls.</p>
 <p>It records the position of the program is at.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
 
 <span style="color:#75715e">// function defination
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">plusOne</span>(<span style="color:#a6e22e">b</span>){
-  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">c</span>;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">plusOne</span>(<span style="color:#a6e22e">b</span>) {
+  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">c</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">c</span>
 }
 
 <span style="color:#75715e">// function call
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">plusOne</span>(<span style="color:#ae81ff">2</span>);
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">plusOne</span>(<span style="color:#ae81ff">2</span>)
 </code></pre></div><p>When JavaScript starts to run, the global context is like <code>main</code> in <code>C</code>.</p>
 <p>The call stack working flow:</p>
 <p><img src="/images/call-stack.drawio.svg" alt="call-stack"></p>
 <p>The right column shows how the call stack changes.</p>
 <p>We can use <code>console.trace</code> to trace a function call stacks:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#66d9ef">double</span>(<span style="color:#a6e22e">n</span>){
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">trace</span>(<span style="color:#e6db74">&#34;Tracing function `double`&#34;</span>);
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#66d9ef">double</span>(<span style="color:#a6e22e">n</span>) {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">trace</span>(<span style="color:#e6db74">&#39;Tracing function `double`&#39;</span>)
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>
 }
-<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">calculate</span>(<span style="color:#a6e22e">n</span>){
-  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">double</span>(<span style="color:#a6e22e">n</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">calculate</span>(<span style="color:#a6e22e">n</span>) {
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">double</span>(<span style="color:#a6e22e">n</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
 }
-<span style="color:#a6e22e">calculate</span>(<span style="color:#ae81ff">1</span>);
+<span style="color:#a6e22e">calculate</span>(<span style="color:#ae81ff">1</span>)
 </code></pre></div><p>The code will print:</p>
 <p><img src="/images/console-trace.jpg" alt="console-trace.jpg"></p>
 <p>We can find <code>double</code> is on the top, then <code>calculate</code>, and <code>anonymous</code> means <code>calculate</code> is called in the global context.</p>
@@ -216,15 +216,15 @@ class Stack { constructor() { this.elements = []; } get length() { return this."
 <li><code>array</code></li>
 </ul>
 <p>Basic types are stored in <code>stack</code>, reference types are stored in <code>heap</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#75715e">// basic type
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span>; <span style="color:#75715e">// copy value of a to b
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>; <span style="color:#75715e">// change value of a
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">b</span>); <span style="color:#75715e">// b is still 1  
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#75715e">// basic type
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">a</span> <span style="color:#75715e">// copy value of a to b
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span> <span style="color:#75715e">// change value of a
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">b</span>) <span style="color:#75715e">// b is still 1
 </span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">o1</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">age</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>}; <span style="color:#75715e">// reference type
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">o2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">o1</span>; <span style="color:#75715e">// copy the memory address of o1 to o2
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">o1</span>.<span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>; <span style="color:#75715e">// change o1&#39;s data
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">o2</span>); <span style="color:#75715e">// o2.age is 2, because o1 and o2 points to the same address in memory.
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">o1</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">age</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> } <span style="color:#75715e">// reference type
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">o2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">o1</span> <span style="color:#75715e">// copy the memory address of o1 to o2
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">o1</span>.<span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span> <span style="color:#75715e">// change o1&#39;s data
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">o2</span>) <span style="color:#75715e">// o2.age is 2, because o1 and o2 points to the same address in memory.
 </span></code></pre></div><h2 id="garbage-recycling">Garbage recycling</h2>
 <p>Garbage memory is recycled automatically in JavaScript. So many developers don&rsquo;t know the its mechanism.</p>
 <h3 id="recycle-stack-space">Recycle stack space</h3>
@@ -295,91 +295,91 @@ class Stack { constructor() { this.elements = []; } get length() { return this."
 <p><strong>Example answer(stupid version):</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MinStack</span> {
   <span style="color:#a6e22e">constructor</span>() {
-    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">min</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
-    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span> <span style="color:#f92672">=</span> [];
-    <span style="color:#66d9ef">this</span>.<span style="color:#ae81ff">__</span><span style="color:#a6e22e">orderedElements</span> <span style="color:#f92672">=</span> [];
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">min</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span> <span style="color:#f92672">=</span> []
+    <span style="color:#66d9ef">this</span>.<span style="color:#ae81ff">__</span><span style="color:#a6e22e">orderedElements</span> <span style="color:#f92672">=</span> []
   }
   <span style="color:#a6e22e">get</span> <span style="color:#a6e22e">top</span>() {
-    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>[<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">size</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>];
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>[<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">size</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>]
   }
   <span style="color:#a6e22e">get</span> <span style="color:#a6e22e">size</span>() {
-    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">length</span>;
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">length</span>
   }
   <span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">el</span>) {
     <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">min</span> <span style="color:#f92672">===</span> <span style="color:#66d9ef">null</span>) {
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">min</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">el</span>;
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">min</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">el</span>
     } <span style="color:#66d9ef">else</span> {
       <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">size</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
         <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#ae81ff">__</span><span style="color:#a6e22e">orderedElements</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">el</span>) {
-          <span style="color:#66d9ef">this</span>.<span style="color:#ae81ff">__</span><span style="color:#a6e22e">orderedElements</span>.<span style="color:#a6e22e">splice</span>(<span style="color:#a6e22e">i</span>, <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">el</span>);
-          <span style="color:#66d9ef">break</span>;
+          <span style="color:#66d9ef">this</span>.<span style="color:#ae81ff">__</span><span style="color:#a6e22e">orderedElements</span>.<span style="color:#a6e22e">splice</span>(<span style="color:#a6e22e">i</span>, <span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">el</span>)
+          <span style="color:#66d9ef">break</span>
         }
       }
     }
-    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">el</span>);
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">el</span>)
   }
   <span style="color:#a6e22e">pop</span>() {
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ele</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">pop</span>();
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ele</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">pop</span>()
     <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">size</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
       <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#ae81ff">__</span><span style="color:#a6e22e">orderedElements</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">===</span> <span style="color:#a6e22e">ele</span>) {
-        <span style="color:#66d9ef">this</span>.<span style="color:#ae81ff">__</span><span style="color:#a6e22e">orderedElements</span>.<span style="color:#a6e22e">splice</span>(<span style="color:#a6e22e">i</span>, <span style="color:#ae81ff">1</span>);
-        <span style="color:#66d9ef">break</span>;
+        <span style="color:#66d9ef">this</span>.<span style="color:#ae81ff">__</span><span style="color:#a6e22e">orderedElements</span>.<span style="color:#a6e22e">splice</span>(<span style="color:#a6e22e">i</span>, <span style="color:#ae81ff">1</span>)
+        <span style="color:#66d9ef">break</span>
       }
     }
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ele</span>;
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ele</span>
   }
   <span style="color:#a6e22e">getMin</span>() {
-    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">min</span>;
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">min</span>
   }
 }
 
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">s</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MinStack</span>();
-<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">push</span>(<span style="color:#ae81ff">2</span>);
-<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">push</span>(<span style="color:#ae81ff">3</span>);
-<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">push</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
-<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">push</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>);
-<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">pop</span>();
-<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">pop</span>();
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">s</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MinStack</span>()
+<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">push</span>(<span style="color:#ae81ff">2</span>)
+<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">push</span>(<span style="color:#ae81ff">3</span>)
+<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">push</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">push</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>)
+<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">pop</span>()
+<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">pop</span>()
 
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">getMin</span>()); <span style="color:#75715e">// 2
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">getMin</span>()) <span style="color:#75715e">// 2
 </span></code></pre></div><p><strong>Another example answer (clever version):</strong></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MinStack</span> {
   <span style="color:#a6e22e">constructor</span>() {
-    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">min</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">Infinity</span>;
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">min</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">Infinity</span>
     <span style="color:#75715e">// Each element is also an array [currentValue,currentMin]
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span> <span style="color:#f92672">=</span> [];
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span> <span style="color:#f92672">=</span> []
   }
   <span style="color:#a6e22e">get</span> <span style="color:#a6e22e">top</span>() {
-    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>[<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">size</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>];
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>[<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">size</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>]
   }
   <span style="color:#a6e22e">get</span> <span style="color:#a6e22e">size</span>() {
-    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">length</span>;
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">length</span>
   }
   <span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">el</span>) {
     <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">min</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">el</span>) {
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">min</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">el</span>;
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">push</span>([<span style="color:#a6e22e">el</span>, <span style="color:#a6e22e">el</span>]);
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">min</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">el</span>
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">push</span>([<span style="color:#a6e22e">el</span>, <span style="color:#a6e22e">el</span>])
     } <span style="color:#66d9ef">else</span> {
-      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">push</span>([<span style="color:#a6e22e">el</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">min</span>]);
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">push</span>([<span style="color:#a6e22e">el</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">min</span>])
     }
   }
   <span style="color:#a6e22e">pop</span>() {
-    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ele</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">pop</span>();
-    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ele</span>[<span style="color:#ae81ff">0</span>];
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">ele</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>.<span style="color:#a6e22e">pop</span>()
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">ele</span>[<span style="color:#ae81ff">0</span>]
   }
   <span style="color:#a6e22e">getMin</span>() {
-    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>[<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">size</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>];
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">elements</span>[<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">size</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">1</span>]
   }
 }
 
-<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">s</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MinStack</span>();
-<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">push</span>(<span style="color:#ae81ff">2</span>);
-<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">push</span>(<span style="color:#ae81ff">3</span>);
-<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">push</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>);
-<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">push</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>);
-<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">pop</span>();
-<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">pop</span>();
-<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">getMin</span>()); <span style="color:#75715e">// 2
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">s</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">MinStack</span>()
+<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">push</span>(<span style="color:#ae81ff">2</span>)
+<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">push</span>(<span style="color:#ae81ff">3</span>)
+<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">push</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">push</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">3</span>)
+<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">pop</span>()
+<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">pop</span>()
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">getMin</span>()) <span style="color:#75715e">// 2
 </span></code></pre></div>
         </div>
 
