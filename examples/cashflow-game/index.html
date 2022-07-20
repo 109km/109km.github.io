@@ -93,11 +93,16 @@
             range: [10000, 150000],
             gap: 10000,
           },
+          {
+            code: 'FP10',
+            range: [10, 15],
+            gap: 1,
+          },
         ]
 
         function random(min, max, gap = 1) {
-          const diff = (max - min) / gap
-          const current = min + parseInt(Math.random() * diff) * gap
+          const diff = Math.ceil((max - min) / gap)
+          const current = min + Math.floor(Math.random() * (diff + 1)) * gap
           return current
         }
 
@@ -122,12 +127,11 @@
           isSelecting = true
           btn.html('选股中...').addClass('pure-button-disabled')
 
-          timer = setInterval(() => {
-            requestAnimationFrame(() => {
+          function select() {
+            setTimeout(() => {
               if (i === 20) {
                 i = 0
                 isSelecting = false
-                clearInterval(timer)
                 btn.html(btnDefaultText).removeClass('pure-button-disabled')
                 return
               }
@@ -136,8 +140,11 @@
               price.html(stock.price)
               range.html(`${stock.range[0]}~${stock.range[1]}`)
               i++
-            })
-          }, 100)
+              select()
+            }, 150)
+          }
+
+          select()
         })
       })
     </script>
