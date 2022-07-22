@@ -50,33 +50,33 @@
         const STOCKS = [
           {
             code: 'AYU1',
-            range: [40, 100],
+            range: [50, 120],
             gap: 10,
           },
           {
             code: 'BTN2',
-            range: [100, 300],
-            gap: 10,
+            range: [100, 350],
+            gap: 50,
           },
           {
             code: 'COP3',
-            range: [300, 1100],
-            gap: 10,
+            range: [300, 1500],
+            gap: 100,
           },
           {
             code: 'DRQ4',
-            range: [500, 2000],
+            range: [500, 3500],
             gap: 100,
           },
           {
             code: 'EWK5',
-            range: [800, 4000],
-            gap: 100,
+            range: [800, 8000],
+            gap: 200,
           },
           {
             code: 'LKO6',
-            range: [1000, 10000],
-            gap: 1000,
+            range: [1000, 12000],
+            gap: 500,
           },
           {
             code: 'FPU7',
@@ -91,11 +91,26 @@
           return current
         }
 
+        function priceLottery(stock){
+          const lottery = random(1,100,1)
+          console.log(lottery)
+          if (lottery === 1){
+            stock.price = stock.range[0] - stock.gap
+          }else if (lottery === 100){
+            stock.price = stock.range[1] + stock.gap * 2
+          }else{
+            stock.price = null
+          }
+          return stock
+        }
+
         function selectStock() {
           const i = random(0, STOCKS.length - 1, 1)
-          const stock = STOCKS[i]
-          const price = random(stock.range[0], stock.range[1], stock.gap)
+          const stock = priceLottery(STOCKS[i])
+          if (!stock.price){
+            const price = random(stock.range[0], stock.range[1], stock.gap)
           stock.price = price
+          }
           return stock
         }
         const btnDefaultText = '开始选股'
