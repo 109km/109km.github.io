@@ -50,32 +50,27 @@
         const STOCKS = [
           {
             code: 'AYU1',
-            range: [100, 350],
-            gap: 50,
+            range: [100, 600],
+            gap: 100,
           },
           {
             code: 'BTN2',
-            range: [200, 1000],
-            gap: 100,
+            range: [200, 2000],
+            gap: 200,
           },
           {
             code: 'COP3',
-            range: [300, 2200],
-            gap: 100,
+            range: [300, 4500],
+            gap: 300,
           },
           {
             code: 'DRQ4',
-            range: [500, 5000],
-            gap: 100,
+            range: [500, 10000],
+            gap: 500,
           },
           {
             code: 'EWK5',
-            range: [1000, 15000],
-            gap: 1000,
-          },
-          {
-            code: 'LKO6',
-            range: [2000, 40000],
+            range: [1000, 30000],
             gap: 1000,
           }
         ]
@@ -89,7 +84,7 @@
         function priceLottery(stock){
           const lottery = random(1,100,1)
           if (lottery === 1){
-            stock.price = stock.range[0] - stock.gap
+            stock.price = Math.floor(stock.range[0] / 2)
           }else if (lottery === 100){
             stock.price = stock.range[1] + stock.gap * 2
           }else{
